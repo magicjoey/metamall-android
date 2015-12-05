@@ -128,8 +128,8 @@
             android:text="@string/register"
             android:textColor="@color/white"
             android:textSize="17sp" />
-    <activity android:name="register"
-              android:lable="register"/>
+    <!--<activity android:name="register"-->
+              <!--android:lable="register"/>-->
 
 
     </LinearLayout>
