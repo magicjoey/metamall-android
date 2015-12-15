@@ -3,22 +3,22 @@ package com.metamall.activity;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import com.metamall.R;
-import com.metamall.SQLite.account;
 import com.metamall.fragment.HomeFragment;
 import com.metamall.utils.HttpUtil;
 import com.metamall.utils.RemoteServiceEnum;
-import org.json.JSONObject;
+
 
 import java.util.HashMap;
 import java.util.Map;
@@ -31,18 +31,40 @@ public class LoginActivity extends Activity {
 
 	private ImageButton ibBack;
 	private EditText username;
-	private EditText password;
+	private EditText password=null;
+    private CheckBox check=null;
 	private Button btnLogin;
 	private Button btnRegister;
-    private SQLiteDatabase ac;
-    private account acHelper;
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_login);
-		initView();
-	}
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState)
+    {
+        super.onCreate(savedInstanceState);
+        super.setContentView(R.layout.activity_login);
+        initView();
+        this.password=(EditText)super.findViewById(R.id.password);
+        this.check=(CheckBox)super.findViewById(R.id.check);
+        //为check设置监听选项，控制密码框的显示方式
+        this.check.setOnClickListener(new OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                if(check.isChecked())
+                {
+                        //设置密码可见
+                        password.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                    }
+                    else
+                    {
+                        //设置密码隐藏
+                        password.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                    }
+                }
+            });
+        }
+
 
 	/**
 	 * 初始化视图
@@ -71,17 +93,15 @@ public class LoginActivity extends Activity {
                     String accountNo = username.getText().toString();
                     String password1 = password.getText().toString();
                     //远程调用登陆服务
-//                Cursor c=ac.rawQuery(accountNo,null);                     //查询数据库
-
                     Map<String, String> map = new HashMap<String, String>();
                     map.put("accountNo", accountNo);
                     map.put("password1", password1);
                     //返回json格式数据类型
                     String response = HttpUtil.post(RemoteServiceEnum.LOGIN, map);
 
-                    if (1 == 1) {
+                    if (password1.equals("password1")) {
                         Intent intent =
-                                new Intent(LoginActivity.this, HomeFragment.class);       //意图跳不到主页
+                                new Intent(LoginActivity.this, HomeFragment.class);       //意图跳到主页
                         startActivity(intent);
 
                     } else {

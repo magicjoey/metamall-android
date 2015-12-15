@@ -2,15 +2,13 @@ package com.metamall.activity;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.ContentValues;
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import com.metamall.R;
-import com.metamall.SQLite.account;
+
 
 /**
  * <p>.</p>
@@ -20,18 +18,18 @@ import com.metamall.SQLite.account;
  */
 public class RegisterActivity extends Activity {
     private EditText username;
-    private EditText password;
-    private EditText repassword;
+    private EditText password=null;
+    private EditText repassword=null;
     private Button register;
     private Button cancel;
-    private SQLiteDatabase ac;
-    private account acHelper;
     public String id;
+    public String password2=password.getText().toString();
+    String repassword2=repassword.getText().toString();
 
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_register);
         setTitle("注册");
         username = (EditText) findViewById(R.id.userName);
         password = (EditText) findViewById(R.id.password);
@@ -43,6 +41,7 @@ public class RegisterActivity extends Activity {
 
     public void register_Click(View view) {
 
+
         if (username.getText().toString().equals("")) {
             new AlertDialog.Builder(this)
                     .setIcon(android.R.drawable.ic_dialog_alert)
@@ -52,7 +51,7 @@ public class RegisterActivity extends Activity {
                     .show();
             return;
         }
-        if (!password.getText().toString().equals(repassword.getText().toString())) {
+        if (!password2.equals(repassword2)) {
             new AlertDialog.Builder(this)
                     .setIcon(android.R.drawable.ic_dialog_alert)
                     .setTitle("警告")
@@ -61,12 +60,7 @@ public class RegisterActivity extends Activity {
                     .show();
             return;
         }
-        acHelper=new account(this);                                             //打开数据库ac
-        ac=acHelper.getWritableDatabase();
-        ContentValues cv=new ContentValues();
-        cv.put("_id",Integer.parseInt(id.toString()));
-        cv.put("username",username.getText().toString());
-        cv.put("password",password.getText().toString());//加入数据库中
+
 
 
 

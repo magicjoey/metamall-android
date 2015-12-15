@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="libs">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libs/android-support-v4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/jackson-core-asl-1.9.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/jackson-mapper-asl-1.9.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/volley.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/AutoScroll-ViewPager.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/UniversalListViewAdapter.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

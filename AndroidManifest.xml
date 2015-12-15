@@ -22,5 +22,8 @@
         </activity>
         <activity android:name=".activity.ProductDetailsSecondLayerActivity" >
         </activity>
+        <activity android:name=".activity.RegisterActivity">
+
+        </activity>
     </application>
 </manifest>

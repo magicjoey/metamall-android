@@ -3,10 +3,11 @@
             android:layout_height="match_parent"
             android:background="@color/bg_gray" >
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
+              android:orientation="vertical"
+              android:layout_height="wrap_content" android:id="@+id/body">
     <RelativeLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@color/white" >
@@ -31,6 +32,7 @@
     </RelativeLayout>
 
     <RelativeLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:background="@drawable/login_top_bg" >
@@ -72,7 +74,7 @@
                     android:layout_gravity="center_vertical"
                     android:layout_weight="1"
                     android:background="@color/white"
-                    android:hint="用户名/手机号"
+                    android:hint="用户名"
                     android:textSize="18sp" />
         </LinearLayout>
         <View
@@ -103,34 +105,49 @@
                     android:hint="@string/password_hint"
                     android:inputType="textPassword"
                     android:textSize="18sp" />
+            <Button
+                    android:id="@+id/login_btn_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/selector_btn_login"
+                    android:enabled="false"
+                    android:text="@string/login"
+                    android:textColor="@color/white"
+                    android:textSize="17sp" />
+
         </LinearLayout>
     </LinearLayout>
-
-    <Button
-            android:id="@+id/login_btn_login"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginEnd="15dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/selector_btn_login"
-            android:enabled="false"
-            android:text="@string/login"
-            android:textColor="@color/white"
-            android:textSize="17sp" />
-    <Button
-            android:id="@+id/login_btn_register1"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_margin="15dp"
-            android:background="@drawable/selector_btn_login"
-            android:enabled="false"
-            android:text="@string/register"
-            android:textColor="@color/white"
-            android:textSize="17sp" />
-    <!--<activity android:name="register"-->
-              <!--android:lable="register"/>-->
-
-
     </LinearLayout>
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:Orientation="horizontal">
+
+        <Button
+                android:id="@+id/login_btn_register1"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:layout_alignParentLeft="true"
+                android:background="@drawable/selector_btn_login"
+                android:enabled="false"
+                android:text="@string/register"
+                android:textColor="@color/white"
+                android:textSize="17sp"/>
+        <CheckBox
+                android:id="@+id/check"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:focusable="false"
+                android:layout_alignParentRight="true"
+                />
+
+        <!--<activity android:name="login"-->
+        <!--android:lable="login"/>-->
+
+    </RelativeLayout>
 </ScrollView>
