@@ -100,22 +100,22 @@ public class MainActivity extends Activity implements OnClickListener {
 		case R.id.main_btn_cart:
 			// 切换购物车选项卡
 			switchFragment(FragmentTag.TAG_CART);
-			break;
-		case R.id.main_btn_my:
-			// 切换我的信息选项卡
-			switchFragment(FragmentTag.TAG_MY);
-			break;
-		}
-	}
+            break;
+            case R.id.main_btn_my:
+                // 切换我的信息选项卡
+                switchFragment(FragmentTag.TAG_MY);
+                break;
+        }
+    }
 
-	/**
-	 * 切换Fragment
-	 * 
-	 * @param to
-	 *            目标Fragment
-	 */
-	private void switchFragment(FragmentTag to) {
-		if (!mCurrentTag.equals(to)) {
+    /**
+     * 切换Fragment
+     *
+     * @param to
+     *            目标Fragment
+     */
+    private void switchFragment(FragmentTag to) {
+        if (!mCurrentTag.equals(to)) {
 			Fragment currentF = getFragmentManager().findFragmentByTag(
 					mCurrentTag.getTag());
 			Fragment toF = getFragmentManager().findFragmentByTag(to.getTag());
@@ -159,6 +159,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		((TransitionDrawable) mBtnTabs.get(to).getDrawable())
 				.startTransition(200);
 	}
+
 
 	/**
 	 * 获取当前显示的Fragment
