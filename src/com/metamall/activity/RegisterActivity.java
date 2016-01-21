@@ -65,10 +65,14 @@ public class RegisterActivity extends Activity {
 
 
 
-        Intent intent = new Intent(this, LoginActivity.class);
+        Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+
+        Bundle bundle1=new Bundle();
+        bundle1.putString("password2", password.getText().toString());
+        bundle1.putString("username2",username.getText().toString());
+        intent.putExtras(bundle1);
         startActivity(intent);             //启动这个activity
         this.finish();                   //结束本个Activity
-
     }
 
     public void cancel_Click(View view){

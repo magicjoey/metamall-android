@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import com.metamall.R;
@@ -22,6 +23,7 @@ public class MyFragment extends Fragment {
 	
 	private ImageButton ibLogin;
 	private TextView tvUsername;
+
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -38,6 +40,7 @@ public class MyFragment extends Fragment {
 	private void initView(View view){
 		ibLogin = (ImageButton) view.findViewById(R.id.my_ib_login);
 		tvUsername = (TextView) view.findViewById(R.id.my_tv_username);
+
 		ibLogin.setOnClickListener(new OnClickListener() {
 			
 			@Override
@@ -57,5 +60,16 @@ public class MyFragment extends Fragment {
 			}
 		}
 	}
-	
+
+    public void Clickbt (View v1) {
+
+        Intent intent = new Intent();
+
+        intent.setClass(getActivity(),LoginActivity.class);
+
+        startActivity(intent);
+
+
+    }
+
 }

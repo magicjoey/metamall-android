@@ -35,6 +35,11 @@ public class LoginActivity extends Activity {
     private CheckBox check=null;
 	private Button btnLogin;
 	private Button btnRegister;
+    private String password1;
+    private String password3;
+    private String username3;
+    private String username1;
+
 
 
     @Override
@@ -45,6 +50,11 @@ public class LoginActivity extends Activity {
         initView();
         this.password=(EditText)super.findViewById(R.id.password);
         this.check=(CheckBox)super.findViewById(R.id.check);
+        Bundle bundle1=this.getIntent().getExtras();
+        if(bundle1!= null){
+            password3=bundle1.getString("password2");
+            username3=bundle1.getString("username2");
+        }
         //为check设置监听选项，控制密码框的显示方式
         this.check.setOnClickListener(new OnClickListener()
         {
@@ -99,7 +109,7 @@ public class LoginActivity extends Activity {
                     //返回json格式数据类型
                     String response = HttpUtil.post(RemoteServiceEnum.LOGIN, map);
 
-                    if (password1.equals("password1")) {
+                    if (password1.equals("password2")) {
                         Intent intent =
                                 new Intent(LoginActivity.this, HomeFragment.class);       //意图跳到主页
                         startActivity(intent);

@@ -1,14 +1,15 @@
 package com.metamall.fragment;
 
 import android.app.Fragment;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.EditText;
-import android.widget.ImageButton;
+import android.widget.*;
 import android.widget.ImageView.ScaleType;
 import cn.trinea.android.view.autoscrollviewpager.AutoScrollViewPager;
 import com.android.volley.toolbox.NetworkImageView;
@@ -26,8 +27,7 @@ import java.util.ArrayList;
  * 首页Fragment
  */
 public class HomeFragment extends Fragment {
-
-	/**
+    /**
 	 * 广告自动循环切换的时间间隔
 	 */
 	private static final int AUTO_SCROLL_INTERVAL = 3000;

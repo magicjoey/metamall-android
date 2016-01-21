@@ -44,7 +44,7 @@
                 android:background="@drawable/shape_login_dog"
                 android:contentDescription="@string/dog"
                 android:padding="2dp"
-                android:src="@drawable/login_dog" />
+                android:src="@drawable/personal_avatar_unlogin_normal" />
         </RelativeLayout>
 
         <LinearLayout

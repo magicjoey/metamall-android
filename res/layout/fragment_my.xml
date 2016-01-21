@@ -5,18 +5,10 @@
     android:background="@color/bg_gray"
     android:orientation="vertical" >
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@color/white"
-        android:gravity="center"
-        android:text="@string/myMall"
-        android:textSize="20sp" />
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="170dp"
-        android:background="@drawable/personal_info_bg" >
+        android:background="@drawable/personal_info_bg" android:layout_weight="1">
 
         <ImageButton
             android:id="@+id/my_ib_login"
@@ -37,6 +29,43 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
             android:textSize="17sp" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/selector_personal_show"
+            android:onClick="showAllCollection" android:layout_weight="1" android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:drawableLeft="@drawable/personal_icon_collection"
+                android:drawablePadding="10dp"
+                android:text="@string/myCollection"
+                android:textSize="17sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="10dp"
+                android:drawablePadding="10dp"
+                android:drawableRight="@drawable/personal_arrow_right"
+                android:text="@string/myAllCollection"
+                android:textColor="@color/gray"
+                android:textSize="15sp" />
+        </RelativeLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/white"
+            android:gravity="center"
+            android:text="@string/myMall"
+            android:textSize="20sp" android:layout_weight="1" android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"/>
     </RelativeLayout>
 
     <RelativeLayout
@@ -44,37 +73,7 @@
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/selector_personal_show"
-        android:onClick="showAllCollection" >
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="10dp"
-            android:drawableLeft="@drawable/personal_icon_collection"
-            android:drawablePadding="10dp"
-            android:text="@string/myCollection"
-            android:textSize="17sp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginEnd="10dp"
-            android:drawablePadding="10dp"
-            android:drawableRight="@drawable/personal_arrow_right"
-            android:text="@string/myAllCollection"
-            android:textColor="@color/gray"
-            android:textSize="15sp" />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/selector_personal_show"
-        android:onClick="showAllOrder" >
+        android:onClick="showAllOrder" android:layout_weight="1">
 
         <TextView
             android:layout_width="wrap_content"
@@ -97,6 +96,15 @@
             android:text="@string/myAllOrder"
             android:textColor="@color/gray"
             android:textSize="15sp" />
+        <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/exit"
+                android:state_pressed="false"
+                android:src="#CC0000"
+                android:layout_gravity="center_vertical"
+                android:text="退出登录"
+                android:onClick="Clickbt"/>
     </RelativeLayout>
 
 </LinearLayout>

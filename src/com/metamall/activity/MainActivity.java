@@ -35,29 +35,28 @@ public class MainActivity extends Activity implements OnClickListener {
 	private ArrayList<ImageButton> mBtnTabs;
 
 	@SuppressLint("InlinedApi")
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        		// 初始化网络模块
+                        NetworkManager.getInstance().init(getApplicationContext());
 
-		// 初始化网络模块
-		NetworkManager.getInstance().init(getApplicationContext());
+                initView();
 
-		initView();
+                if (savedInstanceState == null) {
+            // 记录当前Fragment
+                    mCurrentTag = FragmentTag.TAG_HOME;
+            mCurrentFragment = new HomeFragment();
+            getFragmentManager()
+                    .beginTransaction()
+                    .add(R.id.main_fragment, mCurrentFragment,
+                    mCurrentTag.getTag()).commit();
+            ((TransitionDrawable) mBtnTabs.get(0).getDrawable())
+                    .startTransition(200);
+            }
 
-		if (savedInstanceState == null) {
-			// 记录当前Fragment
-			mCurrentTag = FragmentTag.TAG_HOME;
-			mCurrentFragment = new HomeFragment();
-			getFragmentManager()
-					.beginTransaction()
-					.add(R.id.main_fragment, mCurrentFragment,
-							mCurrentTag.getTag()).commit();
-			((TransitionDrawable) mBtnTabs.get(0).getDrawable())
-					.startTransition(200);
-		}
-		
-	}
+                }
 
 	@Override
 	protected void onDestroy() {
@@ -147,7 +146,9 @@ public class MainActivity extends Activity implements OnClickListener {
 		}
 	}
 
-	/**
+
+
+    /**
 	 * 切换Fragment时选项卡按钮的动画
 	 * 
 	 * @param to
@@ -174,7 +175,8 @@ public class MainActivity extends Activity implements OnClickListener {
 	 * 点击MyFragment中查看所有收藏的处理事件
 	 * @param view 被点击的view
 	 */
-	public void showAllCollection(View view){
+	public void showAllCollection(View view) {
+
 	}
 	
 	/**
@@ -182,6 +184,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	 * @param view 被点击的view
 	 */
 	public void showAllOrder(View view){
+
 	}
 
 }
