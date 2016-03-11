@@ -27,14 +27,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:text="@string/login"
-                android:textSize="20sp" />
+                android:text="@string/register"
+                android:textSize="20sp"
+                android:textColor="#2b2b2b"
+            />
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:background="@drawable/login_top_bg" >
+            android:background="@drawable/login_top_bg1" >
 
             <ImageView
                 android:layout_width="100dp"
@@ -42,30 +44,22 @@
                 android:layout_alignParentStart="true"
                 android:layout_margin="25dp"
                 android:background="@drawable/shape_login_dog"
-                android:contentDescription="@string/dog"
+                android:contentDescription="@string/logo"
                 android:padding="2dp"
-                android:src="@drawable/personal_avatar_unlogin_normal" />
+                android:src="@drawable/logo" />
         </RelativeLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="180dp"
+            android:layout_height="match_parent"
             android:layout_marginTop="30dp"
             android:background="@color/white"
             android:orientation="vertical" >
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="36dp"
                 android:orientation="horizontal" >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginStart="20dp"
-                    android:text="@string/account"
-                    android:textSize="18sp" />
 
                 <EditText
                     android:id="@+id/userName"
@@ -73,8 +67,10 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_weight="1"
+                    android:gravity="center"
                     android:background="@color/white"
-                    android:hint="用户名/手机号"
+                    android:hint="@string/login_tel"
+
                     android:textSize="18sp" />
             </LinearLayout>
 
@@ -83,56 +79,8 @@
                 android:layout_height="1px"
                 android:background="@color/bg_gray" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:orientation="horizontal" >
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginStart="20dp"
-                    android:text="@string/password"
-                    android:textSize="18sp" />
 
-                <EditText
-                    android:id="@+id/password"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_weight="1"
-                    android:background="@color/white"
-                    android:hint="六位以上"
-                    android:inputType="textPassword"
-                    android:textSize="18sp" />
-
-            </LinearLayout>
-            <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:orientation="horizontal" >
-
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginStart="20dp"
-                        android:text="@string/password"
-                        android:textSize="18sp" />
-
-                <EditText
-                        android:id="@+id/repassword"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_weight="1"
-                        android:background="@color/white"
-                        android:hint="请再次输入密码"
-                        android:inputType="textPassword"
-                        android:textSize="18sp" />
-
-            </LinearLayout>
         </LinearLayout>
 
         <Button
@@ -153,7 +101,7 @@
                 android:layout_margin="15dp"
                 android:background="@drawable/selector_btn_login"
                 android:enabled="false"
-                android:text="取消"
+                android:text="@string/cancel"
                 android:textColor="@color/white"
                 android:textSize="17sp"
                 android:onClick="cancel_Click"/>
