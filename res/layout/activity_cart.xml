@@ -8,7 +8,9 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/white" >
+        android:background="@color/white"
+        android:id="@+id/cart_top"
+    >
 
         <Button
             android:id="@+id/cart_btn_edit"
@@ -18,15 +20,16 @@
             android:layout_marginEnd="10dp"
             android:background="#00000000"
             android:text="@string/edit"
-            android:textColor="@color/gray"
+            android:textColor="#7d7d7d"
             android:textSize="15sp"
-            android:visibility="invisible" />
+            android:visibility="visible" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:text="@string/cart"
+            android:textColor="#363636"
             android:textSize="20sp" />
     </RelativeLayout>
 
@@ -95,10 +98,11 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginStart="10dp"
-                android:button="@drawable/selector_cb_cart"
                 android:background="@null"
                 android:text="@string/selectAll"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:checked="false"
+            />
 
             <TextView
                 android:id="@+id/cart_tv_total"

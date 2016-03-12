@@ -1,5 +1,6 @@
-package com.metamall.fragment;
+package com.metamall.activity;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,13 +16,14 @@ import com.metamall.adapter.CartListAdapter;
 import com.metamall.adapter.CartListAdapter.OnPriceChangedListener;
 import com.metamall.model.Global;
 import com.metamall.model.ProductData;
+import junit.framework.Test;
 
 import java.util.ArrayList;
 
 /**
  * 购物车Fragment
  */
-public class CartFragment extends Fragment {
+public class CartActivity extends Activity {
 
 	/**
 	 * 顶部
@@ -52,13 +54,19 @@ public class CartFragment extends Fragment {
 	private Button btnBuy;
 
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState) {
-		View view = inflater.inflate(R.layout.fragment_cart, container, false);
-		initData();
-		initView(view);
-		return view;
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_cart);
+		initView();
 	}
+
+	/**
+	 * 初始化视图
+	 */
+	private void initView(){
+
+	}
+
 
 	@Override
 	public void onStart() {
@@ -123,11 +131,9 @@ public class CartFragment extends Fragment {
 		btnLogin.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				// 跳转登录界面
-				startActivity(new Intent(getActivity(), LoginActivity.class));
-				// ////////////////////////////
-				// //////////模拟登录///////////
-				Global.isLogin = true;
+				Intent intent=new Intent(CartActivity.this,LoginActivity.class);
+				startActivity(intent);
+				CartActivity.this.finish();
 			}
 		});
 		tvEmpty = (TextView) view.findViewById(R.id.cart_tv_empty);
@@ -183,7 +189,7 @@ public class CartFragment extends Fragment {
 	 */
 	private void initData() {
 		products = new ArrayList<ProductData>();
-		adapter = new CartListAdapter(getActivity(), products,
+		adapter = new CartListAdapter(this, products,
 				R.layout.item_cart_lv);
 	}
 

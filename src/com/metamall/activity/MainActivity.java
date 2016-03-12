@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageButton;
 import com.metamall.R;
-import com.metamall.fragment.HomeFragment;
 import com.metamall.network.NetworkManager;
 import com.metamall.utils.FragmentTag;
 import com.metamall.utils.LogType;
@@ -47,7 +46,7 @@ public class MainActivity extends Activity implements OnClickListener {
                 if (savedInstanceState == null) {
             // 记录当前Fragment
                     mCurrentTag = FragmentTag.TAG_HOME;
-            mCurrentFragment = new HomeFragment();
+            //mCurrentFragment = new HomeFragment();
             getFragmentManager()
                     .beginTransaction()
                     .add(R.id.main_fragment, mCurrentFragment,

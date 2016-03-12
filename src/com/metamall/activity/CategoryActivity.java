@@ -1,5 +1,6 @@
-package com.metamall.fragment;
+package com.metamall.activity;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
@@ -22,7 +23,7 @@ import java.util.ArrayList;
 /**
  * 商品分类Fragment
  */
-public class CategoryFragment extends Fragment {
+public class CategoryActivity extends Activity {
 
 	/**
 	 * 顶部搜索相关
@@ -44,12 +45,15 @@ public class CategoryFragment extends Fragment {
 	private CategoryRightGridAdapter gridAdapter;
 
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState) {
-		View view = inflater.inflate(R.layout.fragment_category, container,
-				false);
-		initView(view);
-		return view;
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_category);
+		initView();
+
+	}
+
+	private void initView(){
+
 	}
 
 	@Override
@@ -86,7 +90,7 @@ public class CategoryFragment extends Fragment {
 		// 列表相关
 		listView = (ListView) view.findViewById(R.id.category_listView);
 		listCategorys = new ArrayList<CategoryData>();
-		listAdapter = new CategoryLeftListAdapter(getActivity(), listCategorys,
+		listAdapter = new CategoryLeftListAdapter(this, listCategorys,
 				R.layout.item_category_left_lv);
 		listView.setAdapter(listAdapter);
 		listView.setOnItemClickListener(new OnItemClickListener() {
@@ -128,7 +132,7 @@ public class CategoryFragment extends Fragment {
 		// 网格相关
 		gridView = (GridView) view.findViewById(R.id.category_gridView);
 		gridCategorys = new ArrayList<SecondCategoryData>();
-		gridAdapter = new CategoryRightGridAdapter(getActivity(),
+		gridAdapter = new CategoryRightGridAdapter(this,
 				gridCategorys, R.layout.item_category_right_grid);
 		gridView.setAdapter(gridAdapter);
 		gridView.setOnItemClickListener(new OnItemClickListener() {
@@ -136,7 +140,7 @@ public class CategoryFragment extends Fragment {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
-				startActivity(new Intent(getActivity(),
+				startActivity(new Intent(CategoryActivity.this,
 						ProductDetailsSecondLayerActivity.class));
 			}
 		});

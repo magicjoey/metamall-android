@@ -1,4 +1,4 @@
-package com.metamall.fragment;
+package com.metamall.activity;
 
 import android.app.Activity;
 import android.app.Fragment;
@@ -8,16 +8,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import com.metamall.R;
-import com.metamall.activity.LoginActivity;
 
 /**
  * 我的信息Fragment
  */
-public class MyFragment extends Fragment {
+public class MyActivity extends Activity {
 	
 	private static final int REQUEST_CODE = 15342;
 	
@@ -26,11 +24,10 @@ public class MyFragment extends Fragment {
 
 
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState) {
-		View view = inflater.inflate(R.layout.fragment_my, container, false);
-		initView(view);
-		return view;
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_my);
+		//initView();
 	}
 	
 	/**
@@ -45,7 +42,7 @@ public class MyFragment extends Fragment {
 			
 			@Override
 			public void onClick(View v) {
-				Intent intent = new Intent(getActivity(), LoginActivity.class);
+				Intent intent = new Intent(MyActivity.this, LoginActivity.class);
 				startActivityForResult(intent, REQUEST_CODE);
 			}
 		});
@@ -65,7 +62,7 @@ public class MyFragment extends Fragment {
 
         Intent intent = new Intent();
 
-        intent.setClass(getActivity(),LoginActivity.class);
+        intent.setClass(MyActivity.this,LoginActivity.class);
 
         startActivity(intent);
 

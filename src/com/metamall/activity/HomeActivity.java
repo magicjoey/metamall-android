@@ -1,5 +1,6 @@
-package com.metamall.fragment;
+package com.metamall.activity;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -25,8 +26,9 @@ import java.util.ArrayList;
 
 /**
  * 首页Fragment
+ *
  */
-public class HomeFragment extends Fragment {
+public class HomeActivity extends Activity {
     /**
 	 * 广告自动循环切换的时间间隔
 	 */
@@ -52,13 +54,11 @@ public class HomeFragment extends Fragment {
 	private ImageButton ibSearch;
 
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState) {
-		View view = inflater.inflate(R.layout.fragment_home, container, false);
-		initView(view);
-		return view;
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_home);
+		//initView();
 	}
-
 	/**
 	 * 初始化视图
 	 */
@@ -102,7 +102,7 @@ public class HomeFragment extends Fragment {
 		// 商品列表部分
 		listView = (NoScrollListView) view.findViewById(R.id.home_lv);
 		floorDatas = getListData();
-		listAdapter = new HomeListAdapter(getActivity(), floorDatas,
+		listAdapter = new HomeListAdapter(this, floorDatas,
 				R.layout.item_home_lv);
 		listView.setAdapter(listAdapter);
 		listView.setDivider(null);
@@ -138,7 +138,7 @@ public class HomeFragment extends Fragment {
 		urls = getImageUrls();
 		viewContainer.clear();
 		for (String url : urls) {
-			NetworkImageView iv = new NetworkImageView(getActivity());
+			NetworkImageView iv = new NetworkImageView(this);
 			iv.setScaleType(ScaleType.FIT_XY);
 			NetworkManager.getInstance().setImageUrl(iv, url);
 			viewContainer.add(iv);
