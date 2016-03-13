@@ -19,6 +19,8 @@
     <string name="myAllOrder">查看所有订单</string>
     <string name="login">登录</string>
     <string name="register">注册</string>
+    <string name="validate">验证</string>
+    <string name="suggest1">没有收到短信？请点击重新获取</string>
     <string name="error">用户名和密码不为空</string>
     <string name="back">返回</string>
     <string name="login_tel">请输入您的手机号码</string>
@@ -29,6 +31,7 @@
     <string name="password_display">显示密码</string>
     <string name="password">密码：</string>
     <string name="password1">密码</string>
+    <string name="prompt">请输入验证码</string>
     <string name="password_hint">请输入密码</string>
     <string name="edit">编辑</string>
     <string name="suggest">请先登录再查看购物车</string>
