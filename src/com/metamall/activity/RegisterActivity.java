@@ -58,6 +58,8 @@ public class RegisterActivity extends Activity {
                 if(isPhone){
                     Intent intent_register_message=new Intent();
                     intent_register_message.setClass(RegisterActivity.this,MessageActivity.class);
+                    intent_register_message.putExtra("TLE",etTelephone.getText().toString());
+                    startActivity(intent_register_message);
                     finish();
                 }
                 else{
@@ -65,23 +67,19 @@ public class RegisterActivity extends Activity {
                 }
 
 
+
             }
 
+
         });
-
-
-
-
-
-
     }
 
     public static boolean isMobileNO(String phoneNum) {
         phoneNum=phoneNum.trim();
         String head1 = "";
-        String head2 = "";
+
         head1 = phoneNum.substring(0, 3);
-        head2 = phoneNum.substring(0, 4);
+
 
         if(phoneNum.length()!=11){
             return false;
@@ -94,7 +92,7 @@ public class RegisterActivity extends Activity {
                     || head1.equals("152") || head1.equals("157")
                     || head1.equals("158") || head1.equals("159")
                     || head1.equals("182") || head1.equals("187")
-                    || head1.equals("188") ||head2.equals("134")
+                    || head1.equals("188") ||head1.equals("134")
                     ||head1.equals("130") || head1.equals("131")
                     || head1.equals("132") || head1.equals("145")
                     || head1.equals("155") || head1.equals("156")

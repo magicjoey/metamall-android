@@ -1,110 +1,148 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/bg_gray"
-    android:orientation="vertical" >
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="170dp"
-        android:background="@drawable/personal_info_bg" android:layout_weight="1">
-
-        <ImageButton
-            android:id="@+id/my_ib_login"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="35dp"
-            android:background="#00000000"
-            android:contentDescription="@string/login"
-            android:scaleType="fitXY"
-            android:src="@drawable/selector_personal_avatar_unlogin" />
-
-        <TextView
-            android:id="@+id/my_tv_username"
-            android:layout_width="wrap_content"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/bg_gray">
+    <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/my_ib_login"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
-            android:textSize="17sp" />
+            android:orientation="vertical"
+            android:background="#f0f0f0">
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="@drawable/selector_personal_show"
-            android:onClick="showAllCollection" android:layout_weight="1" android:layout_alignParentBottom="true"
-            android:layout_alignParentStart="true">
+            android:background="@color/white" >
+
+            <ImageButton
+                android:id="@+id/login_ib_back"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:background="#00000000"
+                android:contentDescription="@string/back"
+                android:src="@drawable/top_arrow_back"
+                    />
+
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginStart="10dp"
-                android:drawableLeft="@drawable/personal_icon_collection"
-                android:drawablePadding="10dp"
-                android:text="@string/myCollection"
+                android:layout_centerInParent="true"
+                android:text="@string/myCentre"
+                android:textSize="16sp"
+                android:textColor="#666666"
+                />
+        </RelativeLayout>
+        <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:shrinkColumns="0,1,2,3">
+
+        </TableLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@drawable/personal_info_bg"
+            android:layout_weight="1">
+
+            <ImageButton
+                android:id="@+id/my_ib_login"
+                android:layout_width="80dp"
+                android:layout_height="70dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="35dp"
+                android:background="#00000000"
+                android:layout_alignParentTop="true"
+                android:contentDescription="@string/login"
+                android:scaleType="fitXY"
+                android:src="@drawable/selector_personal_avatar_unlogin"
+            />
+
+            <TextView
+                android:id="@+id/my_tv_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/my_ib_login"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
                 android:textSize="17sp" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_marginEnd="10dp"
-                android:drawablePadding="10dp"
-                android:drawableRight="@drawable/personal_arrow_right"
-                android:text="@string/myAllCollection"
-                android:textColor="@color/gray"
-                android:textSize="15sp" />
-        </RelativeLayout>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@color/white"
-            android:gravity="center"
-            android:text="@string/myMall"
-            android:textSize="20sp" android:layout_weight="1" android:layout_alignParentBottom="true"
-            android:layout_alignParentStart="true"/>
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/selector_personal_show"
-        android:onClick="showAllOrder" android:layout_weight="1">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="10dp"
-            android:drawableLeft="@drawable/personal_icon_order"
-            android:drawablePadding="10dp"
-            android:text="@string/myOrder"
-            android:textSize="17sp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginEnd="10dp"
-            android:drawablePadding="10dp"
-            android:drawableRight="@drawable/personal_arrow_right"
-            android:text="@string/myAllOrder"
-            android:textColor="@color/gray"
-            android:textSize="15sp" />
-        <Button
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/exit"
-                android:state_pressed="false"
-                android:src="#CC0000"
-                android:layout_gravity="center_vertical"
-                android:text="退出登录"
-                android:onClick="Clickbt"/>
-    </RelativeLayout>
+                android:layout_height="35dp"
+                android:background="#8C8C8C"
+                android:gravity="center"
+                android:text="@string/myJXB"
+                android:textSize="15sp"
+                android:textColor="#f4f4f4"
+                android:layout_weight="1"
+                android:id="@+id/MyJXB"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true"/>
+        </RelativeLayout>
+        <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:id="@+id/information1"
+                android:padding="3dip"
+                android:stretchColumns="0,1,2,3" >
+            <TableRow>
+                <Button
+                        android:id="@+id/obligation"
+                        android:text="待付款"
+                        android:textSize="16sp"
+                        android:textColor="#555555"
+                        android:background="#e3e3e3"
+                        />
+                <Button
+                        android:id="@+id/Ordering"
+                        android:text="待发货"
+                        android:textSize="16sp"
+                        android:textColor="#555555"
+                        android:background="#e3e3e3"/>
+                <Button
+                        android:id="@+id/Ordered"
+                        android:text="已发货"
+                        android:textSize="16sp"
+                        android:textColor="#555555"
+                        android:background="#e3e3e3"/>
+                <Button
+                        android:id="@+id/completed"
+                        android:text="已完成"
+                        android:textSize="16sp"
+                        android:textColor="#555555"
+                        android:background="#e3e3e3"/>
 
-</LinearLayout>
+            </TableRow>
+
+        </TableLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/selector_personal_show"
+            android:onClick="showAllOrder"
+            android:layout_weight="1">
+
+            <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/c11"
+                    android:text="      我的全部订单"
+                    android:textColor="#555555"
+                    android:gravity="center_vertical"
+
+                    />
+
+
+    </RelativeLayout>
+    </LinearLayout>
+
+
+
+</ScrollView>

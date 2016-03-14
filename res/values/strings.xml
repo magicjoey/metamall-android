@@ -9,7 +9,7 @@
     <string name="my">我的</string>
     <string name="find_et_hint">一个好套套，一份好心情</string>
     <string name="search">搜索</string>
-    <string name="myMall">我的商城</string>
+    <string name="myJXB">我的精喜币数量：</string>
     <string name="myCollection">我的收藏</string>
     <string name="myOrder">我的订单</string>
     <string name="myAllCollection">查看所有收藏</string>
@@ -21,6 +21,7 @@
     <string name="register">注册</string>
     <string name="validate">验证</string>
     <string name="suggest1">没有收到短信？请点击重新获取</string>
+    <string name="getIde">重新获取</string>
     <string name="error">用户名和密码不为空</string>
     <string name="back">返回</string>
     <string name="login_tel">请输入您的手机号码</string>
@@ -32,6 +33,8 @@
     <string name="password">密码：</string>
     <string name="password1">密码</string>
     <string name="prompt">请输入验证码</string>
+    <string name="myCentre">一路惊喜-我的个人中心</string>
+
     <string name="password_hint">请输入密码</string>
     <string name="edit">编辑</string>
     <string name="suggest">请先登录再查看购物车</string>

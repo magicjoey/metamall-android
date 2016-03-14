@@ -37,6 +37,7 @@
             android:textColor="#454545"
             android:id="@+id/message"
 
+
     />
     <LinearLayout
             android:layout_width="match_parent"
@@ -44,17 +45,17 @@
             android:orientation="horizontal" >
 
         <EditText
-                android:id="@+id/login_et_password"
+                android:id="@+id/message_num"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_weight="1"
                 android:background="@color/white"
                 android:hint="@string/prompt"
-                android:inputType="textPassword"
+                android:inputType="number"
                 android:textSize="18sp" />
         <CheckBox
-                android:text="@string/password_display"
+                android:text="@string/getIde"
                 android:textSize="15sp"
                 android:layout_width="92dp"
                 android:layout_height="60dp"
@@ -71,7 +72,7 @@
             android:textSize="14sp"
             android:textColor="#848484"/>
     <Button
-            android:id="@+id/register"
+            android:id="@+id/register_login"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_margin="15dp"
