@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:orientation="vertical" >
+
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50sp"
+        android:background="#ededed"
+        android:gravity="center_vertical" >
+
+
+    <LinearLayout
+            android:id="@+id/btn_prev_month"
+            android:layout_width="10dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.1"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+        <ImageButton
+                android:id="@+id/left_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:duplicateParentState="true"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/btn_left"
+                android:contentDescription="@string/cal_left"/>
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.6"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+        <TextView
+                android:id="@+id/tv_month"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="xxxx年14月"
+                android:textColor="#555555"
+                android:textSize="24.0dip" />
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/btn_next_month"
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.1"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+        <ImageButton
+                android:id="@+id/right_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:duplicateParentState="true"
+                android:src="@drawable/btn_right"
+                android:contentDescription="@string/cal_right"/>
+    </LinearLayout>
+</LinearLayout>
+
+    <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="22.0dip"
+            android:background="#ff8091a8" >
+
+        <TextView
+                style="@style/weekName"
+                android:text="@string/sunday" />
+
+        <TextView
+                style="@style/weekName"
+                android:text="@string/monday" />
+
+        <TextView
+                style="@style/weekName"
+                android:text="@string/Tuesday" />
+
+        <TextView
+                style="@style/weekName"
+                android:text="@string/Wednesday" />
+
+        <TextView
+                style="@style/weekName"
+                android:text="@string/Thursday" />
+
+        <TextView
+                style="@style/weekName"
+                android:text="@string/friday" />
+
+        <TextView
+                style="@style/weekName"
+                android:text="@string/Saturday" />
+    </LinearLayout>
+
+    <GridView
+            android:id="@+id/gridview"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/bg_gray"
+            android:clickable="true"
+            android:clipChildren="true"
+            android:columnWidth="55.0dip"
+            android:horizontalSpacing="1.0dip"
+            android:listSelector="@null"
+            android:numColumns="7"
+            android:paddingBottom="1.0dip"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="1.0dip" />
+
+</LinearLayout>

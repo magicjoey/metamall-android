@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/bg_gray"
+        >
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#f0f0f0">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@color/white" >
+
+            <ImageButton
+                android:id="@+id/login_ib_back"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:background="#00000000"
+                android:contentDescription="@string/back"
+                android:src="@drawable/top_arrow_back"
+                />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/myFit_layout"
+                android:textSize="18sp"
+                android:textColor="#666666"
+                />
+        </RelativeLayout>
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:background="@drawable/login_top_bg1" >
+
+            <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_margin="25dp"
+                    android:background="@drawable/shape_login_dog"
+                    android:contentDescription="@string/logo"
+                    android:padding="2dp"
+                    android:src="@drawable/logo" />
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:background="#8C8C8C"
+                    android:gravity="center"
+                    android:text="@string/myJXB"
+                    android:textSize="15sp"
+                    android:textColor="#f4f4f4"
+                    android:id="@+id/MyJXB"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentStart="true"/>
+
+
+
+        </RelativeLayout>
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                >
+        <include
+                android:id="@+id/my_calendar_layout"
+                layout="@layout/calendar"
+                />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+
+
+
+
+
+
+
+</ScrollView>

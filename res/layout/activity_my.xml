@@ -34,17 +34,12 @@
                 android:textColor="#666666"
                 />
         </RelativeLayout>
-        <TableLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:shrinkColumns="0,1,2,3">
 
-        </TableLayout>
 
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="0dp"
             android:background="@drawable/personal_info_bg"
             android:layout_weight="1">
 
@@ -53,7 +48,7 @@
                 android:layout_width="80dp"
                 android:layout_height="70dp"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="35dp"
+                android:layout_marginTop="10dp"
                 android:background="#00000000"
                 android:layout_alignParentTop="true"
                 android:contentDescription="@string/login"
@@ -68,7 +63,9 @@
                 android:layout_below="@id/my_ib_login"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp"
-                android:textSize="17sp" />
+                android:textSize="17sp"
+                android:textColor="#f4f4f4"
+                    />
 
             <TextView
                 android:layout_width="match_parent"
@@ -78,7 +75,6 @@
                 android:text="@string/myJXB"
                 android:textSize="15sp"
                 android:textColor="#f4f4f4"
-                android:layout_weight="1"
                 android:id="@+id/MyJXB"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentStart="true"/>
@@ -92,26 +88,26 @@
             <TableRow>
                 <Button
                         android:id="@+id/obligation"
-                        android:text="待付款"
+                        android:text="@string/forPay"
                         android:textSize="16sp"
                         android:textColor="#555555"
                         android:background="#e3e3e3"
                         />
                 <Button
                         android:id="@+id/Ordering"
-                        android:text="待发货"
+                        android:text="@string/forDelivery"
                         android:textSize="16sp"
                         android:textColor="#555555"
                         android:background="#e3e3e3"/>
                 <Button
                         android:id="@+id/Ordered"
-                        android:text="已发货"
+                        android:text="@string/Deliveryed"
                         android:textSize="16sp"
                         android:textColor="#555555"
                         android:background="#e3e3e3"/>
                 <Button
                         android:id="@+id/completed"
-                        android:text="已完成"
+                        android:text="@string/completed"
                         android:textSize="16sp"
                         android:textColor="#555555"
                         android:background="#e3e3e3"/>
@@ -121,26 +117,71 @@
         </TableLayout>
 
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/selector_personal_show"
-            android:onClick="showAllOrder"
-            android:layout_weight="1">
+
 
             <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:id="@+id/MyAllOrder"
                     android:background="@drawable/c11"
-                    android:text="      我的全部订单"
+                    android:text="@string/myAllOrder"
                     android:textColor="#555555"
+                    android:textSize="18sp"
+                    android:drawableLeft="@drawable/my_try"
                     android:gravity="center_vertical"
+                    android:onClick="showAllOrder"
+                    android:layout_marginTop="4dp"/>
+            <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/MyCollection"
+                    android:background="@drawable/c11"
+                    android:text="@string/MyCollection"
+                    android:textSize="18sp"
+                    android:textColor="#555555"
+                    android:drawableLeft="@drawable/my_try"
+                    android:gravity="center_vertical"
+                    android:onClick="showAllCollection"
+                    android:layout_marginTop="4dp"/>
+            <Button
+                    android:id="@+id/MyFit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/c11"
+                    android:text="@string/MyFit"
+                    android:textSize="18sp"
+                    android:textColor="#555555"
+                    android:drawableLeft="@drawable/my_try"
+                    android:gravity="center_vertical"
+                    android:onClick="showMyFit"
+                    android:layout_marginTop="4dp"/>
+            <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/MyActivity"
+                    android:background="@drawable/c11"
+                    android:text="@string/MyActivity"
+                    android:textSize="18sp"
+                    android:textColor="#555555"
+                    android:drawableLeft="@drawable/my_try"
+                    android:gravity="center_vertical"
+                    android:onClick="showMyActivity"
+                    android:layout_marginTop="4dp"/>
+        <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/recommend"
+                android:background="@drawable/c11"
+                android:text="@string/MyRecommend"
+                android:textSize="18sp"
+                android:textColor="#555555"
+                android:drawableLeft="@drawable/my_try"
+                android:gravity="center_vertical"
+                android:layout_marginTop="4dp"
+                android:onClick="showMyRecommend"/>
 
-                    />
 
 
-    </RelativeLayout>
     </LinearLayout>
 
 

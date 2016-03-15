@@ -49,7 +49,7 @@ public class MainActivity extends Activity implements OnClickListener {
             //mCurrentFragment = new HomeFragment();
             getFragmentManager()
                     .beginTransaction()
-                    .add(R.id.main_fragment, mCurrentFragment,
+                    .add(R.id.main_layout, mCurrentFragment,
                     mCurrentTag.getTag()).commit();
             ((TransitionDrawable) mBtnTabs.get(0).getDrawable())
                     .startTransition(200);
@@ -72,7 +72,6 @@ public class MainActivity extends Activity implements OnClickListener {
 		mBtnTabs = new ArrayList<ImageButton>();
 		mBtnTabs.add((ImageButton) findViewById(R.id.main_btn_home));
 		mBtnTabs.add((ImageButton) findViewById(R.id.main_btn_category));
-		mBtnTabs.add((ImageButton) findViewById(R.id.main_btn_scan));
 		mBtnTabs.add((ImageButton) findViewById(R.id.main_btn_cart));
 		mBtnTabs.add((ImageButton) findViewById(R.id.main_btn_my));
 		for (int i = 0; i < mBtnTabs.size(); i++) {
@@ -91,10 +90,7 @@ public class MainActivity extends Activity implements OnClickListener {
 			// 切换商品分类选项卡
 			switchFragment(FragmentTag.TAG_CATEGORY);
 			break;
-		case R.id.main_btn_scan:
-			// 切换扫描选项卡
-			switchFragment(FragmentTag.TAG_SCAN);
-			break;
+
 		case R.id.main_btn_cart:
 			// 切换购物车选项卡
 			switchFragment(FragmentTag.TAG_CART);
@@ -122,7 +118,7 @@ public class MainActivity extends Activity implements OnClickListener {
 					// 未add过，使用反射新建一个Fragment并add到FragmentManager中
 					toF = (Fragment) Class.forName(to.getTag()).newInstance();
 					getFragmentManager().beginTransaction().hide(currentF)
-							.add(R.id.main_fragment, toF, to.getTag()).commit(); // 隐藏当前的fragment，add下一个到Activity中
+							.add(R.id.main_layout, toF, to.getTag()).commit(); // 隐藏当前的fragment，add下一个到Activity中
 					// 切换按钮动画
 					switchAnimation(to.ordinal());
 					// 更新当前Fragment

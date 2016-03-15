@@ -1,16 +1,13 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/bg_gray"
-    android:orientation="vertical">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/bg_gray">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@color/white"
-        android:id="@+id/cart_top"
-    >
+        android:id="@+id/cart_top">
 
         <Button
             android:id="@+id/cart_btn_edit"
@@ -31,9 +28,9 @@
             android:text="@string/cart"
             android:textColor="#363636"
             android:textSize="20sp" />
-    </RelativeLayout>
 
-    <RelativeLayout
+
+        <RelativeLayout
         android:id="@+id/cart_suggest_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -57,9 +54,9 @@
             android:paddingTop="5dp"
             android:text="@string/suggest"
             android:textSize="15sp" />
-    </RelativeLayout>
+        </RelativeLayout>
 
-    <TextView
+        <TextView
         android:id="@+id/cart_tv_empty"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -70,7 +67,7 @@
         android:textSize="17sp"
         android:visibility="gone" />
 
-    <LinearLayout
+        <LinearLayout
         android:id="@+id/cart_list_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -78,21 +75,21 @@
         android:orientation="vertical"
         android:visibility="gone" >
 
-        <ListView
+            <ListView
             android:id="@+id/cart_lv"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:scrollbars="none" >
-        </ListView>
+            </ListView>
 
-        <RelativeLayout
+            <RelativeLayout
             android:id="@+id/cart_check_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/gray" >
 
-            <CheckBox
+                <CheckBox
                 android:id="@+id/cart_cb_all"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -102,9 +99,9 @@
                 android:text="@string/selectAll"
                 android:textColor="@color/white"
                 android:checked="false"
-            />
+                />
 
-            <TextView
+                <TextView
                 android:id="@+id/cart_tv_total"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -112,7 +109,7 @@
                 android:textColor="@color/white"
                 android:textSize="17sp" />
 
-            <Button
+                <Button
                 android:id="@+id/cart_btn_buy"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -121,8 +118,10 @@
                 android:text="@string/buy"
                 android:textColor="@color/white"
                 android:textSize="17sp" />
-        </RelativeLayout>
+            </RelativeLayout>
         
-    </LinearLayout>
+        </LinearLayout>
 
-</LinearLayout>
+    </RelativeLayout>
+
+</ScrollView>

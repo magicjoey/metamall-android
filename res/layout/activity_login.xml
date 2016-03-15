@@ -126,7 +126,7 @@
 
         </LinearLayout>
 
-        <Button
+            <Button
                 android:id="@+id/login_btn_register"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
