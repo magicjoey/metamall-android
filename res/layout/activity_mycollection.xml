@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:sndroid="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#e8e8e8"
+        >
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#f0f0f0">
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/white" >
+
+            <ImageButton
+                    android:id="@+id/login_ib_back"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:background="#00000000"
+                    android:contentDescription="@string/back"
+                    android:src="@drawable/top_arrow_back"
+                    />
+
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/myCollection_layout"
+                    android:textSize="16sp"
+                    android:textColor="#666666"
+                />
+            <Button
+                    android:id="@+id/MyCollection_setting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/setting"
+                    android:background="#00000000"
+                    android:textColor="#555555"/>
+        </RelativeLayout>
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:orientation="vertical"
+                android:gravity="center_vertical|center_horizontal"
+                android:padding="3dip"
+                android:id="@+id/myCollection_noCollection"
+                android:background="#e8e8e8">
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/c14"
+                    />
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/myCollection_advise"
+                    android:textColor="#555555"
+                    android:textSize="16sp"
+                    android:gravity="center_horizontal"
+                    android:padding="10dip"/>
+            <Button
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:background="#cd0000"
+                    android:text="@string/myCollection_shopping"
+                    android:id="@+id/myCollection_shopping"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -5,8 +5,10 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical" >
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/bg_gray"
+            >
 
         <LinearLayout
             android:layout_width="fill_parent"
@@ -39,7 +41,7 @@
                     android:background="@drawable/shape_input_search"
                     android:hint="@string/find_et_hint"
                     android:singleLine="true"
-                    android:textColorHint="@color/gray"
+                    android:textColorHint="#636363"
                     android:textSize="15sp" />
 
                 <ImageButton
@@ -73,7 +75,9 @@
                 android:layout_weight="1"
                 android:background="@color/white"
                 android:drawableRight="@drawable/pd_second_layer_down"
-                android:text="综合" />
+                android:text="综合"
+                android:textColor="#666666"
+                    />
 
             <Button
                 android:id="@+id/btn_pd2_sales"
@@ -81,7 +85,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@color/white"
-                android:text="销量" />
+                android:text="销量"
+                android:textColor="#666666"
+                    />
 
             <Button
                 android:id="@+id/btn_pd2_price"
@@ -90,7 +96,9 @@
                 android:layout_weight="1"
                 android:background="@color/white"
                 android:drawableRight="@drawable/pd_button_price_normal"
-                android:text="价格" />
+                android:text="价格"
+                android:textColor="#666666"
+                    />
 
             <Button
                 android:id="@+id/btn_pd2_select"
@@ -99,7 +107,9 @@
                 android:layout_weight="1"
                 android:background="@color/white"
                 android:drawableRight="@drawable/selection_normal"
-                android:text="筛选" />
+                android:text="筛选"
+                android:textColor="#666666"
+                    />
         </LinearLayout>
 
         <com.metamall.noscrollview.NoScrollListView

@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/bg_gray">
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+            >
 
         <LinearLayout
             android:layout_width="fill_parent"
@@ -23,13 +25,14 @@
                     android:id="@+id/pd_btn_back"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
                     android:background="@drawable/top_arrow_back" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
+                    android:textColor="#555555"
                     android:text="商品详情" />
 
                 <ImageButton
@@ -70,6 +73,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentTop="true"
+                    android:textColor="#636363"
                     android:text="商品信息描述" />
 
                 <ImageButton
@@ -89,7 +93,7 @@
                     android:textSize="20sp" />
             </RelativeLayout>
         </LinearLayout>
-    </ScrollView>
+
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -112,6 +116,7 @@
             android:layout_below="@id/pd_btn_collect"
             android:layout_marginLeft="40dp"
             android:layout_marginTop="10dp"
+            android:textColor="#636363"
             android:text="收藏" />
 
         <Button
@@ -133,5 +138,6 @@
             android:background="@drawable/selector_pd_cart"
             android:scaleType="fitXY" />
     </RelativeLayout>
+    </LinearLayout>
 
-</FrameLayout>
+</ScrollView>

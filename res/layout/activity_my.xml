@@ -12,17 +12,6 @@
             android:layout_height="50dp"
             android:background="@color/white" >
 
-            <ImageButton
-                android:id="@+id/login_ib_back"
-                android:layout_width="40dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_centerVertical="true"
-                android:layout_marginStart="10dp"
-                android:background="#00000000"
-                android:contentDescription="@string/back"
-                android:src="@drawable/top_arrow_back"
-                    />
 
 
             <TextView
@@ -30,8 +19,8 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:text="@string/myCentre"
-                android:textSize="16sp"
-                android:textColor="#666666"
+                android:textSize="20sp"
+                android:textColor="#363636"
                 />
         </RelativeLayout>
 
@@ -41,7 +30,8 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:background="@drawable/personal_info_bg"
-            android:layout_weight="1">
+            android:layout_weight="1"
+                >
 
             <ImageButton
                 android:id="@+id/my_ib_login"
@@ -64,7 +54,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp"
                 android:textSize="17sp"
-                android:textColor="#f4f4f4"
+                android:textColor="#5c5c5c"
                     />
 
             <TextView
@@ -94,13 +84,13 @@
                         android:background="#e3e3e3"
                         />
                 <Button
-                        android:id="@+id/Ordering"
+                        android:id="@+id/DeliveryIng"
                         android:text="@string/forDelivery"
                         android:textSize="16sp"
                         android:textColor="#555555"
                         android:background="#e3e3e3"/>
                 <Button
-                        android:id="@+id/Ordered"
+                        android:id="@+id/DeliveryEd"
                         android:text="@string/Deliveryed"
                         android:textSize="16sp"
                         android:textColor="#555555"

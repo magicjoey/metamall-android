@@ -130,13 +130,13 @@ public class RegisterActivity extends Activity {
             }
         }
 
-        @Override
-        public void beforeTextChanged(CharSequence arg0, int arg1, int arg2,
-                                      int arg3) {
-        }
+            @Override
+            public void beforeTextChanged(CharSequence arg0, int arg1, int arg2,
+            int arg3) {
+            }
 
-        @Override
-        public void afterTextChanged(Editable arg0) {
+            @Override
+            public void afterTextChanged(Editable arg0) {
         }
     }
 

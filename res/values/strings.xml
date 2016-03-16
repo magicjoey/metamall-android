@@ -4,7 +4,6 @@
     <string name="app_name">一路精喜商城</string>
     <string name="home">首页</string>
     <string name="category">分类</string>
-    <string name="scan">扫码</string>
     <string name="slogan">情趣人生，大胆生活</string>
     <string name="my">我的</string>
     <string name="find_et_hint">一个好套套，一份好心情</string>
@@ -23,6 +22,9 @@
     <string name="getIde">重新获取</string>
     <string name="error">用户名和密码不为空</string>
     <string name="back">返回</string>
+    <string name="myCollection_advise">收藏夹空荡荡的，赶快去逛逛吧！</string>
+    <string name="myAllOrder_advise">你还没有订单，赶快去逛逛吧</string>
+    <string name="myCollection_shopping">去逛逛</string>
     <string name="login_tel">请输入您的手机号码</string>
     <string name="cancel">取消</string>
     <string name="logo">商标</string>
@@ -32,7 +34,13 @@
     <string name="password">密码：</string>
     <string name="password1">密码</string>
     <string name="prompt">请输入验证码</string>
-    <string name="myCentre">一路惊喜-我的个人中心</string>
+    <string name="myCentre">我的个人中心</string>
+    <string name="myAllOrder_layout">一路惊喜-我的全部订单</string>
+    <string name="fordelivery_layout">一路惊喜—我的订单(待发货)</string>
+    <string name="deliveryed_layout">一路惊喜-我的订单(已发货)</string>
+    <string name="forpay_layout">一路惊喜-我的订单(待付款)</string>
+    <string name="completed_layout">一路惊喜-我的订单(已完成)</string>
+    <string name="myCollection_layout">一路惊喜-我的收藏</string>
     <string name="myFit_layout">健康管理</string>
     <string name="MyFit_count">我的健康记录</string>
     <string name="MyActivity_layout">我参与的活动</string>
@@ -58,6 +66,7 @@
     <string name="MyRecommend">应用推荐</string>
     <string name="password_hint">请输入密码</string>
     <string name="edit">编辑</string>
+    <string name="setting">设置</string>
     <string name="suggest">请先登录再查看购物车</string>
     <string name="cart_empty">购物车肚子空空</string>
     <string name="selectAll">全选</string>

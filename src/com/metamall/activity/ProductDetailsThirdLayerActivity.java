@@ -114,8 +114,8 @@ public class ProductDetailsThirdLayerActivity extends Activity {
 		};
 		btnCollect.setOnClickListener(listener);
 		btnBack.setOnClickListener(listener);
-	}
 
+}
 	@Override
 	protected void onResume() {
 		super.onResume();
