@@ -117,7 +117,7 @@
                     android:text="@string/myAllOrder"
                     android:textColor="#555555"
                     android:textSize="18sp"
-                    android:drawableLeft="@drawable/my_try"
+                    android:drawableStart="@drawable/my_try"
                     android:gravity="center_vertical"
                     android:onClick="showAllOrder"
                     android:layout_marginTop="4dp"/>
@@ -129,7 +129,7 @@
                     android:text="@string/MyCollection"
                     android:textSize="18sp"
                     android:textColor="#555555"
-                    android:drawableLeft="@drawable/my_try"
+                    android:drawableStart="@drawable/my_try"
                     android:gravity="center_vertical"
                     android:onClick="showAllCollection"
                     android:layout_marginTop="4dp"/>
@@ -141,7 +141,7 @@
                     android:text="@string/MyFit"
                     android:textSize="18sp"
                     android:textColor="#555555"
-                    android:drawableLeft="@drawable/my_try"
+                    android:drawableStart="@drawable/my_try"
                     android:gravity="center_vertical"
                     android:onClick="showMyFit"
                     android:layout_marginTop="4dp"/>
@@ -153,7 +153,7 @@
                     android:text="@string/MyActivity"
                     android:textSize="18sp"
                     android:textColor="#555555"
-                    android:drawableLeft="@drawable/my_try"
+                    android:drawableStart="@drawable/my_try"
                     android:gravity="center_vertical"
                     android:onClick="showMyActivity"
                     android:layout_marginTop="4dp"/>
@@ -165,7 +165,7 @@
                 android:text="@string/MyRecommend"
                 android:textSize="18sp"
                 android:textColor="#555555"
-                android:drawableLeft="@drawable/my_try"
+                android:drawableStart="@drawable/my_try"
                 android:gravity="center_vertical"
                 android:layout_marginTop="4dp"
                 android:onClick="showMyRecommend"/>

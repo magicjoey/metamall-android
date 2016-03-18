@@ -63,9 +63,7 @@ public class CartActivity extends Activity {
 	/**
 	 * 初始化视图
 	 */
-	private void initView(){
 
-	}
 
 
 	@Override
@@ -94,11 +92,11 @@ public class CartActivity extends Activity {
 	/**
 	 * 初始化视图
 	 * 
-	 * @param view
-	 *            父视图
+	 * @param
+	 *
 	 */
-	private void initView(View view) {
-		btnEdit = (Button) view.findViewById(R.id.cart_btn_edit);
+	private void initView() {
+		btnEdit = (Button) findViewById(R.id.cart_btn_edit);
 		btnEdit.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -125,9 +123,8 @@ public class CartActivity extends Activity {
 				}
 			}
 		});
-		suggestLayout = (RelativeLayout) view
-				.findViewById(R.id.cart_suggest_layout);
-		btnLogin = (Button) view.findViewById(R.id.cart_btn_login);
+		suggestLayout = (RelativeLayout) findViewById(R.id.cart_suggest_layout);
+		btnLogin = (Button) findViewById(R.id.cart_btn_login);
 		btnLogin.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -136,13 +133,12 @@ public class CartActivity extends Activity {
 				CartActivity.this.finish();
 			}
 		});
-		tvEmpty = (TextView) view.findViewById(R.id.cart_tv_empty);
-		listLayout = (LinearLayout) view.findViewById(R.id.cart_list_layout);
-		listView = (ListView) view.findViewById(R.id.cart_lv);
+		tvEmpty = (TextView) findViewById(R.id.cart_tv_empty);
+		listLayout = (LinearLayout) findViewById(R.id.cart_list_layout);
+		listView = (ListView) findViewById(R.id.cart_lv);
 		listView.setAdapter(adapter);
-		checkLayout = (RelativeLayout) view
-				.findViewById(R.id.cart_check_layout);
-		cbCheckAll = (CheckBox) view.findViewById(R.id.cart_cb_all);
+		checkLayout = (RelativeLayout) findViewById(R.id.cart_check_layout);
+		cbCheckAll = (CheckBox) findViewById(R.id.cart_cb_all);
 		cbCheckAll.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 			@Override
 			public void onCheckedChanged(CompoundButton buttonView,
@@ -154,8 +150,8 @@ public class CartActivity extends Activity {
 				adapter.notifyDataSetChanged();
 			}
 		});
-		tvTotal = (TextView) view.findViewById(R.id.cart_tv_total);
-		btnBuy = (Button) view.findViewById(R.id.cart_btn_buy);
+		tvTotal = (TextView) findViewById(R.id.cart_tv_total);
+		btnBuy = (Button) findViewById(R.id.cart_btn_buy);
 		btnBuy.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {

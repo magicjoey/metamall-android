@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/bg_gray">
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#f0f0f0">
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/white" >
+
+            <ImageButton
+                    android:id="@+id/login_ib_back"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:background="#00000000"
+                    android:contentDescription="@string/back"
+                    android:src="@drawable/top_arrow_back"
+                    />
+
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/OrderConfirm_layout"
+                    android:textSize="18sp"
+                    android:textColor="#454545"
+                    />
+
+        </RelativeLayout>
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+            <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/c12"
+                    android:drawableStart="@drawable/c13"
+                    android:text="@string/OrderConfirm_advise"
+                    android:textColor="#636363"
+                    android:textSize="16sp"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="10dip"
+                    />
+            <RelativeLayout
+                    android:id="@+id/Order_confirm_goods"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white" >
+            </RelativeLayout>
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/PayMode"
+                    android:layout_marginTop="20dip"
+                    android:textColor="#555555"/>
+            <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:id="@+id/payMode_radio"
+                    android:layout_marginTop="10dip">
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                    <RadioButton
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:id="@+id/AliPay"
+                            android:textColor="#666666"
+                            android:button="@null"
+                            android:drawableEnd="@android:drawable/btn_radio"
+                            android:text="@string/AliPay"
+                            android:layout_marginTop="5dip"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:background="@drawable/alipay_bg">
+                    </RadioButton>
+                    <RadioButton
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:checked="false"
+                            android:id="@+id/winXin"
+                            android:text="@string/WinXinPay"
+                            android:textColor="#666666"
+                            android:button="@null"
+                            android:drawableEnd="@android:drawable/btn_radio"
+                            android:layout_marginTop="5dip"
+                            android:scaleY="0.7"
+                            android:scaleX="0.7"
+                            android:background="@color/white">
+                            </RadioButton>
+                    <RadioButton
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/COD"
+                            android:text="@string/CODPay"
+                            android:textColor="#666666"
+                            android:layout_marginTop="5dip"
+                            android:button="@null"
+                            android:scaleY="0.7"
+                            android:scaleX="0.7"
+                            android:drawableEnd="@android:drawable/btn_radio"
+                            android:background="@color/white">
+                            </RadioButton>
+
+
+
+
+                </LinearLayout>
+            </RadioGroup>
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/goods_details"
+                    android:textColor="#555555"
+                    android:layout_marginTop="20dip"/>
+
+
+
+
+
+        </LinearLayout>
+        <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/JXB"
+                android:background="@drawable/c12"
+                android:layout_marginTop="15dip"/>
+
+
+
+    </LinearLayout>
+</ScrollView>

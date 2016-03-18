@@ -1,17 +1,15 @@
 package com.metamall.activity;
 
+
 import android.app.Activity;
-import android.app.Fragment;
-import android.content.Context;
-import android.content.SharedPreferences;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.*;
-import android.widget.ImageView.ScaleType;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import cn.trinea.android.view.autoscrollviewpager.AutoScrollViewPager;
 import com.android.volley.toolbox.NetworkImageView;
 import com.meta.viewpagerindicator.CirclePageIndicator;
@@ -54,18 +52,17 @@ public class HomeActivity extends Activity {
 	private ImageButton ibSearch;
 
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_home);
 		initView();
 	}
 	/**
 	 * 初始化视图
 	 */
-	private void initView(View view) {
+	private void initView() {
 		// 广告位部分
-		viewPager = (AutoScrollViewPager) view
-				.findViewById(R.id.home_viewPager);
+		viewPager = (AutoScrollViewPager) findViewById(R.id.home_viewPager);
 		getViewImage();
 		pagerAdapter = new PagerAdapter() {
 
@@ -94,13 +91,12 @@ public class HomeActivity extends Activity {
 			}
 		};
 		viewPager.setAdapter(pagerAdapter);
-		indicator = (CirclePageIndicator) view
-				.findViewById(R.id.home_indicator);
+		indicator = (CirclePageIndicator) findViewById(R.id.home_indicator);
 		indicator.setViewPager(viewPager);
 		viewPager.setInterval(AUTO_SCROLL_INTERVAL);
 		viewPager.startAutoScroll();
 		// 商品列表部分
-		listView = (NoScrollListView) view.findViewById(R.id.home_lv);
+		listView = (NoScrollListView) findViewById(R.id.home_lv);
 		floorDatas = getListData();
 		listAdapter = new HomeListAdapter(this, floorDatas,
 				R.layout.item_home_lv);
@@ -111,9 +107,10 @@ public class HomeActivity extends Activity {
 		viewPager.setFocusableInTouchMode(true);
 		viewPager.requestFocus();
 		// 顶部搜索部分
-		etSearch = (EditText) view.findViewById(R.id.home_top_et_search);
-		ibSearch = (ImageButton) view.findViewById(R.id.home_top_ib_search);
-		ibSearch.setOnClickListener(new OnClickListener() {
+		etSearch = (EditText) findViewById(R.id.home_top_et_search);
+		ibSearch = (ImageButton) findViewById(R.id.home_top_ib_search);
+		ibSearch.setOnClickListener(new View.OnClickListener() {
+
 
 			@Override
 			public void onClick(View v) {
@@ -139,7 +136,7 @@ public class HomeActivity extends Activity {
 		viewContainer.clear();
 		for (String url : urls) {
 			NetworkImageView iv = new NetworkImageView(this);
-			iv.setScaleType(ScaleType.FIT_XY);
+			iv.setScaleType(ImageView.ScaleType.FIT_XY);
 			NetworkManager.getInstance().setImageUrl(iv, url);
 			viewContainer.add(iv);
 		}

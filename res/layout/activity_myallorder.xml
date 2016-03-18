@@ -45,34 +45,96 @@
                     android:background="#00000000"
                     android:textColor="#555555"/>
         </RelativeLayout>
-        <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="400dp"
-                android:orientation="vertical"
-                android:gravity="center_vertical|center_horizontal"
-                android:padding="3dip"
-                android:id="@+id/myCollection_noCollection"
-                android:background="#e8e8e8">
-            <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/c14"
-                    />
-            <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/myAllOrder_advise"
-                    android:textColor="#555555"
-                    android:textSize="16sp"
-                    android:gravity="center_horizontal"
-                    android:padding="10dip"/>
+        <RelativeLayout
+                android:id="@+id/cart_suggest_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:visibility="gone" >
+
             <Button
-                    android:id="@+id/MyAllOrder_shopping"
+                    android:id="@+id/cart_btn_login"
                     android:layout_width="70dp"
                     android:layout_height="30dp"
-                    android:background="#cd0000"
-                    android:text="@string/myCollection_shopping"
-                    />
+                    android:background="@drawable/shape_login_dog"
+                    android:text="@string/login"
+                    android:textSize="15sp" />
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/cart_btn_login"
+                    android:paddingStart="10dp"
+                    android:paddingTop="5dp"
+                    android:text="@string/suggest"
+                    android:textSize="15sp" />
+        </RelativeLayout>
+
+        <TextView
+                android:id="@+id/cart_tv_empty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:drawableTop="@drawable/c14"
+                android:text="@string/myOrder_empty"
+                android:textColor="@color/gray"
+                android:textSize="17sp"
+                android:visibility="gone" />
+
+        <LinearLayout
+                android:id="@+id/cart_list_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:visibility="gone" >
+
+            <ListView
+                    android:id="@+id/cart_lv"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:scrollbars="none" >
+            </ListView>
+
+            <RelativeLayout
+                    android:id="@+id/cart_check_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/gray" >
+
+                <CheckBox
+                        android:id="@+id/cart_cb_all"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="10dp"
+                        android:background="@null"
+                        android:text="@string/selectAll"
+                        android:textColor="@color/white"
+                        android:checked="false"
+                        />
+
+                <TextView
+                        android:id="@+id/cart_tv_total"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:textColor="@color/white"
+                        android:textSize="17sp" />
+
+                <Button
+                        android:id="@+id/cart_btn_buy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:background="@color/red"
+                        android:text="@string/buy"
+                        android:textColor="@color/white"
+                        android:textSize="17sp" />
+            </RelativeLayout>
+
         </LinearLayout>
     </LinearLayout>
 

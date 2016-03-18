@@ -36,6 +36,14 @@
     <string name="prompt">请输入验证码</string>
     <string name="myCentre">我的个人中心</string>
     <string name="myAllOrder_layout">一路惊喜-我的全部订单</string>
+    <string name="OrderConfirm_layout">确认订单</string>
+    <string name="OrderConfirm_advise">请填写您的收货地址</string>
+    <string name="PayMode">支付方式</string>
+    <string name="AliPay">支付宝</string>
+    <string name="WinXinPay">微信支付</string>
+    <string name="CODPay">货到付款</string>
+    <string name="goods_details">商品详情</string>
+    <string name="JXB">精喜币</string>
     <string name="fordelivery_layout">一路惊喜—我的订单(待发货)</string>
     <string name="deliveryed_layout">一路惊喜-我的订单(已发货)</string>
     <string name="forpay_layout">一路惊喜-我的订单(待付款)</string>
@@ -67,8 +75,10 @@
     <string name="password_hint">请输入密码</string>
     <string name="edit">编辑</string>
     <string name="setting">设置</string>
-    <string name="suggest">请先登录再查看购物车</string>
+    <string name="suggest">请先登录再查看</string>
     <string name="cart_empty">购物车肚子空空</string>
+    <string name="mycollection_empty">收藏夹肚子空空</string>
+    <string name="myOrder_empty">你还没有订单</string>
     <string name="selectAll">全选</string>
     <string name="buy">去结算</string>
     <string name="add">+</string>

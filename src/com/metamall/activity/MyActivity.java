@@ -46,10 +46,10 @@ public class MyActivity extends Activity {
 	
 	/**
 	 * 初始化视图
-	 * @param view 父视图
+	 * @param
 	 */
-	private void initView(View view){
-		ibLogin = (ImageButton) view.findViewById(R.id.my_ib_login);
+	private void initView(){
+		ibLogin = (ImageButton) findViewById(R.id.my_ib_login);
 
 
 		ibLogin.setOnClickListener(new OnClickListener() {
@@ -60,14 +60,14 @@ public class MyActivity extends Activity {
 				startActivityForResult(intent, REQUEST_CODE);
 			}
 		});
-        tvUsername = (TextView) view.findViewById(R.id.my_tv_username);
+        tvUsername = (TextView) findViewById(R.id.my_tv_username);
         Bundle bundle1=this.getIntent().getExtras();
         if(bundle1!=null){
             telnum=bundle1.getString("TLE");
         }
         tvUsername.setText(telnum);
 
-		btnForPay=(Button) view.findViewById(R.id.obligation);
+		btnForPay=(Button) findViewById(R.id.obligation);
 		btnForPay.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -77,7 +77,7 @@ public class MyActivity extends Activity {
 				finish();
 			}
 		});
-		btnForDelivery=(Button) view.findViewById(R.id.DeliveryIng);
+		btnForDelivery=(Button) findViewById(R.id.DeliveryIng);
 		btnForDelivery.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -87,7 +87,7 @@ public class MyActivity extends Activity {
 				finish();
 			}
 		});
-		btnDeliveryed=(Button) view.findViewById(R.id.DeliveryEd);
+		btnDeliveryed=(Button) findViewById(R.id.DeliveryEd);
 		btnDeliveryed.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -97,7 +97,7 @@ public class MyActivity extends Activity {
 				finish();
 			}
 		});
-		btnCompleted=(Button) view.findViewById(R.id.completed);
+		btnCompleted=(Button) findViewById(R.id.completed);
 		btnCompleted.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -107,7 +107,7 @@ public class MyActivity extends Activity {
 				finish();
 			}
 		});
-		btnmyallaoder=(Button) view.findViewById(R.id.MyAllOrder);
+		btnmyallaoder=(Button) findViewById(R.id.MyAllOrder);
 		btnmyallaoder.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -117,7 +117,7 @@ public class MyActivity extends Activity {
 				finish();
 			}
 		});
-		btnmycollection=(Button) view.findViewById(R.id.MyCollection);
+		btnmycollection=(Button) findViewById(R.id.MyCollection);
 		btnmycollection.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -127,7 +127,7 @@ public class MyActivity extends Activity {
 				finish();
 			}
 		});
-		btnmyfit=(Button) view.findViewById(R.id.MyFit);
+		btnmyfit=(Button) findViewById(R.id.MyFit);
 		btnmyfit.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -137,7 +137,7 @@ public class MyActivity extends Activity {
                 finish();
 			}
 		});
-        btnmyactivity=(Button) view.findViewById(R.id.MyActivity);
+        btnmyactivity=(Button) findViewById(R.id.MyActivity);
         btnmyactivity.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -147,7 +147,7 @@ public class MyActivity extends Activity {
                 finish();
             }
         });
-        btnrecommend=(Button) view.findViewById(R.id.recommend);
+        btnrecommend=(Button) findViewById(R.id.recommend);
         btnrecommend.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -172,15 +172,5 @@ public class MyActivity extends Activity {
 
 
 
-    public void Clickbt (View v1) {
-
-        Intent intent = new Intent();
-
-        intent.setClass(MyActivity.this,LoginActivity.class);
-
-        startActivity(intent);
-
-
-    }
 
 }
