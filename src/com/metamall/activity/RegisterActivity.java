@@ -56,6 +56,7 @@ public class RegisterActivity extends Activity {
                 String telephoneNB=etTelephone.getText().toString();
                 boolean isPhone=isMobileNO(telephoneNB);
                 if(isPhone){
+                    // TODO Auto-generated method stub
                     Intent intent_register_message=new Intent();
                     intent_register_message.setClass(RegisterActivity.this,MessageActivity.class);
                     intent_register_message.putExtra("TLE",etTelephone.getText().toString());
@@ -143,4 +144,5 @@ public class RegisterActivity extends Activity {
 
 
 }
+
 

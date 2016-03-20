@@ -15,7 +15,10 @@ public class PayConfirmActivity extends Activity {
         setContentView(R.layout.activity_pay_confirm);
         initView();
     }
+
     private void initView(){
+
+
 
     }
 

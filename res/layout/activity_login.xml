@@ -53,13 +53,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
                 android:layout_marginTop="30dp"
-                android:background="@color/white"
                 android:orientation="vertical" >
 
             <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
-                    android:orientation="horizontal" >
+                    android:orientation="horizontal"
+                    android:background="@color/white">
 
                 <TextView
                         android:layout_width="wrap_content"
@@ -91,7 +91,9 @@
             <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
-                    android:orientation="horizontal" >
+                    android:orientation="horizontal"
+                    android:background="@color/white"
+                    android:layout_marginTop="6dip">
 
                 <TextView
                         android:layout_width="wrap_content"
@@ -126,28 +128,41 @@
 
         </LinearLayout>
 
+
+
+
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48sp"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:layout_marginTop="30dip">
             <Button
-                android:id="@+id/login_btn_register"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_margin="15dp"
-                android:background="@drawable/selector_btn_login"
-                android:enabled="false"
-                android:text="@string/register"
-                android:textColor="@color/white"
-                android:textSize="17sp"
-                android:onClick="register_Click"/>
-        <Button
-                android:id="@+id/login_btn_login"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_margin="15dp"
-                android:background="@drawable/selector_btn_login"
-                android:enabled="false"
-                android:text="@string/login"
-                android:textColor="@color/white"
-                android:textSize="17sp"
-                android:onClick="login_Click"/>
+                    android:id="@+id/login_btn_register"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="2"
+                    android:background="#4a4a4a"
+                    android:text="@string/register"
+                    android:textColor="@color/white"
+                    android:textSize="17sp"
+
+                    />
+            <Button
+                    android:id="@+id/login_btn_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:background="#cd0000"
+                    android:text="@string/login"
+                    android:textColor="@color/white"
+                    android:textSize="17sp"
+
+                  />
+
+
+        </LinearLayout>
 
 
     </LinearLayout>

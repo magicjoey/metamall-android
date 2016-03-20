@@ -7,7 +7,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="#f0f0f0">
+            android:background="#ededed">
         <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
@@ -41,6 +41,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
             <Button
+                    android:id="@+id/pay_address"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/c12"
@@ -51,12 +52,31 @@
                     android:gravity="center_vertical"
                     android:layout_marginTop="10dip"
                     />
-            <RelativeLayout
+
+            <LinearLayout
                     android:id="@+id/Order_confirm_goods"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/white" >
-            </RelativeLayout>
+                    android:orientation="vertical"
+
+                    >
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dip"
+                        android:text="@string/order_details"
+                        android:textColor="#555555"
+                        />
+                <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/c12"
+                        android:layout_marginTop="10dip"
+                        android:id="@+id/address_details">
+
+                </Button>
+
+            </LinearLayout>
             <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -133,11 +153,69 @@
 
         </LinearLayout>
         <Button
+                android:id="@+id/JXB"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/JXB"
                 android:background="@drawable/c12"
-                android:layout_marginTop="15dip"/>
+                android:textColor="#555555"
+                android:gravity="center_vertical"
+                android:layout_marginTop="15dip"
+                android:textSize="16sp"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="38sp"
+                android:text="@string/goods_freePosts"
+                android:textColor="#555555"
+                android:textSize="17sp"
+                android:layout_marginTop="3dip"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:id="@+id/Order_confirm_goodsPostsFree"/>
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="30sp"
+                android:id="@+id/leave_message"
+                android:hint="@string/leave_message"
+                android:textColor="#666666"
+                android:textSize="16sp"
+                android:layout_marginTop="4dip"
+                android:background="@color/white"/>
+
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:layout_marginTop="30dip">
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:background="#4a4a4a"
+                    android:id="@+id/allPay"
+                    android:text="@string/allpay"
+                    android:textSize="16sp"
+                    android:textColor="#ffffff"
+                    android:gravity="center_vertical"/>
+            <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="2"
+                    android:background="#cd0000"
+                    android:text="@string/confirmPay"
+                    android:id="@+id/confirmPay">
+
+            </Button>
+
+        </LinearLayout>
+
+
+
+
+
 
 
 

@@ -7,6 +7,7 @@
       <root url="jar://$PROJECT_DIR$/libs/volley.jar!/" />
       <root url="jar://$PROJECT_DIR$/libs/AutoScroll-ViewPager.jar!/" />
       <root url="jar://$PROJECT_DIR$/libs/UniversalListViewAdapter.jar!/" />
+      <root url="jar://D:/资料/metaput.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

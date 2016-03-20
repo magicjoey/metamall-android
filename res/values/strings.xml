@@ -19,7 +19,7 @@
     <string name="register">注册</string>
     <string name="validate">验证</string>
     <string name="suggest1">没有收到短信？请点击重新获取</string>
-    <string name="getIde">重新获取</string>
+    <string name="getIde">60秒后重新获取</string>
     <string name="error">用户名和密码不为空</string>
     <string name="back">返回</string>
     <string name="myCollection_advise">收藏夹空荡荡的，赶快去逛逛吧！</string>
@@ -29,10 +29,10 @@
     <string name="cancel">取消</string>
     <string name="logo">商标</string>
     <string name="account">账号：</string>
-    <string name="account_hint">用户名/手机号</string>
+    <string name="account_hint">请输入您的手机号</string>
     <string name="password_display">显示密码</string>
     <string name="password">密码：</string>
-    <string name="password1">密码</string>
+    <string name="password1">请输入您的密码</string>
     <string name="prompt">请输入验证码</string>
     <string name="myCentre">我的个人中心</string>
     <string name="myAllOrder_layout">一路惊喜-我的全部订单</string>
@@ -44,6 +44,12 @@
     <string name="CODPay">货到付款</string>
     <string name="goods_details">商品详情</string>
     <string name="JXB">精喜币</string>
+    <string name="goods_freePosts">运费</string>
+    <string name="confirm_pay">确认付款</string>
+    <string name="allpay">实付款:</string>
+    <string name="confirmPay">提交订单</string>
+    <string name="leave_message">请给我们留言</string>
+    <string name="order_details">订单详情</string>
     <string name="fordelivery_layout">一路惊喜—我的订单(待发货)</string>
     <string name="deliveryed_layout">一路惊喜-我的订单(已发货)</string>
     <string name="forpay_layout">一路惊喜-我的订单(待付款)</string>
