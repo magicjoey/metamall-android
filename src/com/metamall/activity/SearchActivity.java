@@ -39,7 +39,7 @@ public class SearchActivity extends Activity implements View.OnClickListener {
 
     private void init() {
         mSearchAutoAdapter = new SearchAutoAdapter(this, -1, this);
-        mAutoListView = (ListView) findViewById(R.id.auto_listview);
+        //mAutoListView = (ListView) findViewById(R.id.auto_listview);
         mAutoListView.setAdapter(mSearchAutoAdapter);
         mAutoListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
