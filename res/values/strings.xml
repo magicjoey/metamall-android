@@ -16,7 +16,7 @@
     <string name="failed">保存失败</string>
     <string name="cart">购物车</string>
     <string name="login">登录</string>
-    <string name="question1">传道兽业</string>
+    <string name="weekGoods">本周上新</string>
     <string name="erHuo">计时降价商品</string>
     <string name="teJia">抄底特卖</string>
     <string name="goodSeal">TOP热卖</string>
@@ -26,6 +26,10 @@
     <string name="getIde">60秒后重新获取</string>
     <string name="error">用户名和密码不为空</string>
     <string name="back">返回</string>
+    <string name="for_more">更多</string>
+    <string name="goods_everyday">每日必看</string>
+    <string name="last_crazy">最后疯抢</string>
+    <string name="for_sell">即将出售</string>
     <string name="myCollection_advise">收藏夹空荡荡的，赶快去逛逛吧！</string>
     <string name="myAllOrder_advise">你还没有订单，赶快去逛逛吧</string>
     <string name="myCollection_shopping">去逛逛</string>
