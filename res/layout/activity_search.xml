@@ -38,10 +38,33 @@
                     android:singleLine="true"
                     android:textSize="15sp"/>
         </LinearLayout>
-        <RelativeLayout
+        <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:id="@+id/history_search"
+                android:orientation="vertical">
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="16dip">
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/search_history"/>
+                <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:id="@+id/search_history_delete"
+                        android:src="@drawable/btn_goods_delete_p"
+                        android:background="bg_grey"/>
 
-        </RelativeLayout>
+            </RelativeLayout>
+            <FlowLayout>
+
+            </FlowLayout>
+
+        </LinearLayout>
     </LinearLayout>
 </ScrollView>
