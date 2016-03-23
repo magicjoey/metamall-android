@@ -1,70 +1,113 @@
-<?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/bg_gray">
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical"
+        tools:context="${relativePackage}.${activityClass}"
+        android:background="#ffffff"
+        >
+
     <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-        <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="@color/white"
-                android:orientation="horizontal"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                android:paddingEnd="20dp">
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:background="#f6f6f6"
+            android:orientation="horizontal"
+            android:paddingEnd="10dp">
 
-            <ImageButton
-                    android:id="@+id/login_ib_back"
-                    android:layout_width="40dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="5dp"
-                    android:background="#00000000"
-                    android:contentDescription="@string/back"
-                    android:src="@drawable/top_arrow_back"/>
+        <ImageButton
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_gravity="center_vertical"
+                android:padding="10dp"
+                android:src="@drawable/top_arrow_back"
+                android:id="@+id/search_history_delete"
+                android:background="#f6f6f6"/>
 
-            <EditText
-                    android:id="@+id/top_et_search"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/shape_input_search1"
-                    android:hint="@string/find_et_hint"
-                    android:drawableStart="@drawable/top_search_icon"
-                    android:textColorHint="#454545"
-                    android:singleLine="true"
-                    android:textSize="15sp"/>
-        </LinearLayout>
+        <EditText
+                android:id="@+id/et_search"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/shape_input_search"
+                android:drawableStart="@drawable/top_search_icon"
+                android:drawablePadding="8dp"
+                android:gravity="start|center_vertical"
+                android:hint="@string/etSearch"
+                android:imeOptions="actionSearch"
+                android:singleLine="true"
+                android:textColor="@android:color/white"
+                android:textSize="16sp" />
+
+    </LinearLayout>
+
+
+    <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
         <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/history_search"
                 android:orientation="vertical">
-            <RelativeLayout
+
+            <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="16dip">
+                    android:orientation="vertical"
+                    android:paddingStart="20dp"
+                    >
+
                 <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/search_history"/>
-                <ImageButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:id="@+id/search_history_delete"
-                        android:src="@drawable/btn_goods_delete_p"
-                        android:background="bg_grey"/>
+                        android:id="@+id/tv_tip"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:gravity="start|center_vertical"
+                        android:text="@string/search_history"
+                        android:textColor="#666666"/>
 
-            </RelativeLayout>
-            <FlowLayout>
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#EEEEEE">
 
-            </FlowLayout>
+                </View>
 
+                <com.metamall.Search.MyListView
+                        android:id="@+id/listView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                </com.metamall.Search.MyListView>
+
+
+            </LinearLayout>
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#EEEEEE">
+
+            </View>
+
+            <TextView
+                    android:id="@+id/tv_clear"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@color/bg_gray"
+                    android:gravity="center"
+                    android:text="@string/search_history_clear"
+                    android:textColor="#555555"/>
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="#EEEEEE">
+
+            </View>
         </LinearLayout>
-    </LinearLayout>
-</ScrollView>
+
+    </ScrollView>
+</LinearLayout>

@@ -35,42 +35,16 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent" >
 
-            <com.metamall.imagecycleview.ImageCycleView
-                    android:id="@+id/ad_view"
-                    android:layout_width="fill_parent"
-                    android:layout_height="150dip" />
-
-            <com.metamall.imagecycleview.ImageCycleView
-                    android:id="@+id/ad_view2"
-                    android:layout_width="fill_parent"
-                    android:layout_height="75dip"
-                    android:layout_alignParentBottom="true" />
+            <com.metamall.activity.Home.ConvenientBanner
+                    android:id="@+id/convenientBanner"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"/>
+            <ListView
+                    android:id="@+id/listView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
 
         </RelativeLayout>
-        <RelativeLayout
-                        android:id="@+id/ad_rl"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent" >
-
-            <com.metamall.imagecycleview.CycleViewPager
-                    android:id="@+id/pager_banner"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" >
-            </com.metamall.imagecycleview.CycleViewPager>
-
-            <LinearLayout
-                    android:id="@+id/viewGroup"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginBottom="8dp"
-                    android:gravity="center"
-                    android:orientation="horizontal" >
-            </LinearLayout>
-
-        </RelativeLayout>
-
-
 
         <LinearLayout
                 android:layout_width="match_parent"

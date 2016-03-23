@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 import com.metamall.R;
-import com.metamall.activity.SearchActivity;
+import com.metamall.Search.SearchActivity;
 import com.metamall.model.SearchAutoData;
 
 import java.util.ArrayList;

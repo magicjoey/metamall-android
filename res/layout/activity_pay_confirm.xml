@@ -100,12 +100,12 @@
                             android:id="@+id/AliPay"
                             android:textColor="#666666"
                             android:button="@null"
-                            android:drawableEnd="@android:drawable/btn_radio"
+                            android:drawableEnd="@drawable/btn_radio_confirm"
                             android:text="@string/AliPay"
                             android:layout_marginTop="5dip"
                             android:scaleX="0.7"
                             android:scaleY="0.7"
-                            android:background="@drawable/alipay_bg">
+                            android:background="@drawable/c12">
                     </RadioButton>
                     <RadioButton
                             android:layout_width="match_parent"
