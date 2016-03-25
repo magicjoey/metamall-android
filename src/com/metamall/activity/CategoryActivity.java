@@ -12,6 +12,7 @@ import android.widget.*;
 import android.widget.AbsListView.OnScrollListener;
 import android.widget.AdapterView.OnItemClickListener;
 import com.metamall.R;
+import com.metamall.Search.SearchActivity;
 import com.metamall.activity.ProductDetailsSecondLayerActivity;
 import com.metamall.adapter.CategoryLeftListAdapter;
 import com.metamall.adapter.CategoryRightGridAdapter;
@@ -81,10 +82,10 @@ public class CategoryActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				// ////////////////////////////////////
-				// /////////向服务器发送搜索请求///////////
-				etSearch.getText().toString().trim();
-				// ////////////////////////////////////
+				Intent i=new Intent();
+				i.setClass(CategoryActivity.this, SearchActivity.class);
+				finish();
+
 			}
 		});
 		// 列表相关

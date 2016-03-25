@@ -3,18 +3,19 @@ package com.metamall.activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.media.Image;
 import android.os.Bundle;
+import android.provider.ContactsContract;
+import android.util.DisplayMetrics;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.EditText;
-import android.widget.ListView;
+import android.widget.*;
 import com.metamall.R;
 import com.metamall.activity.Home.ConvenientBanner.Transformer;
 import com.metamall.Search.SearchActivity;
 import com.metamall.activity.Home.CBViewHolderCreator;
 import com.metamall.activity.Home.ConvenientBanner;
 import com.metamall.activity.Home.LocalImageHolderView;
+import com.metamall.activity.SonActivity.*;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
@@ -31,9 +32,17 @@ import java.util.List;
  */
 public class HomeActivity extends Activity implements AdapterView.OnItemClickListener {
     private EditText ethome_top_et_search;
+    private Button btntimingDepreciate;
+    private Button btnTopHot;
+    private Button btnBargainSale;
+    private Button btnPreaching;
+    private ImageButton ibWeekGoods;
+    private ImageButton ibLastCrazy;
+    private ImageButton ibGoodsEveryDay;
+    private ImageButton ibForSale;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         initView();
@@ -41,21 +50,21 @@ public class HomeActivity extends Activity implements AdapterView.OnItemClickLis
         init();
 
     }
-    private void initView(){
-        ethome_top_et_search=(EditText) findViewById(R.id.home_top_et_search);
+
+    private void initView() {
+        ethome_top_et_search = (EditText) findViewById(R.id.home_top_et_search);
         ethome_top_et_search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i=new Intent();
-                i.setClass(HomeActivity.this,SearchActivity.class);
+                Intent i = new Intent();
+                i.setClass(HomeActivity.this, SearchActivity.class);
                 finish();
             }
         });
 
 
-
-
     }
+
     private ConvenientBanner convenientBanner;//顶部广告栏控件
     private ArrayList<Integer> localImages = new ArrayList<Integer>();
     private List<String> networkImages;
@@ -72,16 +81,87 @@ public class HomeActivity extends Activity implements AdapterView.OnItemClickLis
     private ArrayList<String> transformerList = new ArrayList<String>();
 
 
-
     private void initViews() {
         convenientBanner = (ConvenientBanner) findViewById(R.id.convenientBanner);
         listView = (ListView) findViewById(R.id.listView);
-        transformerArrayAdapter = new ArrayAdapter(this,R.layout.adapter_transformer,transformerList);
+        transformerArrayAdapter = new ArrayAdapter(this, R.layout.adapter_transformer, transformerList);
         listView.setAdapter(transformerArrayAdapter);
         listView.setOnItemClickListener(this);
+        btntimingDepreciate=(Button) findViewById(R.id.erHuo_home);
+        btntimingDepreciate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent();
+                i.setClass(HomeActivity.this, TimingDepreciateActivity.class);
+                finish();
+            }
+        });
+        btnTopHot=(Button) findViewById(R.id.goodSeal_home);
+        btnTopHot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent();
+                i.setClass(HomeActivity.this, TopHotActivity.class);
+                finish();
+            }
+        });
+        btnBargainSale=(Button) findViewById(R.id.teJia_home);
+        btnBargainSale.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent();
+                i.setClass(HomeActivity.this, BargainSaleActivity.class);
+                finish();
+            }
+        });
+        btnPreaching=(Button) findViewById(R.id.question_home);
+        btnPreaching.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i= new Intent();
+                i.setClass(HomeActivity.this, PreachingActivity.class);
+                finish();
+            }
+        });
+        ibWeekGoods=(ImageButton) findViewById(R.id.forMore_weekDated);
+        ibWeekGoods.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent();
+                i.setClass(HomeActivity.this, WeekGoodsActivity.class);
+                finish();
+            }
+        });
+        ibGoodsEveryDay=(ImageButton) findViewById(R.id.forMore_goods_everyday);
+        ibGoodsEveryDay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i= new Intent();
+                i.setClass(HomeActivity.this,GoodsEveryDayActivity.class);
+                finish();
+            }
+        });
+        ibLastCrazy=(ImageButton) findViewById(R.id.forMore_last_crazy);
+        ibLastCrazy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent();
+                i.setClass(HomeActivity.this,LastCrazyActivity.class);
+                finish();
+            }
+        });
+        ibForSale=(ImageButton) findViewById(R.id.forMore_for_sell);
+        ibForSale.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent();
+                i.setClass(HomeActivity.this,ForSealActivity.class);
+                finish();
+            }
+        });
     }
 
-    private void init(){
+    private void init() {
         initImageLoader();
         loadTestDatas();
         //本地图片例子
@@ -110,7 +190,7 @@ public class HomeActivity extends Activity implements AdapterView.OnItemClickLis
     }
 
     //初始化网络图片缓存库
-    private void initImageLoader(){
+    private void initImageLoader() {
 
         //网络图片例子,结合常用的图片缓存库UIL,你可以根据自己需求自己换其他网络图片库
         DisplayImageOptions defaultOptions = new DisplayImageOptions.Builder()
@@ -129,6 +209,7 @@ public class HomeActivity extends Activity implements AdapterView.OnItemClickLis
                 .tasksProcessingOrder(QueueProcessingType.LIFO).build();
         ImageLoader.getInstance().init(config);
     }
+
     /*
     加入测试Views
     * */
@@ -136,7 +217,6 @@ public class HomeActivity extends Activity implements AdapterView.OnItemClickLis
         //本地图片集合
         for (int position = 0; position < 7; position++)
             localImages.add(getResId("ic_test_" + position, R.drawable.class));
-
 
 
         //各种翻页效果
@@ -199,9 +279,13 @@ public class HomeActivity extends Activity implements AdapterView.OnItemClickLis
         convenientBanner.setPageTransformer(transformer);
     }
 
-
-
 }
+
+
+
+
+
+
 
 
 

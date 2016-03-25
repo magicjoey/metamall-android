@@ -1,20 +1,23 @@
 package com.metamall.activity;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.AdapterView;
+import android.widget.*;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.Button;
-import android.widget.ImageButton;
 import com.metamall.R;
 import com.metamall.adapter.PdSecondLayerAdapter;
 import com.metamall.model.ProductData;
 import com.metamall.noscrollview.NoScrollListView;
+import com.nostra13.universalimageloader.utils.L;
 
 import java.util.ArrayList;
 
@@ -32,10 +35,15 @@ public class ProductDetailsSecondLayerActivity extends Activity {
 	 * listview的数据
 	 * */
 	private ArrayList<ProductData> list_datas = new ArrayList<ProductData>();
-	/**
+    /**
+     * popupWindow
+     */
+    private PopupWindow mPopWindow;
+    /**
 	 * 二级分类的适配器
 	 * */
 	private PdSecondLayerAdapter adapter;
+    private PdSecondLayerAdapter adapter1;
 
 	/**
 	 * buttons
@@ -45,6 +53,25 @@ public class ProductDetailsSecondLayerActivity extends Activity {
 	private Button btn_sales; // 销量
 	private Button btn_price; // 价格
 	private Button btn_select; // 筛选
+    private ImageButton btn_switchStyle;//转变显示方式
+    /**
+     * 记录按钮点击次数
+     */
+    private int count;
+    /**
+     * 布局隐藏
+     *
+     */
+    private GridLayout gridLayout;
+    private LinearLayout linearLayout;
+    /**
+     * populayout
+     */
+    private Button btnson1;
+    private Button btnson2;
+    private ScrollView scrollView1;
+    private ScrollView scrollView2;
+
 
 	/**
 	 * 控制价格图标上下箭头的标志位
@@ -118,6 +145,7 @@ public class ProductDetailsSecondLayerActivity extends Activity {
 		adapter = new PdSecondLayerAdapter(this, list_datas,
 				R.layout.item_pd_second_layer);
 		listView.setAdapter(adapter);
+        adapter1=new PdSecondLayerAdapter(this,list_datas,R.layout.item_pd_fouth_layer);
 	}
 
 	/**
@@ -129,6 +157,14 @@ public class ProductDetailsSecondLayerActivity extends Activity {
 		btn_back.setFocusableInTouchMode(true);
 		btn_back.requestFocus();
 		btn_back.requestFocusFromTouch();
+		btn_back.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent();
+                i.setClass(ProductDetailsSecondLayerActivity.this,HomeActivity.class);
+                finish();
+            }
+        });
 
 		btn_price = (Button) findViewById(R.id.btn_pd2_price);
 		btn_sales = (Button) findViewById(R.id.btn_pd2_sales);
@@ -169,6 +205,11 @@ public class ProductDetailsSecondLayerActivity extends Activity {
 					btn_sales.setTextColor(Color.RED);
 					break;
 				}
+                 case R.id.btn_pd2_select:{
+
+
+
+                    }
 				case R.id.btn_pd_second_back:
 					finish();
 					break;
@@ -178,10 +219,73 @@ public class ProductDetailsSecondLayerActivity extends Activity {
 			}
 		};
 
-		btn_back.setOnClickListener(listener);
 		btn_price.setOnClickListener(listener);
 		btn_sales.setOnClickListener(listener);
 		btn_total.setOnClickListener(listener);
-		btn_select.setOnClickListener(listener);
+        gridLayout=(GridLayout) findViewById(R.id.switch_grid);
+        linearLayout=(LinearLayout) findViewById(R.id.switch_linear);
+        btn_switchStyle=(ImageButton) findViewById(R.id.switchStyle);
+        btn_switchStyle.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                count++;
+                if(count%2==1){
+                    btn_switchStyle.setBackgroundResource(R.drawable.selector_press_list);
+                    gridLayout.setVisibility(View.INVISIBLE);
+                    linearLayout.setVisibility(View.VISIBLE);
+                    listView.setAdapter(adapter1);
+                }
+                else{
+                    btn_switchStyle.setBackgroundResource(R.drawable.selector_press_grid);
+                    gridLayout.setVisibility(View.VISIBLE);
+                    linearLayout.setVisibility(View.INVISIBLE);
+                    listView.setAdapter(adapter);
+                }
+
+
+            }
+        });
+        btn_select.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showPopupWindow();
+            }
+        });
 	}
+    private void showPopupWindow() {
+        //设置contentView
+        View contentView = LayoutInflater.from(ProductDetailsSecondLayerActivity.this).inflate(R.layout.popuplayout, null);
+        mPopWindow = new PopupWindow(contentView,
+                ActionBar.LayoutParams.WRAP_CONTENT, ActionBar.LayoutParams.WRAP_CONTENT, true);
+        mPopWindow.setContentView(contentView);
+        //设置各个控件的点击响应
+        scrollView1=(ScrollView) findViewById(R.id.son_son_popuplayout1);
+        scrollView2=(ScrollView) findViewById(R.id.son_son_popuplayout2);
+        btnson1=(Button) findViewById(R.id.son_popuplayout1);
+        btnson1.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                scrollView1.setVisibility(View.VISIBLE);
+                scrollView2.setVisibility(View.INVISIBLE);
+            }
+        });
+        btnson2=(Button) findViewById(R.id.son_popuplayout2);
+        btnson2.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                scrollView1.setVisibility(View.INVISIBLE);
+                scrollView2.setVisibility(View.VISIBLE);
+            }
+        });
+        //todo:confirm classify;
+
+        //显示PopupWindow
+		View rootview = LayoutInflater.from(ProductDetailsSecondLayerActivity.this)
+                .inflate(R.layout.activity_productdetails_second_layer, null);
+        mPopWindow.showAtLocation(rootview, Gravity.BOTTOM, 0, 0);
+
+    }
+
+
+
 }

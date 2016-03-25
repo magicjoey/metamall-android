@@ -42,7 +42,7 @@ public class SearchActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_search);
         // 初始化控件
         initView();
 
@@ -169,9 +169,7 @@ public class SearchActivity extends Activity {
         iback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i=new Intent();
-                i.setClass(SearchActivity.this,HomeActivity.class);
-                finish();
+                SearchActivity.this.finish();
             }
         });
 

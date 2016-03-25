@@ -24,6 +24,12 @@
     <string name="price">价格</string>
     <string name="seal_volume">销量</string>
     <string name="screen">筛选</string>
+    <string name="classify">分类</string>
+    <string name="price_segment">价格段</string>
+    <string name="price_segment1">1-30</string>
+    <string name="price_segment2">31-60</string>
+    <string name="price_segment3">60-100</string>
+    <string name="price_segment4">100+</string>
     <string name="register">注册</string>
     <string name="validate">验证</string>
     <string name="suggest1">没有收到短信？请点击重新获取</string>
