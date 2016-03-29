@@ -22,9 +22,7 @@ import java.net.FileNameMap;
 public class MyActivity extends Activity {
 	
 	private static final int REQUEST_CODE = 15342;
-	
-	private ImageButton ibLogin;
-	private TextView tvUsername;
+
 	private Button btnForPay;
 	private Button btnForDelivery;
 	private Button btnDeliveryed;
@@ -35,6 +33,7 @@ public class MyActivity extends Activity {
 	private Button btnmyactivity;
 	private Button btnrecommend;
     private String telnum;
+	private Button btnsetting;
 
 
 	@Override
@@ -49,23 +48,7 @@ public class MyActivity extends Activity {
 	 * @param
 	 */
 	private void initView(){
-		ibLogin = (ImageButton) findViewById(R.id.my_ib_login);
 
-
-		ibLogin.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				Intent intent = new Intent(MyActivity.this, LoginActivity.class);
-				startActivityForResult(intent, REQUEST_CODE);
-			}
-		});
-        tvUsername = (TextView) findViewById(R.id.my_tv_username);
-        Bundle bundle1=this.getIntent().getExtras();
-        if(bundle1!=null){
-            telnum=bundle1.getString("TLE");
-        }
-        tvUsername.setText(telnum);
 
 		btnForPay=(Button) findViewById(R.id.obligation);
 		btnForPay.setOnClickListener(new OnClickListener() {

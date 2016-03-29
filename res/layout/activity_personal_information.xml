@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+        android:background="@color/bg_gray">
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/white" >
+
+        <ImageButton
+                android:id="@+id/login_ib_back"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:background="#00000000"
+                android:contentDescription="@string/back"
+                android:src="@drawable/top_arrow_back"
+                />
+
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/personal_information"
+                android:textSize="20sp"
+                android:textColor="#666666"
+                />
+    </RelativeLayout>
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/c12"
+            android:layout_marginTop="2dip"
+            >
+        <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:layout_marginTop="1dip"
+                android:id="@+id/portrait_change"
+                android:text="@string/portrait"
+                android:textColor="#555555"
+                android:gravity="center||start"
+                android:layout_marginStart="10dip"
+                android:textSize="20sp"
+                android:layout_weight="1"
+                />
+        <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:background="@android:color/transparent"
+                android:layout_marginEnd="16dip"
+                android:id="@+id/portrait_change1"
+                android:layout_gravity="center_horizontal||center_vertical"
+
+                />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -36,6 +36,7 @@
     <string name="getIde">60秒后重新获取</string>
     <string name="error">用户名和密码不为空</string>
     <string name="back">返回</string>
+    <string name="portrait">头像</string>
     <string name="etSearch">输入你想要的内容</string>
     <string name="search_history_clear">清除搜索内容</string>
     <string name="search_history">历史搜索</string>
@@ -82,6 +83,7 @@
     <string name="MyRecommend_layout">应用推荐</string>
     <string name="MyRecommend_message">暂无应用推荐</string>
     <string name="myAllOrder">      我的全部订单</string>
+    <string name="personal_information">个人信息</string>
     <string name="cal_left">日历向左</string>
     <string name="cal_right">日历向右</string>
     <string name="sunday">周日</string>

@@ -1,4 +1,5 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:imagecontrol="http://schemas.android.com/apk/res-auto"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/bg_gray">
@@ -8,66 +9,96 @@
             android:orientation="vertical"
             android:background="#f0f0f0">
         <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@color/white" >
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/white" >
 
 
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="@string/myCentre"
-                android:textSize="20sp"
-                android:textColor="#363636"
-                />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/myCentre"
+                    android:textSize="20sp"
+                    android:textColor="#363636"
+                    />
+            <Button
+                    android:id="@+id/my_btn_edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="5dp"
+                    android:background="#00000000"
+                    android:text="@string/setting"
+                    android:textColor="#7d7d7d"
+                    android:textSize="15sp"
+                    />
         </RelativeLayout>
 
 
 
         <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:background="@drawable/personal_info_bg"
-            android:layout_weight="1"
-                >
-
-            <ImageButton
-                android:id="@+id/my_ib_login"
-                android:layout_width="80dp"
-                android:layout_height="70dp"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="10dp"
-                android:background="#00000000"
-                android:layout_alignParentTop="true"
-                android:contentDescription="@string/login"
-                android:scaleType="fitXY"
-                android:src="@drawable/selector_personal_avatar_unlogin"
-            />
-
-            <TextView
-                android:id="@+id/my_tv_username"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/my_ib_login"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="10dp"
-                android:textSize="17sp"
-                android:textColor="#5c5c5c"
-                    />
-
-            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:background="#8C8C8C"
-                android:gravity="center"
-                android:text="@string/myJXB"
-                android:textSize="15sp"
-                android:textColor="#f4f4f4"
-                android:id="@+id/MyJXB"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentStart="true"/>
+                android:layout_height="wrap_content"
+                android:background="@color/bg_gray"
+                android:visibility="visible"
+                android:id="@+id/my_unlisted"
+                >
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_horizontal||center_vertical">
+            <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#ffd700"
+                    android:text="@string/login"
+                    android:textColor="@drawable/my_button_login"
+                    android:layout_marginEnd="12dip"
+                    android:id="@+id/my_login"/>
+                <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/my_button"
+                        android:text="@string/register"
+                        android:textColor="#ee7621"
+                        android:layout_marginStart="12dip"
+                        android:id="@+id/my_register"/>
+            </LinearLayout>
+            <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="100dp"
+                    android:weightSum="5"
+                    android:orientation="horizontal"
+                    android:background="@drawable/bg_my_listed"
+                    android:visibility="invisible"
+                    android:id="@+id/my_listed">
+                <com.metamall.View.RoundImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:layout_gravity="center_horizontal||center_vertical"
+                        android:src="@drawable/meta_loge"
+                        imagecontrol:border_inside_color="#ffffff"
+                        imagecontrol:border_outside_color="#ffffff"
+                        imagecontrol:border_thickness="1dp"
+                        android:id="@+id/portrait"
+                        />
+                <Button
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:id="@+id/my_clutter"
+                        android:gravity="start||center_vertical"
+                        />
+
+            </LinearLayout>
+
+
+
         </RelativeLayout>
         <TableLayout
                 android:layout_width="match_parent"
@@ -109,54 +140,54 @@
 
 
 
-            <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/MyAllOrder"
-                    android:background="@drawable/c11"
-                    android:text="@string/myAllOrder"
-                    android:textColor="#555555"
-                    android:textSize="18sp"
-                    android:drawableStart="@drawable/my_try"
-                    android:gravity="center_vertical"
-                    android:onClick="showAllOrder"
-                    android:layout_marginTop="4dp"/>
-            <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/MyCollection"
-                    android:background="@drawable/c11"
-                    android:text="@string/MyCollection"
-                    android:textSize="18sp"
-                    android:textColor="#555555"
-                    android:drawableStart="@drawable/my_try"
-                    android:gravity="center_vertical"
-                    android:onClick="showAllCollection"
-                    android:layout_marginTop="4dp"/>
-            <Button
-                    android:id="@+id/MyFit"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/c11"
-                    android:text="@string/MyFit"
-                    android:textSize="18sp"
-                    android:textColor="#555555"
-                    android:drawableStart="@drawable/my_try"
-                    android:gravity="center_vertical"
-                    android:onClick="showMyFit"
-                    android:layout_marginTop="4dp"/>
-            <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/MyActivity"
-                    android:background="@drawable/c11"
-                    android:text="@string/MyActivity"
-                    android:textSize="18sp"
-                    android:textColor="#555555"
-                    android:drawableStart="@drawable/my_try"
-                    android:gravity="center_vertical"
-                    android:onClick="showMyActivity"
-                    android:layout_marginTop="4dp"/>
+        <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/MyAllOrder"
+                android:background="@drawable/c11"
+                android:text="@string/myAllOrder"
+                android:textColor="#555555"
+                android:textSize="18sp"
+                android:drawableStart="@drawable/my_try"
+                android:gravity="center_vertical"
+                android:onClick="showAllOrder"
+                android:layout_marginTop="4dp"/>
+        <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/MyCollection"
+                android:background="@drawable/c11"
+                android:text="@string/MyCollection"
+                android:textSize="18sp"
+                android:textColor="#555555"
+                android:drawableStart="@drawable/my_try"
+                android:gravity="center_vertical"
+                android:onClick="showAllCollection"
+                android:layout_marginTop="4dp"/>
+        <Button
+                android:id="@+id/MyFit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/c11"
+                android:text="@string/MyFit"
+                android:textSize="18sp"
+                android:textColor="#555555"
+                android:drawableStart="@drawable/my_try"
+                android:gravity="center_vertical"
+                android:onClick="showMyFit"
+                android:layout_marginTop="4dp"/>
+        <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/MyActivity"
+                android:background="@drawable/c11"
+                android:text="@string/MyActivity"
+                android:textSize="18sp"
+                android:textColor="#555555"
+                android:drawableStart="@drawable/my_try"
+                android:gravity="center_vertical"
+                android:onClick="showMyActivity"
+                android:layout_marginTop="4dp"/>
         <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
