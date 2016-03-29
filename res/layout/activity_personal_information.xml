@@ -7,7 +7,7 @@
     <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:background="@color/white" >
+            android:background="#ffd700" >
 
         <ImageButton
                 android:id="@+id/login_ib_back"
@@ -28,40 +28,119 @@
                 android:layout_centerInParent="true"
                 android:text="@string/personal_information"
                 android:textSize="20sp"
-                android:textColor="#666666"
+                android:textColor="#333333"
                 />
     </RelativeLayout>
+
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="@drawable/c12"
-            android:layout_marginTop="2dip"
+            android:layout_marginTop="20dip"
+            android:background="@color/white"
+            android:orientation="vertical">
+        <Button
+                android:id="@+id/portrait_personal"
+                android:layout_width="match_parent"
+                android:layout_height="58dip"
+                android:background="@drawable/c12"
+                android:layout_marginStart="20dip"
+                android:text="@string/portrait"
+                android:textColor="#333333"
+                android:gravity="center||start"/>
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="0.7dp"
+                android:background="#999999"
+                />
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/c12">
+            <Button
+                    android:id="@+id/sex_personal1"
+                    android:layout_width="0dp"
+                    android:layout_height="44dp"
+                    android:background="@android:color/transparent"
+                    android:layout_weight="1"
+                    android:text="@string/sex"
+                    android:textColor="#333333"
+                    android:gravity="center||start"
+                    android:layout_marginStart="20dip"
+                    android:textSize="18sp">
+
+            </Button>
+            <Button
+                    android:layout_width="0dp"
+                    android:layout_height="44dp"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:gravity="center||end"
+                    android:layout_marginEnd="20dip"
+                    android:textSize="15sp"
+                    android:textColor="#636363"
+                    android:id="@+id/sex_personal2"/>
+
+        </LinearLayout>
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="0.7dp"
+                android:background="#999999"
+                />
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/c12"
+                android:orientation="horizontal">
+            <Button
+                    android:layout_width="0dp"
+                    android:layout_height="44dp"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:textColor="#333333"
+                    android:text="@string/myaddress1"
+                    android:gravity="center||start"
+                    android:layout_marginStart="20dip"
+                    android:id="@+id/address_personal"/>
+            <Button
+                    android:layout_width="0dp"
+                    android:layout_height="44dp"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:textSize="15sp"
+                    android:textColor="#636363"
+                    android:layout_marginEnd="20dip"
+                    android:gravity="center||end"/>
+
+        </LinearLayout>
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="0.7dp"
+                android:background="#999999"
+                />
+
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:layout_marginTop="20dip"
             >
         <Button
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#ffffff"
-                android:layout_marginTop="1dip"
-                android:id="@+id/portrait_change"
-                android:text="@string/portrait"
-                android:textColor="#555555"
+                android:layout_height="50dp"
+                android:background="@drawable/c12"
+                android:text="@string/account_security"
+                android:textColor="#333333"
                 android:gravity="center||start"
-                android:layout_marginStart="10dip"
-                android:textSize="20sp"
-                android:layout_weight="1"
-                />
-        <ImageButton
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:background="@android:color/transparent"
-                android:layout_marginEnd="16dip"
-                android:id="@+id/portrait_change1"
-                android:layout_gravity="center_horizontal||center_vertical"
+                android:layout_marginStart="20dip"
+                android:id="@+id/account_security"
 
                 />
-
     </LinearLayout>
 
 </LinearLayout>
