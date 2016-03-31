@@ -59,6 +59,11 @@
     <string name="account">账号：</string>
     <string name="person">收货人:</string>
     <string name="personal_number">手机号码：</string>
+    <string name="personal_address_verbose_details">详细地址：</string>
+    <string name="personal_address_verbose_details_hint">街道、楼牌号等</string>
+    <string name="keep">保存</string>
+    <string name="complete">完成</string>
+    <string name="personal_address_verbose">所在地区：</string>
     <string name="account_hint">请输入您的手机号</string>
     <string name="password_display">显示密码</string>
     <string name="password">密码：</string>
@@ -94,6 +99,7 @@
     <string name="personal_information">个人信息</string>
     <string name="activity_address">收货地址管理</string>
     <string name="address_add">新建收货地址</string>
+    <string name="slient_recognition_address">设为默认地址\n(注：下次下单自动使用该地址)</string>
     <string name="personal_sex">修改性别</string>
     <string name="cal_left">日历向左</string>
     <string name="cal_right">日历向右</string>

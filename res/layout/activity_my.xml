@@ -80,7 +80,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="4"
                         android:layout_gravity="center_horizontal||center_vertical"
-                        android:src="@drawable/meta_loge"
+                        android:src="@drawable/ic_launcher"
                         imagecontrol:border_inside_color="#ffffff"
                         imagecontrol:border_outside_color="#ffffff"
                         imagecontrol:border_thickness="1dp"

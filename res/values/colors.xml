@@ -8,4 +8,7 @@
     <color name="black">#000000</color>
     <drawable name="btn_txt_p">#fc7700</drawable>
     <drawable name="btn_txt_n">#333333</drawable>
+    <color name="province_line_border">#C7C7C7</color>
+    <color name="yellow">#ffff00</color>
+    <color name="lightYellow">#ffb90f</color>
 </resources>

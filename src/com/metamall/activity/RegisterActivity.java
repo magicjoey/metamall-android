@@ -53,20 +53,33 @@ public class RegisterActivity extends Activity {
         btnRegister.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                String telephoneNB=etTelephone.getText().toString();
-                boolean isPhone=isMobileNO(telephoneNB);
-                if(isPhone){
-                    // TODO Auto-generated method stub
-                    Intent intent_register_message=new Intent();
-                    intent_register_message.setClass(RegisterActivity.this,MessageActivity.class);
-                    intent_register_message.putExtra("TLE",etTelephone.getText().toString());
-                    startActivity(intent_register_message);
-                    finish();
+                String etnumber1=etTelephone.toString().trim();
+                String head1=etnumber1.substring(0,3);  // "hamburger".substring(4, 8) returns "urge"//"smiles".substring(1, 5) returns "mile"
+                if(etnumber1.length()!=11){
+                    Toast.makeText(getApplicationContext(),"请输入十一位手机号码",Toast.LENGTH_LONG).show();
                 }
                 else{
-                    Toast.makeText(RegisterActivity.this,"请检查手机号码格式",Toast.LENGTH_LONG).show();
-                }
+                    if(head1.equals("135") || head1.equals("136")
+                            || head1.equals("137") || head1.equals("138")
+                            || head1.equals("139") || head1.equals("147")
+                            || head1.equals("150") || head1.equals("151")
+                            || head1.equals("152") || head1.equals("157")
+                            || head1.equals("158") || head1.equals("159")
+                            || head1.equals("182") || head1.equals("187")
+                            || head1.equals("188") ||head1.equals("134")
+                            ||head1.equals("130") || head1.equals("131")
+                            || head1.equals("132") || head1.equals("145")
+                            || head1.equals("155") || head1.equals("156")
+                            || head1.equals("185") || head1.equals("186")
+                            ||head1.equals("133") || head1.equals("153")
+                            || head1.equals("180") || head1.equals("189")){
 
+                    }
+                    else{
+                        Toast.makeText(getApplicationContext(),"请检查手机号码格式",Toast.LENGTH_LONG).show();
+                    }
+
+                }
 
 
             }
@@ -75,47 +88,13 @@ public class RegisterActivity extends Activity {
         });
     }
 
-    public static boolean isMobileNO(String phoneNum) {
-        phoneNum=phoneNum.trim();
-        String head1 = "";
-
-        head1 = phoneNum.substring(0, 3);
-
-
-        if(phoneNum.length()!=11){
-            return false;
-        }
-        else{
-            boolean cmcctemp2 = head1.equals("135") || head1.equals("136")
-                    || head1.equals("137") || head1.equals("138")
-                    || head1.equals("139") || head1.equals("147")
-                    || head1.equals("150") || head1.equals("151")
-                    || head1.equals("152") || head1.equals("157")
-                    || head1.equals("158") || head1.equals("159")
-                    || head1.equals("182") || head1.equals("187")
-                    || head1.equals("188") ||head1.equals("134")
-                    ||head1.equals("130") || head1.equals("131")
-                    || head1.equals("132") || head1.equals("145")
-                    || head1.equals("155") || head1.equals("156")
-                    || head1.equals("185") || head1.equals("186")
-                    ||head1.equals("133") || head1.equals("153")
-                    || head1.equals("180") || head1.equals("189");
-
-            if(cmcctemp2||phoneNum.length()==11){
-
-                return true;
-            }
-            else{
-                return false;
-            }
-
-        }
 
 
 
 
 
-    }
+
+
     /**
      +	 * 监听文本框
      +	 */

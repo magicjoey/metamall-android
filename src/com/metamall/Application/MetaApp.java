@@ -23,10 +23,10 @@ public class MetaApp extends Application {
     public static Map<String, Long> map;
     public static boolean mIsRuning = false;	//是否从ManiActivity进入启动应用的
 
+    private String  recognition;
+    public static boolean ibrecognition;
 
     public static String GCRASHFILEPATH = "/sdcard/GoodPlaceError/";	//Crash路径
-
-
 
     @Override
     public void onCreate() {
@@ -67,6 +67,15 @@ public class MetaApp extends Application {
 
     public static Context getContext() {
         return sContext;
+    }
+
+
+    //默认收货地址
+    public String getRecognition() {
+        return recognition;
+    }
+    public void setRecognition(String recognition){
+        this.recognition=recognition;
     }
 
 

@@ -245,6 +245,7 @@ public class ProductDetailsSecondLayerActivity extends Activity {
 
             }
         });
+		btn_select=(Button) findViewById(R.id.btn_pd2_select);
         btn_select.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
