@@ -3,7 +3,6 @@ package com.metamall.activity.Personal;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -179,6 +178,7 @@ public class PersonalAddAddressActivity extends AddressBaseActivity {
                     Intent in=new Intent();
                     in.setClass(PersonalAddAddressActivity.this,PersonalAddressActivity.class);
                     finish();
+                    Toast.makeText(getApplicationContext(),"保存成功",Toast.LENGTH_SHORT).show();
 
                 }
             });
@@ -237,6 +237,7 @@ public class PersonalAddAddressActivity extends AddressBaseActivity {
                 bundle.putString("City",mCity);
                 bundle.putString("District",mDistrict);
                 i.putExtras(bundle);
+
 
 
 

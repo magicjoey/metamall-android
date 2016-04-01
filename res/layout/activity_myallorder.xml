@@ -83,7 +83,7 @@
                 android:visibility="gone" />
 
         <LinearLayout
-                android:id="@+id/cart_list_layout"
+                android:id="@+id/all_order_list_layout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
@@ -91,7 +91,7 @@
                 android:visibility="gone" >
 
             <ListView
-                    android:id="@+id/cart_lv"
+                    android:id="@+id/all_prder_lv"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"

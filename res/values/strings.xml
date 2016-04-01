@@ -38,6 +38,7 @@
     <string name="getIde">60秒后重新获取</string>
     <string name="error">用户名和密码不为空</string>
     <string name="back">返回</string>
+    <string name="add_address">新建</string>
     <string name="male">男</string>
     <string name="female">女</string>
     <string name="sex_secret">保密</string>
@@ -99,6 +100,8 @@
     <string name="personal_information">个人信息</string>
     <string name="activity_address">收货地址管理</string>
     <string name="address_add">新建收货地址</string>
+    <string name="confirm_refresh">收货信息修改</string>
+    <string name="confirm_refresh_button">确认修改</string>
     <string name="slient_recognition_address">设为默认地址\n(注：下次下单自动使用该地址)</string>
     <string name="personal_sex">修改性别</string>
     <string name="cal_left">日历向左</string>

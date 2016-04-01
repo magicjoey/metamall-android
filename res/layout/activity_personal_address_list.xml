@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/address_suggest_layout"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@drawable/c12"
+            android:clickable="true"
+            android:focusable="true"
+            android:orientation="vertical"
+        >
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginStart="16dip"
+                android:layout_marginEnd="20dip"
+                android:layout_marginTop="2dip"
+                android:layout_gravity="center"
+                android:textColor="#363636"
+                android:textSize="18sp"
+                android:id="@+id/personal_address_name">
+        </TextView>
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginEnd="20dip"
+                android:layout_marginStart="16dip"
+                android:layout_gravity="center"
+                android:textSize="16sp"
+                android:textColor="#363636"
+                android:id="@+id/personal_address_details"
+                />
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="0.8dp"
+                android:background="@color/gray">
+
+        </View>
+
+
+
+
+
+
+    </LinearLayout>
