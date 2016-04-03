@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import com.metamall.R;
-import com.metamall.activity.PersonalInformationActivity;
 
 
 /**

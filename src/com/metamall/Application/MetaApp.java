@@ -77,6 +77,23 @@ public class MetaApp extends Application {
     public void setRecognition(String recognition){
         this.recognition=recognition;
     }
+    private String login_user_name = "";
+    private String login_user_password="";
+
+    public String getLoginUserName() {
+        return login_user_name;
+    }
+    public void setLoginUserName(String login_user_name) {
+        this.login_user_name = login_user_name;
+    }
+    public String getLogin_user_password(){
+        return login_user_password;
+
+    }
+    public void setLogin_user_password(String login_user_password){
+        this.login_user_password = login_user_password;
+    }
+
 
 
 

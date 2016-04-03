@@ -10,6 +10,7 @@
     <string name="search">搜索</string>
     <string name="myaddress1">收件地址</string>
     <string name="account_security">账号与安全</string>
+    <string name="password_change">修改密码</string>
     <string name="myJXB">我的精喜币数量：</string>
     <string name="myCollection">我的收藏</string>
     <string name="myOrder">我的订单</string>
@@ -34,6 +35,7 @@
     <string name="price_segment4">100+</string>
     <string name="register">注册</string>
     <string name="validate">验证</string>
+    <string name="welcome">欢迎来到一路惊喜</string>
     <string name="suggest1">没有收到短信？请点击重新获取</string>
     <string name="getIde">60秒后重新获取</string>
     <string name="error">用户名和密码不为空</string>
@@ -66,8 +68,16 @@
     <string name="complete">完成</string>
     <string name="personal_address_verbose">所在地区：</string>
     <string name="account_hint">请输入您的手机号</string>
+    <string name="welcome_name_hint">给自己取一个名字吧</string>
+    <string name="welcome_text">请输入6-18位密码</string>
+    <string name="welcome_password_hint1">一路惊喜建议您时常更换密码</string>
+    <string name="welcome_password_hint2">密码不要和别人分享哦</string>
+    <string name="curtain">昵称：</string>
+    <string name="password_confirm">确认密码：</string>
     <string name="password_display">显示密码</string>
     <string name="password">密码：</string>
+    <string name="oldpassword">旧密码：</string>
+    <string name="newpassword">新密码：</string>
     <string name="password1">请输入您的密码</string>
     <string name="prompt">请输入验证码</string>
     <string name="myCentre">我的个人中心</string>
@@ -80,6 +90,7 @@
     <string name="CODPay">货到付款</string>
     <string name="goods_details">商品详情</string>
     <string name="JXB">精喜币</string>
+    <string name="confirm">确认</string>
     <string name="goods_freePosts">运费</string>
     <string name="confirm_pay">确认付款</string>
     <string name="allpay">实付款:</string>
@@ -104,6 +115,10 @@
     <string name="confirm_refresh_button">确认修改</string>
     <string name="slient_recognition_address">设为默认地址\n(注：下次下单自动使用该地址)</string>
     <string name="personal_sex">修改性别</string>
+    <string name="camera_pop_camera">相机拍摄</string>
+    <string name="camera_pop_album">从相机中选取</string>
+    <string name="tele_change_pop_change">更换手机</string>
+    <string name="camera_pop_cancel">取消</string>
     <string name="cal_left">日历向左</string>
     <string name="cal_right">日历向右</string>
     <string name="sunday">周日</string>
@@ -151,6 +166,11 @@
     <string name="title_activity_login">LoginActivity</string>
     <string name="text_btn_addIntoCart">加入购物车</string>
     <string name="accomplish">完成</string>
+    <string name="account_secure">账号与安全</string>
+    <string name="login_password">登录密码</string>
+    <string name="secure_telephone">手机号码</string>
+    <string name="secure_telephone_change">去更换</string>
+    <string name="login_password_tip">*建议您定期更换登录密码</string>
     <string name="provider">麦塔工作室</string>
 
 

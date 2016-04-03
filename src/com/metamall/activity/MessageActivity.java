@@ -39,9 +39,6 @@ public class MessageActivity extends Activity implements View.OnClickListener {
 
             @Override
             public void onClick(View v) {
-                Intent intent_register_my=new Intent();
-                intent_register_my.setClass(MessageActivity.this,MyActivity.class);
-                setResult(RESULT_CANCELED);
                 finish();
             }
 
@@ -66,7 +63,7 @@ public class MessageActivity extends Activity implements View.OnClickListener {
 
 
                 Intent intent_register=new Intent();
-                intent_register.setClass(MessageActivity.this, MyActivity.class);
+                intent_register.setClass(MessageActivity.this, WelcomeActivity.class);
                 finish();
                 }
                 else{

@@ -49,7 +49,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:orientation="horizontal"
-                    android:gravity="center_horizontal||center_vertical">
+                    android:gravity="center"
+                    >
             <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -79,7 +80,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="4"
-                        android:layout_gravity="center_horizontal||center_vertical"
+                        android:layout_gravity="center"
                         android:src="@drawable/ic_launcher"
                         imagecontrol:border_inside_color="#ffffff"
                         imagecontrol:border_outside_color="#ffffff"
@@ -92,7 +93,8 @@
                         android:layout_weight="1"
                         android:background="@android:color/transparent"
                         android:id="@+id/my_clutter"
-                        android:gravity="start||center_vertical"
+                        android:gravity="center_vertical"
+
                         />
 
             </LinearLayout>
@@ -150,7 +152,6 @@
                 android:textSize="18sp"
                 android:drawableStart="@drawable/my_try"
                 android:gravity="center_vertical"
-                android:onClick="showAllOrder"
                 android:layout_marginTop="4dp"/>
         <Button
                 android:layout_width="match_parent"
@@ -162,7 +163,6 @@
                 android:textColor="#555555"
                 android:drawableStart="@drawable/my_try"
                 android:gravity="center_vertical"
-                android:onClick="showAllCollection"
                 android:layout_marginTop="4dp"/>
         <Button
                 android:id="@+id/MyFit"

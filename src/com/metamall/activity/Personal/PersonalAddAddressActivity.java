@@ -9,6 +9,7 @@ import android.text.TextWatcher;
 import android.view.*;
 import android.widget.*;
 import com.metamall.Application.MetaApp;
+import com.metamall.Clutter.UserEntity;
 import com.metamall.R;
 import com.metamall.activity.Personal.ChinaCity.AddressBaseActivity;
 import com.metamall.adapter.ArrayWheelAdapter;
@@ -98,7 +99,6 @@ public class PersonalAddAddressActivity extends AddressBaseActivity {
                             || head1.equals("185") || head1.equals("186")
                             ||head1.equals("133") || head1.equals("153")
                             || head1.equals("180") || head1.equals("189")){
-
                     }
                     else{
                         Toast.makeText(getApplicationContext(),"请检查手机号格式",Toast.LENGTH_LONG).show();
@@ -148,7 +148,6 @@ public class PersonalAddAddressActivity extends AddressBaseActivity {
                     ibrecognition.setImageDrawable(getResources().getDrawable(R.drawable.btn_psd_yes));
                     metaApp=(MetaApp)getApplication();
                     metaApp.setRecognition("Recognition");
-
                 }
                 else{
                     ibrecognition.setImageDrawable(getResources().getDrawable(R.drawable.btn_psd_no));
@@ -169,12 +168,19 @@ public class PersonalAddAddressActivity extends AddressBaseActivity {
                     String mname=etname.getText().toString();
                     String mnumber=etnumber.getText().toString();
                     String maddressDetails=etaddress_details.getText().toString();
-                    Intent i=new Intent(PersonalAddAddressActivity.this,PersonalAddressActivity.class);
-                    Bundle bundle1=new Bundle();
-                    bundle1.putString("Name",mname);
-                    bundle1.putString("Number",mnumber);
-                    bundle1.putString("AddressDetails",maddressDetails);
-                    i.putExtras(bundle1);
+                    String mProvince=mViewProvince.toString();
+                    String mCity=mViewCity.toString();
+                    String mDistrict=mViewDistrict.toString();
+                    UserEntity user = new UserEntity();
+                    user.setUserName(mname);
+                    user.setdistrict(mDistrict);
+                    user.setProvince(mProvince);
+                    user.setCity(mCity);
+                    user.setnumber(mnumber);
+                    user.setaddressDetails(maddressDetails);
+
+
+
                     Intent in=new Intent();
                     in.setClass(PersonalAddAddressActivity.this,PersonalAddressActivity.class);
                     finish();
@@ -228,15 +234,7 @@ public class PersonalAddAddressActivity extends AddressBaseActivity {
             @Override
             public void onClick(View v) {
                 popWindow.dismiss();
-                String mProvince=mViewProvince.toString();
-                String mCity=mViewCity.toString();
-                String mDistrict=mViewDistrict.toString();
-                Intent i=new Intent(PersonalAddAddressActivity.this,PersonalAddressActivity.class);
-                Bundle bundle=new Bundle();
-                bundle.putString("Province",mProvince);
-                bundle.putString("City",mCity);
-                bundle.putString("District",mDistrict);
-                i.putExtras(bundle);
+
 
 
 

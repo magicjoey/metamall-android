@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.*;
+import com.metamall.Clutter.UserEntity;
 import com.metamall.R;
 import com.metamall.adapter.CartListAdapter;
 
@@ -25,15 +26,16 @@ public class PersonalAddressActivity extends ListActivity {
     private ListView listView;
     private LinearLayout listLayout;
 
-    Bundle bundle=this.getIntent().getExtras();
-    Bundle bundle1=this.getIntent().getExtras();
-    String address1=bundle.getString("Province");
-    String address2=bundle.getString("City");
-    String address3=bundle.getString("District");
-    String anumber=bundle1.getString("Number");
-    String adetails=bundle1.getString("AddressDetails");
-    String actualAddress="收货地址："+address1+address2+address3+adetails;
-    String aname="收货人:"+bundle1.getString("Name")+"\t"+anumber;
+    UserEntity user;
+
+    String aprovince=user.getProvince();
+    String acity=user.getCity();
+    String adistrict=user.getdistrict();
+    String anumber=user.getnumber();
+    String adetails=user.getaddressDetails();
+    String aname1=user.getUserName();
+    String actualAddress="收货地址："+aprovince+acity+adistrict+adetails;
+    String aname="收货人:"+aname1+"\t"+anumber;
 
 
     @Override
@@ -71,18 +73,18 @@ public class PersonalAddressActivity extends ListActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent i=new Intent();
-                i.setClass(PersonalAddressActivity.this,PersonalRefreshAddressActivity.class);
+
+
+                Intent in=new Intent();
+                in.setClass(PersonalAddressActivity.this,PersonalRefreshAddressActivity.class);
                 finish();
 
             }
         });
-        
-
-
-
-
-
-
+        Intent in=new Intent(this,PersonalInformationActivity.class);
+        Bundle bundle=new Bundle();
+        bundle.putInt("Num",listView.getCount());
+        in.putExtras(bundle);
+        startActivity(in);
     }
 }

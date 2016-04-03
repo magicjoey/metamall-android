@@ -36,10 +36,10 @@ public class HomeActivity extends Activity implements AdapterView.OnItemClickLis
     private Button btnTopHot;
     private Button btnBargainSale;
     private Button btnPreaching;
-    private ImageButton ibWeekGoods;
-    private ImageButton ibLastCrazy;
-    private ImageButton ibGoodsEveryDay;
-    private ImageButton ibForSale;
+    private Button ibWeekGoods;
+    private Button ibLastCrazy;
+    private Button ibGoodsEveryDay;
+    private Button ibForSale;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -123,7 +123,7 @@ public class HomeActivity extends Activity implements AdapterView.OnItemClickLis
                 finish();
             }
         });
-        ibWeekGoods=(ImageButton) findViewById(R.id.forMore_weekDated);
+        ibWeekGoods=(Button) findViewById(R.id.forMore_weekDated);
         ibWeekGoods.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -132,7 +132,7 @@ public class HomeActivity extends Activity implements AdapterView.OnItemClickLis
                 finish();
             }
         });
-        ibGoodsEveryDay=(ImageButton) findViewById(R.id.forMore_goods_everyday);
+        ibGoodsEveryDay=(Button) findViewById(R.id.forMore_goods_everyday);
         ibGoodsEveryDay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -141,7 +141,7 @@ public class HomeActivity extends Activity implements AdapterView.OnItemClickLis
                 finish();
             }
         });
-        ibLastCrazy=(ImageButton) findViewById(R.id.forMore_last_crazy);
+        ibLastCrazy=(Button) findViewById(R.id.forMore_last_crazy);
         ibLastCrazy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -150,7 +150,7 @@ public class HomeActivity extends Activity implements AdapterView.OnItemClickLis
                 finish();
             }
         });
-        ibForSale=(ImageButton) findViewById(R.id.forMore_for_sell);
+        ibForSale=(Button) findViewById(R.id.forMore_for_sell);
         ibForSale.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

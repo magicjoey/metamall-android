@@ -40,15 +40,28 @@ public class RegisterActivity extends Activity {
 
             @Override
             public void onClick(View v) {
-                Intent intent_register_my=new Intent();
-                intent_register_my.setClass(RegisterActivity.this,MyActivity.class);
-                setResult(RESULT_CANCELED);
+
                 finish();
             }
         });
-        MyWatcher watcher = new MyWatcher();
+
         etTelephone = (EditText) findViewById(R.id.telephone);
-        etTelephone.addTextChangedListener(watcher);
+        etTelephone.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
         btnRegister = (Button) findViewById(R.id.register_message);
         btnRegister.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -73,6 +86,9 @@ public class RegisterActivity extends Activity {
                             || head1.equals("185") || head1.equals("186")
                             ||head1.equals("133") || head1.equals("153")
                             || head1.equals("180") || head1.equals("189")){
+                        Intent i=new Intent();
+                        i.setClass(RegisterActivity.this,MessageActivity.class);
+                        finish();
 
                     }
                     else{

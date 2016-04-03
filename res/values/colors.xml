@@ -12,4 +12,5 @@
     <color name="yellow">#ffff00</color>
     <color name="lightYellow">#ffb90f</color>
     <color name="lightRed">#fe2e46</color>
+    <color name="camera_pop_normal">#5DB8FE</color>
 </resources>

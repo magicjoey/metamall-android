@@ -20,6 +20,20 @@
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
+
+    <style name="PopupAnimation" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/push_bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/push_bottom_out</item>
+    </style>
+
+    <style name="txt_camera_pop_menu">
+        <!-- PopupWindow左右弹出的效果 -->
+        <item name="android:textColor">@color/camera_pop_normal</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:gravity">center</item>
+    </style>
       
     <style name="NoTitle" parent="android:Theme.Holo.Light.NoActionBar"/>       
 </resources>
