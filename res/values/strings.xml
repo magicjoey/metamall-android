@@ -11,6 +11,7 @@
     <string name="myaddress1">收件地址</string>
     <string name="account_security">账号与安全</string>
     <string name="password_change">修改密码</string>
+    <string name="telephone_change">手机号更改</string>
     <string name="myJXB">我的精喜币数量：</string>
     <string name="myCollection">我的收藏</string>
     <string name="myOrder">我的订单</string>
@@ -72,6 +73,8 @@
     <string name="welcome_text">请输入6-18位密码</string>
     <string name="welcome_password_hint1">一路惊喜建议您时常更换密码</string>
     <string name="welcome_password_hint2">密码不要和别人分享哦</string>
+    <string name="telephone_change_hint1">请输入新的手机号码</string>
+    <string name="telephone_change_hint2">请输入当前密码</string>
     <string name="curtain">昵称：</string>
     <string name="password_confirm">确认密码：</string>
     <string name="password_display">显示密码</string>

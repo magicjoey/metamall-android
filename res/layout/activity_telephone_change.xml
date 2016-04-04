@@ -2,6 +2,80 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
+              android:layout_height="match_parent"
+        android:background="@color/bg_gray">
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/white" >
+
+        <ImageButton
+                android:id="@+id/ib_back_personal_telephone_change"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:background="#00000000"
+                android:contentDescription="@string/back"
+                android:src="@drawable/top_arrow_back"
+                />
+
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/telephone_change"
+                android:textSize="19sp"
+                android:textColor="#555555"
+                />
+
+    </RelativeLayout>
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:background="@color/white"
+            android:layout_marginTop="20dip">
+        <EditText
+                android:id="@+id/change_et_telephone"
+                android:inputType="phone"
+                android:layout_width="0dp"
+                android:layout_height="34dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:hint="@string/telephone_change_hint1"
+                android:textSize="18sp" />
+
+    </LinearLayout>
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="1.4dp"
+            android:background="@color/bg_gray"/>
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:background="@color/white"
+            >
+        <EditText
+                android:id="@+id/change_et_telephone_password"
+                android:inputType="textPassword"
+                android:layout_width="0dp"
+                android:layout_height="34dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:hint="@string/telephone_change_hint2"
+                android:textSize="18sp" />
+
+    </LinearLayout>
+    <Button
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/lightYellow"/>
+
 
 </LinearLayout>
