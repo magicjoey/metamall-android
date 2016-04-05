@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
+import com.metamall.Application.MetaApp;
 import com.metamall.R;
 
 
@@ -25,6 +26,7 @@ public class RegisterActivity extends Activity {
     private ImageButton iBack;
     private EditText etTelephone;
     private Button btnRegister;
+    MetaApp metaApp;
 
 
 
@@ -33,6 +35,7 @@ public class RegisterActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         initView();
+        metaApp=MetaApp.getApp();
     }
     private void initView(){
         iBack = (ImageButton) findViewById(R.id.login_ib_back);
@@ -86,6 +89,7 @@ public class RegisterActivity extends Activity {
                             || head1.equals("185") || head1.equals("186")
                             ||head1.equals("133") || head1.equals("153")
                             || head1.equals("180") || head1.equals("189")){
+                        metaApp.setnumber(etTelephone.toString());
                         Intent i=new Intent();
                         i.setClass(RegisterActivity.this,MessageActivity.class);
                         finish();
@@ -103,14 +107,6 @@ public class RegisterActivity extends Activity {
 
         });
     }
-
-
-
-
-
-
-
-
     /**
      +	 * 监听文本框
      +	 */

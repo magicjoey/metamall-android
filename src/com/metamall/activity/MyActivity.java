@@ -11,8 +11,10 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.metamall.R;
+import com.metamall.activity.Setting.MySettingActivity;
 
 import java.net.FileNameMap;
 
@@ -32,8 +34,11 @@ public class MyActivity extends Activity {
 	private Button btnmyfit;
 	private Button btnmyactivity;
 	private Button btnrecommend;
-    private String telnum;
 	private Button btnsetting;
+    private Button btlogin;
+    private Button btregister;
+    private LinearLayout linearLayout_unlisted;
+    private LinearLayout linearLayout_listed;
 
 
 	@Override
@@ -41,6 +46,10 @@ public class MyActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_my);
 		initView();
+        linearLayout_unlisted=(LinearLayout) findViewById(R.id.my_unlisted);
+        linearLayout_listed=(LinearLayout) findViewById(R.id.my_listed);
+        linearLayout_listed.setVisibility(View.GONE);
+        linearLayout_unlisted.setVisibility(View.VISIBLE);
 	}
 	
 	/**
@@ -140,6 +149,33 @@ public class MyActivity extends Activity {
                 finish();
             }
         });
+        btlogin=(Button) findViewById(R.id.my_login);
+        btlogin.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent();
+                i.setClass(MyActivity.this,LoginActivity.class);
+                finish();
+            }
+        });
+        btregister=(Button) findViewById(R.id.my_register);
+        btregister.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent();
+                i.setClass(MyActivity.this,RegisterActivity.class);
+                finish();
+            }
+        });
+        btnsetting=(Button) findViewById(R.id.my_btn_edit);
+        btnsetting.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent();
+                i.setClass(MyActivity.this, MySettingActivity.class);
+                finish();
+            }
+        });
 
 	}
     @Override
@@ -147,7 +183,8 @@ public class MyActivity extends Activity {
         super.onActivityResult(requestCode, resultCode, data);
         if(resultCode == Activity.RESULT_OK){
             if(requestCode == REQUEST_CODE){
-                // 登录成功，取出登录数据
+                linearLayout_listed.setVisibility(View.VISIBLE);
+                linearLayout_unlisted.setVisibility(View.GONE);
             }
         }
     }

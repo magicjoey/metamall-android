@@ -11,7 +11,7 @@
     <color name="province_line_border">#C7C7C7</color>
     <color name="yellow">#ffff00</color>
     <color name="textcolor">#fc7700</color>
-    <color name="lightYellow">#ffb90f</color>
+    <color name="lightYellow">#ffd700</color>
     <color name="lightRed">#fe2e46</color>
     <color name="camera_pop_normal">#5DB8FE</color>
 </resources>

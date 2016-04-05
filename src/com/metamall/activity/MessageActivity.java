@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
 import android.widget.*;
+import com.metamall.Application.MetaApp;
 import com.metamall.R;
 import com.metamall.TimeButton.TimeButton;
 
@@ -19,6 +20,7 @@ public class MessageActivity extends Activity implements View.OnClickListener {
     private TextView message_suggest;
     private Button register_login;
     private TimeButton v;
+    MetaApp metaApp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +30,8 @@ public class MessageActivity extends Activity implements View.OnClickListener {
         v.onCreate(savedInstanceState);
         v.setTextAfter("秒后重新获取").setTextBefore("点击获取验证码").setLenght(15 * 1000);
         v.setOnClickListener(this);
+
+        metaApp=MetaApp.getApp();
 
         initView();
 
@@ -44,8 +48,7 @@ public class MessageActivity extends Activity implements View.OnClickListener {
 
         });
         message_suggest = (TextView) findViewById(R.id.message);
-        Intent intent_message=getIntent();
-        String message_suggest1=intent_message.getStringExtra("TLE");
+        String message_suggest1=metaApp.getnumber();
         String message_suggest2="我们将把验证码发到："+message_suggest1+",请注意查看";
         message_suggest.setText(message_suggest2);
 

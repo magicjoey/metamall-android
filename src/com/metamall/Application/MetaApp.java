@@ -77,22 +77,30 @@ public class MetaApp extends Application {
     public void setRecognition(String recognition){
         this.recognition=recognition;
     }
-    private String login_user_name = "";
-    private String login_user_password="";
+    private String name = "";
+    private String password="";
 
-    public String getLoginUserName() {
-        return login_user_name;
+    public String getName() {
+        return name;
     }
-    public void setLoginUserName(String login_user_name) {
-        this.login_user_name = login_user_name;
+    public void setName(String name) {
+        this.name = name;
     }
-    public String getLogin_user_password(){
-        return login_user_password;
+    public String getpassword(){
+        return password;
 
     }
-    public void setLogin_user_password(String login_user_password){
-        this.login_user_password = login_user_password;
+    public void setpassword(String password){
+        this.password = password;
     }
+    //绑定的手机号码
+    public String getnumber(){
+        return number;
+    }
+    public void setnumber(String number){
+        this.number=number;
+    }
+    private String number;
 
 
 

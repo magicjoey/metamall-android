@@ -75,7 +75,26 @@
     <Button
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:background="@color/lightYellow"/>
+            android:background="@color/lightYellow"
+            android:layout_marginTop="30dip"
+            android:text="@string/confirm"
+            android:textColor="#363636"
+            android:layout_marginStart="40dip"
+            android:layout_marginEnd="40dip"
+            android:id="@+id/telephone_change_confirm_bt"
+            />
+    <TextView
+            android:id="@+id/telephone_change_confirm_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/password_forget"
+            android:gravity="center"
+            android:textColor="@color/textcolor"
+            android:layout_marginTop="4dip"
+            android:textSize="14sp"
+            android:layout_marginStart="100dp"
+            android:layout_marginEnd="100dp"
+            android:clickable="true"/>
 
 
 </LinearLayout>

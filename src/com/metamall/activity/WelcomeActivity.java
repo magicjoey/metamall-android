@@ -99,8 +99,8 @@ public class WelcomeActivity extends Activity {
                     if(etpassword.getText()!=etpasswordConfirm.getText()){
                         Toast.makeText(getApplicationContext(),"两次输入密码不一致，请检查",Toast.LENGTH_LONG).show();
                     }else{
-                        metaApp.setLoginUserName(etcurtain.toString());
-                        metaApp.setLogin_user_password(etpassword.toString());
+                        metaApp.setName(etcurtain.toString());
+                        metaApp.setpassword(etpassword.toString());
                         Intent i=new Intent();
                         i.setClass(WelcomeActivity.this,MyActivity.class);
                         finish();

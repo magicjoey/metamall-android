@@ -13,6 +13,7 @@
     <string name="password_change">修改密码</string>
     <string name="telephone_change">手机号更改</string>
     <string name="myJXB">我的精喜币数量：</string>
+    <string name="myJX">一路惊喜</string>
     <string name="myCollection">我的收藏</string>
     <string name="myOrder">我的订单</string>
     <string name="myAllCollection">查看所有收藏</string>
@@ -41,6 +42,14 @@
     <string name="getIde">60秒后重新获取</string>
     <string name="error">用户名和密码不为空</string>
     <string name="back">返回</string>
+    <string name="feedback">意见反馈</string>
+    <string name="clear">清理缓存</string>
+    <string name="wifi_update">Wifi环境下自动升级客户端</string>
+    <string name="flow_figure">3G/4G环境下被动加载图片</string>
+    <string name="message_push">接受消息推送</string>
+    <string name="about_us">关于我们</string>
+
+    <string name="exit">退出登录</string>
     <string name="add_address">新建</string>
     <string name="male">男</string>
     <string name="female">女</string>
@@ -75,6 +84,7 @@
     <string name="welcome_password_hint2">密码不要和别人分享哦</string>
     <string name="telephone_change_hint1">请输入新的手机号码</string>
     <string name="telephone_change_hint2">请输入当前密码</string>
+    <string name="password_forget">忘记密码？</string>
     <string name="curtain">昵称：</string>
     <string name="password_confirm">确认密码：</string>
     <string name="password_display">显示密码</string>
@@ -121,6 +131,7 @@
     <string name="camera_pop_camera">相机拍摄</string>
     <string name="camera_pop_album">从相机中选取</string>
     <string name="tele_change_pop_change">更换手机</string>
+    <string name="setting_clear_pop">确定清理</string>
     <string name="camera_pop_cancel">取消</string>
     <string name="cal_left">日历向左</string>
     <string name="cal_right">日历向右</string>
@@ -142,6 +153,11 @@
     <string name="password_hint">请输入密码</string>
     <string name="edit">编辑</string>
     <string name="setting">设置</string>
+    <string name="send">发送</string>
+    <string name="your_suggest">您的意见</string>
+    <string name="your_suggest_hint">请在这里添加对一路惊喜的意见，我们将不断改进，谢谢支持</string>
+    <string name="feedback_telephone">联系方式</string>
+    <string name="feedback_telephone_hint">手机号或者QQ号(选填)</string>
     <string name="suggest">请先登录再查看</string>
     <string name="cart_empty">购物车肚子空空</string>
     <string name="mycollection_empty">收藏夹肚子空空</string>

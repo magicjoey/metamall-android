@@ -24,7 +24,7 @@ public class PersonalPasswordChangeActivity extends Activity {
     private EditText etNewPassword_confirm;
     private Button btconfirm;
     MetaApp metaApp;
-    private String pw=metaApp.getLogin_user_password();
+    private String pw=metaApp.getpassword();
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);

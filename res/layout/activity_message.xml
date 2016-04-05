@@ -79,10 +79,9 @@
             android:layout_margin="15dp"
             android:background="@drawable/selector_btn_login"
             android:enabled="false"
-            android:text="@string/register"
+            android:text="@string/sure"
             android:textColor="@color/white"
-            android:textSize="17sp"
-            android:onClick="register_Click"/>
+            android:textSize="17sp"/>
 
 
 

@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
 import com.metamall.R;
-import com.metamall.activity.Personal.ChinaCity.telephoneChangeActivity;
 
 /**
  * Created by Administrator on 2016/4/3.
