@@ -96,7 +96,7 @@
     <string name="myCentre">我的个人中心</string>
     <string name="myAllOrder_layout">一路惊喜-我的全部订单</string>
     <string name="OrderConfirm_layout">确认订单</string>
-    <string name="OrderConfirm_advise">请填写您的收货地址</string>
+    <string name="OrderConfirm_advise">\t请填写您的收货地址</string>
     <string name="PayMode">支付方式</string>
     <string name="AliPay">支付宝</string>
     <string name="WinXinPay">微信支付</string>

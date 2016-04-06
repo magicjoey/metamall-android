@@ -34,6 +34,15 @@
         <item name="android:paddingBottom">10dp</item>
         <item name="android:gravity">center</item>
     </style>
+    <style name="ShareDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
       
     <style name="NoTitle" parent="android:Theme.Holo.Light.NoActionBar"/>       
 </resources>

@@ -51,14 +51,14 @@ public class UserEntity implements Serializable
     }
     private String city;
 
-    public String getdistrict(){
-        return district;
-    }
-    public void setdistrict(String district){
-        this.district=district;
-    }
+   // public String getdistrict(){
+ //       return district;
+   // }
+    //public void setdistrict(String district){
+   //     this.district=district;
+    //}
 
-    private String district;
+    //private String district;
 
     public String getaddressDetails(){
         return addressDetails;

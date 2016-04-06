@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.*;
 import android.widget.CompoundButton.OnCheckedChangeListener;
+import com.metamall.Application.MetaApp;
 import com.metamall.R;
 import com.metamall.adapter.CartListAdapter;
 import com.metamall.adapter.CartListAdapter.OnPriceChangedListener;
@@ -19,6 +20,8 @@ import java.util.ArrayList;
  * 购物车Fragment
  */
 public class CartActivity extends Activity {
+
+    MetaApp metaApp;
 
 	/**
 	 * 顶部
@@ -166,11 +169,14 @@ public class CartActivity extends Activity {
 			public void onPriceChanged(final float price) {
 				tvTotal.post(new Runnable() {
 
+
+
 					@Override
 					public void run() {
 						tvTotal.setText("合计：￥" + price);
 					}
 				});
+                metaApp.setprice(price);
 			}
 		});
 	}

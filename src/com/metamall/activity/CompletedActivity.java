@@ -23,11 +23,10 @@ public class CompletedActivity extends CartActivity {
         ibback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i=new Intent();
-                i.setClass(CompletedActivity.this,MyActivity.class);
                 finish();
             }
         });
+
     }
 
 }

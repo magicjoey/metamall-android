@@ -1,21 +1,16 @@
 package com.metamall.activity;
 
 import android.app.Activity;
-import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.ViewGroup;
 import android.widget.*;
 import android.widget.AbsListView.OnScrollListener;
 import android.widget.AdapterView.OnItemClickListener;
 import com.metamall.R;
 import com.metamall.Search.SearchActivity;
-import com.metamall.activity.ProductDetailsSecondLayerActivity;
 import com.metamall.adapter.CategoryLeftListAdapter;
-import com.metamall.adapter.CategoryRightGridAdapter;
 import com.metamall.model.CategoryData;
 import com.metamall.model.SecondCategoryData;
 

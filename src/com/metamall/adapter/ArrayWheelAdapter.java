@@ -1,3 +1,4 @@
+
 /*
  *  Copyright 2011 Yuri Kanivets
  *
@@ -13,16 +14,16 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package com.metamall.adapter;
+        package com.metamall.adapter;
 
-import android.content.Context;
+        import android.content.Context;
 
 /**
  * The simple Array wheel adapter
  * @param <T> the element type
  */
 public class ArrayWheelAdapter<T> extends AbstractWheelTextAdapter {
-    
+
     // items
     private T items[];
 
@@ -33,11 +34,11 @@ public class ArrayWheelAdapter<T> extends AbstractWheelTextAdapter {
      */
     public ArrayWheelAdapter(Context context, T items[]) {
         super(context);
-        
+
         //setEmptyItemResource(TEXT_VIEW_ITEM_RESOURCE);
         this.items = items;
     }
-    
+
     @Override
     public CharSequence getItemText(int index) {
         if (index >= 0 && index < items.length) {

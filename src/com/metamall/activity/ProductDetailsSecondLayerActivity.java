@@ -8,7 +8,6 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.*;
@@ -17,7 +16,6 @@ import com.metamall.R;
 import com.metamall.adapter.PdSecondLayerAdapter;
 import com.metamall.model.ProductData;
 import com.metamall.noscrollview.NoScrollListView;
-import com.nostra13.universalimageloader.utils.L;
 
 import java.util.ArrayList;
 

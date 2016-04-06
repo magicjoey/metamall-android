@@ -4,12 +4,12 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageButton;
+import android.widget.*;
+import com.metamall.Application.MetaApp;
 import com.metamall.Clutter.SharedPreUtil;
 import com.metamall.Clutter.UserEntity;
 import com.metamall.R;
+import com.metamall.WheelView.ChangeAddressDialog;
 import com.metamall.activity.Personal.PersonalAddAddressActivity;
 import com.metamall.adapter.OnWheelScrollListener;
 import com.metamall.adapter.WheelView;
@@ -23,7 +23,7 @@ public class PersonalRefreshAddressActivity extends PersonalAddAddressActivity {
     private String telenumber=user.getnumber();
     private String province=user.getProvince();
     private String city=user.getCity();
-    private String district=user.getdistrict();
+
     private String details=user.getaddressDetails();
 
 
@@ -32,10 +32,14 @@ public class PersonalRefreshAddressActivity extends PersonalAddAddressActivity {
     private EditText etname;
     private EditText etnumber;
     private EditText etdetails;
-    private Button btaddress;
+    private TextView btaddress;
     private ImageButton ibrecoginition;
     private ImageButton ibback;
     private Button btconfirm;
+    private String mprovince;
+    private String mcity;
+    private Integer count;
+    MetaApp metaApp;
 
 
     @Override
@@ -104,47 +108,48 @@ public class PersonalRefreshAddressActivity extends PersonalAddAddressActivity {
 
             }
         });
-        btaddress=(Button) include1.findViewById(R.id.address_verbose);
+        btaddress=(TextView) include1.findViewById(R.id.address_verbose);
         btaddress.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ChangeAddressDialog mChangeAddressDialog = new ChangeAddressDialog(
+                        PersonalRefreshAddressActivity.this);
+                mChangeAddressDialog.setAddress("四川", "自贡");
+                mChangeAddressDialog.show();
+                mChangeAddressDialog.setAddresskListener(new ChangeAddressDialog.OnAddressCListener() {
+
+                    @Override
+                    public void onClick(String province, String city) {
+
+                        btaddress.setText(province+"\t"+city);
+
+                        // TODO Auto-generated method stub
+                        Toast.makeText(PersonalRefreshAddressActivity.this,
+                                province + "-" + city,
+                                Toast.LENGTH_LONG).show();
+                        mprovince=province;
+                        mcity=city;
+                    }
+                });
             }
         });
-        final WheelView mViewProvince = (WheelView) findViewById(R.id.id_province);
-        mViewProvince.addScrollingListener(new OnWheelScrollListener() {
-            @Override
-            public void onScrollingStarted(WheelView wheel) {
-            }
 
-            @Override
-            public void onScrollingFinished(WheelView wheel) {
-
-            }
-        });
-        final WheelView mViewCity = (WheelView) findViewById(R.id.id_city);
-        mViewCity.addScrollingListener(new OnWheelScrollListener() {
-            @Override
-            public void onScrollingStarted(WheelView wheel) {
-                //todo
-            }
-
-            @Override
-            public void onScrollingFinished(WheelView wheel) {
-
-            }
-        });
-        final WheelView mViewDistrict = (WheelView) findViewById(R.id.id_district);
-        mViewDistrict.addScrollingListener(new OnWheelScrollListener() {
-            @Override
-            public void onScrollingStarted(WheelView wheel) {
-                //todo
-            }
-
-            @Override
-            public void onScrollingFinished(WheelView wheel) {
-            }
-        });
         ibrecoginition=(ImageButton) include1.findViewById(R.id.slient_recognition_address_no);
+        ibrecoginition.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                count++;
+                if(count%2==1){
+                    ibrecoginition.setImageDrawable(getResources().getDrawable(R.drawable.btn_psd_yes));
+                    metaApp=(MetaApp)getApplication();
+                    metaApp.setRecognition(etname.getText().toString(),etnumber.getText().toString()
+                            ,etdetails.getText().toString(),mprovince,mcity);
+                }
+                else{
+                    ibrecoginition.setImageDrawable(getResources().getDrawable(R.drawable.btn_psd_no));
+                }
+            }
+        });
 
         btconfirm=(Button) findViewById(R.id.address_refresh);
         btconfirm.setOnClickListener(new View.OnClickListener() {
@@ -153,9 +158,8 @@ public class PersonalRefreshAddressActivity extends PersonalAddAddressActivity {
                 user.setUserName(etname.toString());
                 user.setnumber(etnumber.toString());
                 user.setaddressDetails(etdetails.toString());
-                user.setProvince(mViewProvince.toString());
-                user.setCity(mViewCity.toString());
-                user.setdistrict(mViewDistrict.toString());
+                user.setProvince(mprovince);
+                user.setCity(mcity);
                 SharedPreUtil.getInstance().putUser(user);
                 finish();
             }

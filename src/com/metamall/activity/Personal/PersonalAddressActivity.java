@@ -1,6 +1,5 @@
 package com.metamall.activity.Personal;
 
-import android.app.Activity;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,7 +7,6 @@ import android.view.View;
 import android.widget.*;
 import com.metamall.Clutter.UserEntity;
 import com.metamall.R;
-import com.metamall.adapter.CartListAdapter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -30,11 +28,10 @@ public class PersonalAddressActivity extends ListActivity {
 
     String aprovince=user.getProvince();
     String acity=user.getCity();
-    String adistrict=user.getdistrict();
     String anumber=user.getnumber();
     String adetails=user.getaddressDetails();
     String aname1=user.getUserName();
-    String actualAddress="收货地址："+aprovince+acity+adistrict+adetails;
+    String actualAddress="收货地址："+aprovince+acity+adetails;
     String aname="收货人:"+aname1+"\t"+anumber;
 
 

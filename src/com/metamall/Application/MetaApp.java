@@ -23,7 +23,19 @@ public class MetaApp extends Application {
     public static Map<String, Long> map;
     public static boolean mIsRuning = false;	//是否从ManiActivity进入启动应用的
 
-    private String  recognition;
+    private String recognition_name = "";
+    private String recognition_number="";
+    private String recognition_addressDetails="";
+    private String recognition_province;
+    private String recognition_city;
+    private String name="";
+    private String password="";
+    private String number="";
+
+    private float price;
+
+
+
     public static boolean ibrecognition;
 
     public static String GCRASHFILEPATH = "/sdcard/GoodPlaceError/";	//Crash路径
@@ -71,14 +83,35 @@ public class MetaApp extends Application {
 
 
     //默认收货地址
-    public String getRecognition() {
-        return recognition;
+
+
+
+    public String getRecognition_name(){
+        return recognition_name;
     }
-    public void setRecognition(String recognition){
-        this.recognition=recognition;
+    public String getRecognition_number(){
+        return recognition_number;
     }
-    private String name = "";
-    private String password="";
+    public String getRecognition_addressDetails(){
+        return recognition_addressDetails;
+    }
+    public String getRecognition_province(){
+        return recognition_province;
+    }
+    public String getRecognition_city(){
+        return recognition_city;
+    }
+    public void setRecognition(String recognition_name,String recognition_number,String recognition_addressDetails,
+                               String recognition_province,String recognition_city){
+
+        this.recognition_name=recognition_name;
+        this.recognition_number=recognition_number;
+        this.recognition_addressDetails=recognition_addressDetails;
+        this.recognition_province=recognition_province;
+        this.recognition_city=recognition_city;
+
+    }
+
 
     public String getName() {
         return name;
@@ -100,7 +133,14 @@ public class MetaApp extends Application {
     public void setnumber(String number){
         this.number=number;
     }
-    private String number;
+
+//price
+    public float getprice(){
+        return price;}
+    public void setprice(float price){
+        this.price=price;
+    }
+
 
 
 

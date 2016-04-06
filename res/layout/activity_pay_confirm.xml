@@ -14,7 +14,7 @@
                 android:background="@color/white" >
 
             <ImageButton
-                    android:id="@+id/login_ib_back"
+                    android:id="@+id/pay_confirm_ib_back"
                     android:layout_width="40dp"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
@@ -49,9 +49,57 @@
                     android:text="@string/OrderConfirm_advise"
                     android:textColor="#636363"
                     android:textSize="16sp"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="1dp"
                     android:gravity="center_vertical"
                     android:layout_marginTop="10dip"
                     />
+            <LinearLayout
+                    android:id="@+id/confirm_address_suggest_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:background="@drawable/c12"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:visibility="gone"
+                    android:orientation="vertical"
+                    >
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginStart="16dip"
+                        android:layout_marginEnd="20dip"
+                        android:layout_marginTop="2dip"
+                        android:layout_gravity="center"
+                        android:textColor="#363636"
+                        android:textSize="18sp"
+                        android:id="@+id/confirm_address_name">
+                </TextView>
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginEnd="20dip"
+                        android:layout_marginStart="16dip"
+                        android:layout_gravity="center"
+                        android:textSize="16sp"
+                        android:textColor="#363636"
+                        android:id="@+id/confirm_address_details"
+                        />
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.8dp"
+                        android:background="@color/gray">
+
+                </View>
+
+
+
+
+
+
+            </LinearLayout>
 
             <LinearLayout
                     android:id="@+id/Order_confirm_goods"
@@ -60,21 +108,22 @@
                     android:orientation="vertical"
 
                     >
-                <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dip"
-                        android:text="@string/order_details"
-                        android:textColor="#555555"
-                        />
-                <Button
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/c12"
-                        android:layout_marginTop="10dip"
-                        android:id="@+id/address_details">
+                <!--                 <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="16dip"
+                                        android:text="@string/order_details"
+                                        android:textColor="#555555"
+                                        android:layout_marginStart="8dp"
+                                        />
+                               <Button
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:background="@drawable/c12"
+                                        android:layout_marginTop="4dip"
+                                        android:id="@+id/address_details">
 
-                </Button>
+                                </Button>-->
 
             </LinearLayout>
             <TextView
@@ -82,13 +131,14 @@
                     android:layout_height="wrap_content"
                     android:text="@string/PayMode"
                     android:layout_marginTop="20dip"
-                    android:textColor="#555555"/>
+                    android:textColor="#555555"
+                    android:layout_marginStart="8dp"/>
             <RadioGroup
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:id="@+id/payMode_radio"
-                    android:layout_marginTop="10dip">
+                    android:layout_marginTop="4dip">
                 <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -102,11 +152,17 @@
                             android:button="@null"
                             android:drawableEnd="@drawable/btn_radio_confirm"
                             android:text="@string/AliPay"
-                            android:layout_marginTop="5dip"
+                            android:layout_marginTop="4dip"
                             android:scaleX="0.7"
                             android:scaleY="0.7"
-                            android:background="@drawable/c12">
+                            android:background="@color/white"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="6dp">
                     </RadioButton>
+                    <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/bg_gray"/>
                     <RadioButton
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -115,24 +171,30 @@
                             android:text="@string/WinXinPay"
                             android:textColor="#666666"
                             android:button="@null"
-                            android:drawableEnd="@android:drawable/btn_radio"
-                            android:layout_marginTop="5dip"
+                            android:drawableEnd="@drawable/btn_radio_confirm"
                             android:scaleY="0.7"
                             android:scaleX="0.7"
-                            android:background="@color/white">
+                            android:background="@color/white"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="6dp">
                             </RadioButton>
+                    <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/bg_gray"/>
                     <RadioButton
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:id="@+id/COD"
                             android:text="@string/CODPay"
                             android:textColor="#666666"
-                            android:layout_marginTop="5dip"
                             android:button="@null"
                             android:scaleY="0.7"
                             android:scaleX="0.7"
-                            android:drawableEnd="@android:drawable/btn_radio"
-                            android:background="@color/white">
+                            android:drawableEnd="@drawable/btn_radio_confirm"
+                            android:background="@color/white"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="6dp">
                             </RadioButton>
 
 
@@ -145,14 +207,16 @@
                     android:layout_height="wrap_content"
                     android:text="@string/goods_details"
                     android:textColor="#555555"
-                    android:layout_marginTop="20dip"/>
+                    android:layout_marginTop="20dip"
+                    android:layout_marginStart="10dp"/>
 
 
 
 
 
         </LinearLayout>
-        <Button
+<!--精喜币
+       <Button
                 android:id="@+id/JXB"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -160,27 +224,46 @@
                 android:background="@drawable/c12"
                 android:textColor="#555555"
                 android:gravity="center_vertical"
-                android:layout_marginTop="15dip"
-                android:textSize="16sp"/>
-        <TextView
+                android:layout_marginTop="4dip"
+                android:textSize="16sp"/>   -->
+        <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="38sp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/white"
+                android:paddingStart="10dp"
+                android:paddingEnd="6dp"
+                android:layout_marginTop="3dip">
+        <TextView
+                android:layout_width="0dp"
+                android:layout_height="30sp"
                 android:text="@string/goods_freePosts"
                 android:textColor="#555555"
                 android:textSize="17sp"
-                android:layout_marginTop="3dip"
-                android:background="@color/white"
+                android:layout_weight="6"
                 android:gravity="center_vertical"
-                android:id="@+id/Order_confirm_goodsPostsFree"/>
+               />
+            <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"
+                    android:id="@+id/Order_confirm_goodsPostsFree"
+                    android:textSize="17sp"
+                    android:textColor="#636363"
+                    android:gravity="center_vertical"
+                    />
+            </LinearLayout>
         <EditText
                 android:layout_width="match_parent"
-                android:layout_height="30sp"
+                android:layout_height="38sp"
                 android:id="@+id/leave_message"
                 android:hint="@string/leave_message"
                 android:textColor="#666666"
                 android:textSize="16sp"
                 android:layout_marginTop="4dip"
-                android:background="@color/white"/>
+                android:background="@color/white"
+                android:paddingStart="10dp"
+                android:paddingEnd="1dp"/>
 
 
         <LinearLayout
