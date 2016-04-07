@@ -1,6 +1,7 @@
 package com.metamall.activity.Personal;
 
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -12,14 +13,12 @@ import com.metamall.Application.MetaApp;
 import com.metamall.Clutter.UserEntity;
 import com.metamall.R;
 import com.metamall.WheelView.ChangeAddressDialog;
-import com.metamall.activity.Personal.ChinaCity.AddressBaseActivity;
-import com.metamall.adapter.WheelView;
 import com.metamall.WheelView.ChangeAddressDialog.OnAddressCListener;
 
 /**
  * Created by Administrator on 2016/3/30.
  */
-public class PersonalAddAddressActivity extends AddressBaseActivity {
+public class PersonalAddAddressActivity extends Activity {
     private ImageButton ibback;
     private EditText etname;
     private EditText etnumber;

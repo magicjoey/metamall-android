@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:id="@+id/ly_myinfo_select_goods"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="#00000000"
+              android:gravity="center"
+              android:orientation="vertical" >
+
+    <LinearLayout
+            android:id="@+id/ly_myinfo_select_goods_child"
+            android:layout_width="300dip"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="27dip"
+            android:layout_marginRight="27dip"
+            android:background="@drawable/bg_dialog_selector"
+            android:orientation="vertical" >
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dip"
+                android:layout_marginStart="18dip"
+                android:layout_marginTop="18dip"
+                android:gravity="center_vertical"
+                android:text="@string/select_goods"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="160dip"
+                android:orientation="horizontal"
+                android:layout_marginLeft="20dip"
+                android:layout_marginRight="20dip"
+                android:gravity="center_vertical">
+            <com.metamall.WheelView.views.WheelView
+                    android:id="@+id/wv_select_goods_conditions"
+                    android:layout_width="0dip"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    />
+            <com.metamall.WheelView.views.WheelView
+                    android:id="@+id/wv_select_goods_outcome"
+                    android:layout_width="0dip"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    />
+        </LinearLayout>
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dip"
+                android:layout_marginBottom="21dip" >
+
+            <TextView
+                    android:id="@+id/btn_select_goods_sure"
+                    android:layout_width="77dip"
+                    android:layout_height="33dip"
+                    android:text="@string/confirm"
+                    android:gravity="center"
+                    android:textColor="#555555"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="15dip"
+                    android:textSize="16sp" />
+
+
+            <TextView
+                    android:id="@+id/btn_select_goods_cancel"
+                    android:layout_width="77dip"
+                    android:layout_height="33dip"
+                    android:layout_toStartOf="@+id/btn_select_goods_sure"
+                    android:gravity="center"
+                    android:textColor="#555555"
+                    android:text="@string/cancel"
+                    android:textSize="16sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -2,7 +2,7 @@ package com.metamall.Search;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
+
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -18,7 +18,6 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.*;
 
 import com.metamall.R;
-import com.metamall.activity.HomeActivity;
 
 import java.util.Date;
 
@@ -69,8 +68,7 @@ public class SearchActivity extends Activity {
                         insertData(et_search.getText().toString().trim());
                         queryData("");
                     }
-                    // TODO 根据输入的内容模糊查询商品，并跳转到另一个界面，由你自己去实现
-                    Toast.makeText(SearchActivity.this, "clicked!", Toast.LENGTH_SHORT).show();
+                    // TODO 根据输入的内容模糊查询商品，并跳转到另一个界面，根据数据库
 
                 }
                 return false;
@@ -110,7 +108,8 @@ public class SearchActivity extends Activity {
                 String name = textView.getText().toString();
                 et_search.setText(name);
                 Toast.makeText(SearchActivity.this, name, Toast.LENGTH_SHORT).show();
-                // TODO 获取到item上面的文字，根据该关键字跳转到另一个页面查询，由你自己去实现
+                // TODO 获取到item上面的文字，根据该关键字跳转到另一个页面查询，根据数据库
+                queryData(name);
             }
         });
 
@@ -175,7 +174,7 @@ public class SearchActivity extends Activity {
 
         et_search = (EditText) findViewById(R.id.et_search);
         tv_tip = (TextView) findViewById(R.id.tv_tip);
-        listView = (com.metamall.Search.MyListView) findViewById(R.id.listView);
+        listView = (com.metamall.Search.MyListView) findViewById(R.id.listView1);
         tv_clear = (TextView) findViewById(R.id.tv_clear);
 
 

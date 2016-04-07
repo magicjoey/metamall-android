@@ -1,3 +1,4 @@
+package com.metamall.adapter;
 import android.app.Activity;
 import android.content.Context;
 import android.util.DisplayMetrics;

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.*;
 import com.metamall.R;
+import com.metamall.adapter.CartListAdapter;
 import com.metamall.model.Global;
 import com.metamall.model.ProductData;
 

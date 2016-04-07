@@ -39,7 +39,7 @@
         <activity android:name=".Search.SearchActivity">
 
         </activity>
-        <activity android:name=".activity.LoadingActivity">
+        <activity android:name=".activity.SplashActivity">
 
         </activity>
     </application>

@@ -11,8 +11,10 @@ import android.widget.AdapterView.OnItemClickListener;
 import com.metamall.R;
 import com.metamall.Search.SearchActivity;
 import com.metamall.adapter.CategoryLeftListAdapter;
+import com.metamall.adapter.CategoryRightGridAdapter;
 import com.metamall.model.CategoryData;
 import com.metamall.model.SecondCategoryData;
+
 
 import java.util.ArrayList;
 

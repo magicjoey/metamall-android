@@ -1,25 +1,30 @@
 package com.metamall.activity;
 
-import android.app.ActionBar;
-import android.app.Activity;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v4.app.FragmentActivity;
+import android.widget.*;
 import android.content.Intent;
+
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.*;
 import android.widget.AdapterView.OnItemClickListener;
 import com.metamall.R;
+import com.metamall.Search.RecordSQLiteOpenHelper;
+import com.metamall.WheelView.SelectGoodsDialog;
 import com.metamall.adapter.PdSecondLayerAdapter;
 import com.metamall.model.ProductData;
 import com.metamall.noscrollview.NoScrollListView;
 
 import java.util.ArrayList;
 
-public class ProductDetailsSecondLayerActivity extends Activity {
+public class ProductDetailsSecondLayerActivity extends FragmentActivity {
+
+    private RecordSQLiteOpenHelper helper = new RecordSQLiteOpenHelper(this);
 	/**
 	 * 显示商品信息的listview
 	 * */
@@ -33,10 +38,7 @@ public class ProductDetailsSecondLayerActivity extends Activity {
 	 * listview的数据
 	 * */
 	private ArrayList<ProductData> list_datas = new ArrayList<ProductData>();
-    /**
-     * popupWindow
-     */
-    private PopupWindow mPopWindow;
+
     /**
 	 * 二级分类的适配器
 	 * */
@@ -60,8 +62,7 @@ public class ProductDetailsSecondLayerActivity extends Activity {
      * 布局隐藏
      *
      */
-    private GridLayout gridLayout;
-    private LinearLayout linearLayout;
+	Fragment fragment_gridview , fragment_listview;
     /**
      * populayout
      */
@@ -77,6 +78,10 @@ public class ProductDetailsSecondLayerActivity extends Activity {
 	private boolean flag_price_transition = false;
 	private Drawable[] layers;
 
+
+    FragmentManager fm = this.getSupportFragmentManager();
+    FragmentTransaction ft = this.getSupportFragmentManager().beginTransaction();
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -84,6 +89,7 @@ public class ProductDetailsSecondLayerActivity extends Activity {
 		initView();
 		initButtons();
 		initAdapter();
+
 	}
 
 	/**
@@ -220,8 +226,8 @@ public class ProductDetailsSecondLayerActivity extends Activity {
 		btn_price.setOnClickListener(listener);
 		btn_sales.setOnClickListener(listener);
 		btn_total.setOnClickListener(listener);
-        gridLayout=(GridLayout) findViewById(R.id.switch_grid);
-        linearLayout=(LinearLayout) findViewById(R.id.switch_linear);
+        fragment_gridview=fm.findFragmentById(R.id.gridview_fragment);
+        fragment_listview=fm.findFragmentById(R.id.listview_fragment);
         btn_switchStyle=(ImageButton) findViewById(R.id.switchStyle);
         btn_switchStyle.setOnClickListener(new OnClickListener() {
             @Override
@@ -229,14 +235,14 @@ public class ProductDetailsSecondLayerActivity extends Activity {
                 count++;
                 if(count%2==1){
                     btn_switchStyle.setBackgroundResource(R.drawable.selector_press_list);
-                    gridLayout.setVisibility(View.INVISIBLE);
-                    linearLayout.setVisibility(View.VISIBLE);
+                    ft.hide(fragment_gridview);
+                    ft.show(fragment_listview);
                     listView.setAdapter(adapter1);
                 }
                 else{
                     btn_switchStyle.setBackgroundResource(R.drawable.selector_press_grid);
-                    gridLayout.setVisibility(View.VISIBLE);
-                    linearLayout.setVisibility(View.INVISIBLE);
+                    ft.show(fragment_gridview);
+                    ft.hide(fragment_listview);
                     listView.setAdapter(adapter);
                 }
 
@@ -247,43 +253,37 @@ public class ProductDetailsSecondLayerActivity extends Activity {
         btn_select.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                showPopupWindow();
+                SelectGoodsDialog mSelectGoodsDialog = new SelectGoodsDialog(
+                        ProductDetailsSecondLayerActivity.this);
+                mSelectGoodsDialog.setSelect("条件", "结果");
+                mSelectGoodsDialog.show();
+                mSelectGoodsDialog
+                        .setSelectCListener(new SelectGoodsDialog.OnSelectCListener() {
+
+                            @Override
+                            public void onClick(String condition, String outcome) {
+                                // TODO Auto-generated method stub
+                                Toast.makeText(ProductDetailsSecondLayerActivity.this,
+                                        condition + "-" + outcome,
+                                        Toast.LENGTH_LONG).show();
+
+                            }
+                        });
+
             }
         });
 	}
-    private void showPopupWindow() {
-        //设置contentView
-        View contentView = LayoutInflater.from(ProductDetailsSecondLayerActivity.this).inflate(R.layout.popuplayout, null);
-        mPopWindow = new PopupWindow(contentView,
-                ActionBar.LayoutParams.WRAP_CONTENT, ActionBar.LayoutParams.WRAP_CONTENT, true);
-        mPopWindow.setContentView(contentView);
-        //设置各个控件的点击响应
-        scrollView1=(ScrollView) findViewById(R.id.son_son_popuplayout1);
-        scrollView2=(ScrollView) findViewById(R.id.son_son_popuplayout2);
-        btnson1=(Button) findViewById(R.id.son_popuplayout1);
-        btnson1.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                scrollView1.setVisibility(View.VISIBLE);
-                scrollView2.setVisibility(View.INVISIBLE);
-            }
-        });
-        btnson2=(Button) findViewById(R.id.son_popuplayout2);
-        btnson2.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                scrollView1.setVisibility(View.INVISIBLE);
-                scrollView2.setVisibility(View.VISIBLE);
-            }
-        });
-        //todo:confirm classify;
+//	private void queryData(String tempName) {
+//		Cursor cursor = helper.getReadableDatabase().rawQuery(
+//				"select id as _id,name from records where name like '%" + tempName + "%' order by id desc ", null);
+//		// 创建adapter适配器对象
+//		adapter = new SimpleCursorAdapter(this, android.R.layout.simple_list_item_1, cursor, new String[] { "name" },
+//				new int[] { android.R.id.text1 }, CursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER);
+//		// 设置适配器
+//		listView.setAdapter(adapter);
+//		adapter.notifyDataSetChanged();
+//	}
 
-        //显示PopupWindow
-		View rootview = LayoutInflater.from(ProductDetailsSecondLayerActivity.this)
-                .inflate(R.layout.activity_productdetails_second_layer, null);
-        mPopWindow.showAtLocation(rootview, Gravity.BOTTOM, 0, 0);
-
-    }
 
 
 
