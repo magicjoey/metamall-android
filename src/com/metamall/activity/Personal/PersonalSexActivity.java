@@ -32,6 +32,7 @@ public class PersonalSexActivity extends Activity {
                 Intent i=new Intent();
                 i.setClass(PersonalSexActivity.this, PersonalInformationActivity.class);
                 finish();
+                overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
             }
         });
         btmale=(Button) findViewById(R.id.male_select);
@@ -50,6 +51,7 @@ public class PersonalSexActivity extends Activity {
                 Intent i=new Intent();
                 i.setClass(PersonalSexActivity.this,PersonalInformationActivity.class);
                 finish();
+                overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
             }
         });
         btfemale.setOnClickListener(new View.OnClickListener() {
@@ -65,6 +67,7 @@ public class PersonalSexActivity extends Activity {
                 Intent i=new Intent();
                 i.setClass(PersonalSexActivity.this,PersonalInformationActivity.class);
                 finish();
+                overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
 
             }
         });
@@ -81,6 +84,7 @@ public class PersonalSexActivity extends Activity {
                 Intent i=new Intent();
                 i.setClass(PersonalSexActivity.this,PersonalInformationActivity.class);
                 finish();
+                overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
             }
         });
 

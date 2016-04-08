@@ -74,6 +74,15 @@ public class CategoryActivity extends Activity {
 	private void initView(View view) {
 		// 搜索相关
 		etSearch = (EditText) view.findViewById(R.id.top_et_search);
+		etSearch.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent();
+                i.setClass(CategoryActivity.this,SearchActivity.class);
+                finish();
+                overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
+            }
+        });
 		ibSearch = (ImageButton) view.findViewById(R.id.top_ib_search);
 		ibSearch.setOnClickListener(new OnClickListener() {
 
@@ -82,6 +91,7 @@ public class CategoryActivity extends Activity {
 				Intent i=new Intent();
 				i.setClass(CategoryActivity.this, SearchActivity.class);
 				finish();
+                overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
 
 			}
 		});

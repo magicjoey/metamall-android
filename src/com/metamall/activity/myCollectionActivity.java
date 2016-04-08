@@ -56,19 +56,7 @@ public class myCollectionActivity extends Activity {
     /**
      * 初始化视图
      */
-    private void initView() {
-        ibBack = (ImageButton) findViewById(R.id.login_ib_back);
-        ibBack.setOnClickListener(new View.OnClickListener() {
 
-            @Override
-            public void onClick(View v) {
-                Intent intent_login_my=new Intent();
-                intent_login_my.setClass(myCollectionActivity.this,MyActivity.class);
-                setResult(RESULT_CANCELED);
-                finish();
-            }
-        });
-    }
         @Override
         public void onStart() {
             super.onStart();
@@ -95,11 +83,17 @@ public class myCollectionActivity extends Activity {
         /**
          * 初始化视图
          *
-         * @param view
-         *            父视图
          */
-    private void initView(View view) {
-        btnEdit = (Button) view.findViewById(R.id.cart_btn_edit);
+    private void initView() {
+        ibBack = (ImageButton) findViewById(R.id.my_collection_ib_back);
+        ibBack.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+        btnEdit = (Button) findViewById(R.id.my_collection_setting);
         btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -126,9 +120,8 @@ public class myCollectionActivity extends Activity {
                 }
             }
         });
-        suggestLayout = (RelativeLayout) view
-                .findViewById(R.id.cart_suggest_layout);
-        btnLogin = (Button) view.findViewById(R.id.cart_btn_login);
+        suggestLayout = (RelativeLayout) findViewById(R.id.my_collection_suggest_layout);
+        btnLogin = (Button) findViewById(R.id.my_collection_btn_login);
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -137,13 +130,12 @@ public class myCollectionActivity extends Activity {
                 myCollectionActivity.this.finish();
             }
         });
-        tvEmpty = (TextView) view.findViewById(R.id.cart_tv_empty);
-        listLayout = (LinearLayout) view.findViewById(R.id.cart_list_layout);
-        listView = (ListView) view.findViewById(R.id.cart_lv);
+        tvEmpty = (TextView) findViewById(R.id.my_collection_tv_empty);
+        listLayout = (LinearLayout) findViewById(R.id.my_collection_list_layout);
+        listView = (ListView) findViewById(R.id.my_collection_lv);
         listView.setAdapter(adapter);
-        checkLayout = (RelativeLayout) view
-                .findViewById(R.id.cart_check_layout);
-        cbCheckAll = (CheckBox) view.findViewById(R.id.cart_cb_all);
+        checkLayout = (RelativeLayout) findViewById(R.id.my_collection_check_layout);
+        cbCheckAll = (CheckBox) findViewById(R.id.my_collection_cb_all);
         cbCheckAll.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView,
@@ -155,8 +147,8 @@ public class myCollectionActivity extends Activity {
                 adapter.notifyDataSetChanged();
             }
         });
-        tvTotal = (TextView) view.findViewById(R.id.cart_tv_total);
-        btnBuy = (Button) view.findViewById(R.id.cart_btn_buy);
+        tvTotal = (TextView) findViewById(R.id.my_collection_tv_total);
+        btnBuy = (Button) findViewById(R.id.my_collection_btn_buy);
         btnBuy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

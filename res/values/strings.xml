@@ -112,7 +112,7 @@
     <string name="confirmPay">提交订单</string>
     <string name="leave_message">请给我们留言</string>
     <string name="order_details">订单详情</string>
-    <string name="fordelivery_layout">一路惊喜—我的订单(待发货)</string>
+    <string name="for_delivery_layout">一路惊喜—我的订单(待发货)</string>
     <string name="deliveryed_layout">一路惊喜-我的订单(已发货)</string>
     <string name="forpay_layout">一路惊喜-我的订单(待付款)</string>
     <string name="completed_layout">一路惊喜-我的订单(已完成)</string>
@@ -162,6 +162,7 @@
     <string name="feedback_telephone_hint">手机号或者QQ号(选填)</string>
     <string name="suggest">请先登录再查看</string>
     <string name="cart_empty">购物车肚子空空</string>
+    <string name="for_pay_empty">您还没有需要支付的商品</string>
     <string name="mycollection_empty">收藏夹肚子空空</string>
     <string name="myOrder_empty">你还没有订单</string>
     <string name="selectAll">全选</string>

@@ -48,26 +48,13 @@ public class MyAllOrderActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cart);
+        setContentView(R.layout.activity_myallorder);
         initView();
     }
 
     /**
      * 初始化视图
      */
-    private void initView(){
-        btback=(ImageButton) listView.findViewById(R.id.login_ib_back);
-        btback.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent();
-                intent.setClass(MyAllOrderActivity.this,MyActivity.class);
-                setResult(RESULT_CANCELED);
-                finish();
-            }
-        });
-
-    }
 
     @Override
     public void onStart() {
@@ -95,11 +82,17 @@ public class MyAllOrderActivity extends Activity {
     /**
      * 初始化视图
      *
-     * @param view
-     *            父视图
+
      */
-    private void initView(View view) {
-        btnEdit = (Button) view.findViewById(R.id.cart_btn_edit);
+    private void initView() {
+        btback=(ImageButton) listView.findViewById(R.id.my_all_order_ib_back);
+        btback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+        btnEdit = (Button) findViewById(R.id.my_all_order_setting);
         btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -126,9 +119,8 @@ public class MyAllOrderActivity extends Activity {
                 }
             }
         });
-        suggestLayout = (RelativeLayout) view
-                .findViewById(R.id.cart_suggest_layout);
-        btnLogin = (Button) view.findViewById(R.id.cart_btn_login);
+        suggestLayout = (RelativeLayout) findViewById(R.id.my_all_order_suggest_layout);
+        btnLogin = (Button) findViewById(R.id.my_all_order_btn_login);
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -137,13 +129,12 @@ public class MyAllOrderActivity extends Activity {
                 MyAllOrderActivity.this.finish();
             }
         });
-        tvEmpty = (TextView) view.findViewById(R.id.cart_tv_empty);
-        listLayout = (LinearLayout) view.findViewById(R.id.cart_list_layout);
-        listView = (ListView) view.findViewById(R.id.cart_lv);
+        tvEmpty = (TextView) findViewById(R.id.my_all_order_tv_empty);
+        listLayout = (LinearLayout) findViewById(R.id.my_all_order_list_layout);
+        listView = (ListView) findViewById(R.id.my_all_order_lv);
         listView.setAdapter(adapter);
-        checkLayout = (RelativeLayout) view
-                .findViewById(R.id.cart_check_layout);
-        cbCheckAll = (CheckBox) view.findViewById(R.id.cart_cb_all);
+        checkLayout = (RelativeLayout) findViewById(R.id.my_all_order_check_layout);
+        cbCheckAll = (CheckBox) findViewById(R.id.my_all_order_cb_all);
         cbCheckAll.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView,
@@ -155,8 +146,8 @@ public class MyAllOrderActivity extends Activity {
                 adapter.notifyDataSetChanged();
             }
         });
-        tvTotal = (TextView) view.findViewById(R.id.cart_tv_total);
-        btnBuy = (Button) view.findViewById(R.id.cart_btn_buy);
+        tvTotal = (TextView) findViewById(R.id.my_all_order_tv_total);
+        btnBuy = (Button) findViewById(R.id.my_all_order_btn_buy);
         btnBuy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

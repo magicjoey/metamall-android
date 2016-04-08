@@ -26,9 +26,6 @@ public class MyRecommendActivity extends Activity {
 
             @Override
             public void onClick(View v) {
-                Intent intent_login_my=new Intent();
-                intent_login_my.setClass(MyRecommendActivity.this,MyActivity.class);
-                setResult(RESULT_CANCELED);
                 finish();
             }
         });

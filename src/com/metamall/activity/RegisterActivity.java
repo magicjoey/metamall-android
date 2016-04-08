@@ -93,6 +93,7 @@ public class RegisterActivity extends Activity {
                         Intent i=new Intent();
                         i.setClass(RegisterActivity.this,MessageActivity.class);
                         finish();
+                        overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
 
                     }
                     else{

@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:sndroid="http://schemas.android.com/apk/res-auto"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#e8e8e8"
+            android:background="@color/bg_gray"
         >
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="#f0f0f0">
+            android:background="@color/bg_gray">
         <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:background="@color/white" >
 
             <ImageButton
-                    android:id="@+id/login_ib_back"
+                    android:id="@+id/my_collection_ib_back"
                     android:layout_width="40dp"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
@@ -37,7 +36,7 @@
                     android:textColor="#666666"
                 />
             <Button
-                    android:id="@+id/MyCollection_setting"
+                    android:id="@+id/my_collection_setting"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -47,25 +46,25 @@
                     android:textColor="#555555"/>
         </RelativeLayout>
         <RelativeLayout
-                android:id="@+id/cart_suggest_layout"
+                android:id="@+id/my_collection_suggest_layout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="120dp"
                 android:visibility="gone" >
 
             <Button
-                    android:id="@+id/cart_btn_login"
+                    android:id="@+id/my_collection_btn_login"
                     android:layout_width="70dp"
                     android:layout_height="30dp"
-                    android:background="@drawable/shape_login_dog"
+                    android:background="#ffd700"
                     android:text="@string/login"
                     android:textSize="15sp" />
 
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toEndOf="@id/cart_btn_login"
+                    android:layout_toEndOf="@id/my_collection_btn_login"
                     android:paddingStart="10dp"
                     android:paddingTop="5dp"
                     android:text="@string/suggest"
@@ -73,7 +72,7 @@
         </RelativeLayout>
 
         <TextView
-                android:id="@+id/cart_tv_empty"
+                android:id="@+id/my_collection_tv_empty"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -84,7 +83,7 @@
                 android:visibility="gone" />
 
         <LinearLayout
-                android:id="@+id/mycollection_list_layout"
+                android:id="@+id/my_collection_list_layout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
@@ -100,13 +99,13 @@
             </ListView>
 
             <RelativeLayout
-                    android:id="@+id/cart_check_layout"
+                    android:id="@+id/my_collection_check_layout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/gray" >
 
                 <CheckBox
-                        android:id="@+id/cart_cb_all"
+                        android:id="@+id/my_collection_cb_all"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
@@ -118,7 +117,7 @@
                         />
 
                 <TextView
-                        android:id="@+id/cart_tv_total"
+                        android:id="@+id/my_collection_tv_total"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
@@ -126,7 +125,7 @@
                         android:textSize="17sp" />
 
                 <Button
-                        android:id="@+id/cart_btn_buy"
+                        android:id="@+id/my_collection_btn_buy"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"

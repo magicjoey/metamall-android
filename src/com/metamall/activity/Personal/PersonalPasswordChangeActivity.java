@@ -103,8 +103,9 @@ public class PersonalPasswordChangeActivity extends Activity {
                     pw=etNewPassword.toString();
                     Intent i=new Intent();
                     i.setClass(PersonalPasswordChangeActivity.this, MyActivity.class);
-                    Toast.makeText(getApplicationContext(),"修改成功",Toast.LENGTH_SHORT).show();
                     finish();
+                    overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
+                    Toast.makeText(getApplicationContext(),"修改成功",Toast.LENGTH_SHORT).show();
                 }
             }
         });

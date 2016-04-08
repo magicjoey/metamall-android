@@ -63,6 +63,7 @@ public class PersonalAddressActivity extends ListActivity {
                 Intent i=new Intent();
                 i.setClass(PersonalAddressActivity.this,PersonalAddAddressActivity.class);
                 finish();
+                overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
             }
         });
         listLayout = (LinearLayout) findViewById(R.id.address_suggest_layout);
@@ -75,6 +76,7 @@ public class PersonalAddressActivity extends ListActivity {
                 Intent in=new Intent();
                 in.setClass(PersonalAddressActivity.this,PersonalRefreshAddressActivity.class);
                 finish();
+                overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
 
             }
         });

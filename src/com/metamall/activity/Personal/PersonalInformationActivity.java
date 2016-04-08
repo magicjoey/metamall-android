@@ -66,6 +66,7 @@ public class PersonalInformationActivity extends Activity {
                 Intent i=new Intent();
                 i.setClass(PersonalInformationActivity.this,PersonalSexActivity.class);
                 finish();
+                overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
             }
         });
         btsex2=(Button) findViewById(R.id.sex_personal2);
@@ -75,6 +76,7 @@ public class PersonalInformationActivity extends Activity {
                 Intent i=new Intent();
                 i.setClass(PersonalInformationActivity.this, PersonalSexActivity.class);
                 finish();
+                overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
             }
         });
         btportrait=(Button) findViewById(R.id.portrait_personal);
@@ -92,6 +94,7 @@ public class PersonalInformationActivity extends Activity {
                 Intent i=new Intent();
                 i.setClass(PersonalInformationActivity.this,PersonalAddressActivity.class);
                 finish();
+                overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
 
             }
         });
@@ -102,6 +105,7 @@ public class PersonalInformationActivity extends Activity {
                 Intent i=new Intent();
                 i.setClass(PersonalInformationActivity.this,PersonalAddressActivity.class);
                 finish();
+                overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
             }
         });
         btsecure=(Button) findViewById(R.id.account_security);
@@ -111,6 +115,7 @@ public class PersonalInformationActivity extends Activity {
                 Intent i=new Intent();
                 i.setClass(PersonalInformationActivity.this,PersonalSecureActivity.class);
                 finish();
+                overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
             }
         });
 

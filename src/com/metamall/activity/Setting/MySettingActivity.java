@@ -4,11 +4,14 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageStats;
 import android.graphics.drawable.ColorDrawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.os.RemoteException;
 import android.telephony.TelephonyManager;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +24,8 @@ import com.metamall.R;
 import com.metamall.activity.LoginActivity;
 import com.metamall.activity.Personal.telephoneChangeActivity;
 import com.metamall.manage.DataCleanManager;
+import com.metamall.manage.FileUtil;
+import com.metamall.manage.NetState;
 import com.metamall.network.NetReceiver;
 
 import java.io.File;
@@ -40,12 +45,20 @@ public class MySettingActivity extends Activity {
     private Button btexit;
     private Integer count;
     private String type = "";
+    private Context context;
+    private Long cachesize ;
+    private Long datasize  ;
+    private Long codesize  ;
+    private Long totalsize ;
+
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_setting);
         initView();
         getCurrentNetType(this);
+
+        btclear2.setText(totalsize.toString());
 
     }
     private void initView(){
@@ -67,7 +80,13 @@ public class MySettingActivity extends Activity {
                 }
                 else{
                     ibwifi.setImageDrawable(getResources().getDrawable(R.drawable.btn_psd_yes));
-                    //todo wifi update
+                    if(isWifiConnected()){
+                        Intent intent = new Intent();
+                        intent.putExtra("autoUpdate", "yes");
+                    }else{
+                        Intent intent = new Intent();
+                        intent.putExtra("autoUpdate", "no");
+                    }
                 }
             }
         });
@@ -204,6 +223,34 @@ public class MySettingActivity extends Activity {
             }
         }
         return type;
+    }
+    private boolean isWifiConnected() {
+        if (context != null) {
+            ConnectivityManager mConnectivityManager = (ConnectivityManager) context
+                    .getSystemService(Context.CONNECTIVITY_SERVICE);
+            NetworkInfo mWiFiNetworkInfo = mConnectivityManager
+                    .getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+            if (mWiFiNetworkInfo != null) {
+                return mWiFiNetworkInfo.isAvailable();
+            }
+        }
+        return false;
+    }
+    public class PkgSizeObserver extends IPackageStatsObserver.Stub{
+        /*** �ص�������
+         * @param ,�������ݷ�װ��PackageStats������
+         * @param succeeded  ����ص��ɹ�
+         */
+        @Override
+        public void onGetStatsCompleted(PackageStats pStats, boolean succeeded)
+                throws RemoteException {
+            // TODO Auto-generated method stub
+            cachesize = pStats.cacheSize  ; //�����С
+            datasize = pStats.dataSize  ;  //���ݴ�С
+            codesize =	pStats.codeSize  ;  //Ӧ�ó����С
+            totalsize = cachesize + datasize + codesize ;
+
+        }
     }
 
 }

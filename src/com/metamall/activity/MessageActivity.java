@@ -68,6 +68,7 @@ public class MessageActivity extends Activity implements View.OnClickListener {
                 Intent intent_register=new Intent();
                 intent_register.setClass(MessageActivity.this, WelcomeActivity.class);
                 finish();
+                    overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
                 }
                 else{
                     Toast.makeText(MessageActivity.this,"您输入的验证码不正确，请重新输入",Toast.LENGTH_LONG).show();

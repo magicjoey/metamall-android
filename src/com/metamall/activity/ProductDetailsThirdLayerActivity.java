@@ -1,13 +1,16 @@
 package com.metamall.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.drawable.TransitionDrawable;
 import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView.ScaleType;
+import android.widget.Toast;
 import cn.trinea.android.view.autoscrollviewpager.AutoScrollViewPager;
 import com.android.volley.toolbox.NetworkImageView;
 import com.meta.viewpagerindicator.CirclePageIndicator;
@@ -27,6 +30,8 @@ public class ProductDetailsThirdLayerActivity extends Activity {
 	private PagerAdapter pagerAdapter;
 	private ImageButton btnBack;
 	private ImageButton btnCollect;
+    private Button btintocart;
+    private ImageButton ibcart;
 
 	/**
 	 * 表示该商品是否被收藏
@@ -49,7 +54,6 @@ public class ProductDetailsThirdLayerActivity extends Activity {
 	 * 初始化界面
 	 * */
 	private void initView() {
-		initButtons();
 		viewPager = (AutoScrollViewPager) findViewById(R.id.pd_viewPager);
 		indicator = (CirclePageIndicator) findViewById(R.id.pd_indicator);
 		getViewImage(); // 得到要予以展示的图片
@@ -82,40 +86,51 @@ public class ProductDetailsThirdLayerActivity extends Activity {
 
 		viewPager.setAdapter(pagerAdapter);
 		indicator.setViewPager(viewPager);
+        btnBack = (ImageButton) findViewById(R.id.pd_btn_back);
+        btnBack.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+        btnCollect = (ImageButton) findViewById(R.id.pd_btn_collect);
+        btnCollect.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (!collected) {
+                    ((TransitionDrawable) btnCollect.getDrawable())
+                            .startTransition(200);
+                    collected = true;
+                } else {
+                    ((TransitionDrawable) btnCollect.getDrawable())
+                            .reverseTransition(200);
+                    collected = false;
+                }
+
+            }
+        });
+        btintocart=(Button) findViewById(R.id.pd_btn_addIntoCart);
+        btintocart.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(),"已添加到购物车",Toast.LENGTH_SHORT).show();
+            }
+        });
+        ibcart=(ImageButton) findViewById(R.id.pd_btn_cart);
+        ibcart.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent();
+                i.setClass(ProductDetailsThirdLayerActivity.this,CartActivity.class);
+                finish();
+                overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
+            }
+        });
 	}
 
-	private void initButtons() {
-		btnBack = (ImageButton) findViewById(R.id.pd_btn_back);
-		btnCollect = (ImageButton) findViewById(R.id.pd_btn_collect);
-		OnClickListener listener = new OnClickListener() {
 
-			@Override
-			public void onClick(View v) {
-				switch (v.getId()) {
-				case R.id.pd_btn_collect:
-					if (!collected) {
-						((TransitionDrawable) btnCollect.getDrawable())
-								.startTransition(200);
-						collected = true;
-					} else {
-						((TransitionDrawable) btnCollect.getDrawable())
-								.reverseTransition(200);
-						collected = false;
-					}
 
-					break;
-
-				default:
-					ProductDetailsThirdLayerActivity.this.finish();
-					break;
-				}
-
-			}
-		};
-		btnCollect.setOnClickListener(listener);
-		btnBack.setOnClickListener(listener);
-
-}
 	@Override
 	protected void onResume() {
 		super.onResume();
@@ -125,6 +140,7 @@ public class ProductDetailsThirdLayerActivity extends Activity {
 	protected void onDestroy() {
 		super.onDestroy();
 	}
+
 
 	/**
 	 * 获取广告图片列表

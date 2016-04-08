@@ -83,6 +83,7 @@ public class PayConfirmActivity extends Activity {
                 Intent i=new Intent();
                 i.setClass(PayConfirmActivity.this,PersonalAddAddressActivity.class);
                 finish();
+                overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
 
             }
         });
@@ -93,6 +94,7 @@ public class PayConfirmActivity extends Activity {
                 Intent i=new Intent();
                 i.setClass(PayConfirmActivity.this,PersonalAddressActivity.class);
                 finish();
+                overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
             }
         });
         tv1=(TextView) findViewById(R.id.confirm_address_name);

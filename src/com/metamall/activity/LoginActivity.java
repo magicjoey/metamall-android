@@ -53,9 +53,6 @@ public class LoginActivity extends Activity {
 
             @Override
             public void onClick(View v) {
-                Intent intent_login_my=new Intent();
-                intent_login_my.setClass(LoginActivity.this,MyActivity.class);
-                setResult(RESULT_CANCELED);
                 finish();
             }
         });
@@ -95,6 +92,8 @@ public class LoginActivity extends Activity {
                             Toast.makeText(getApplicationContext(), R.string.success, Toast.LENGTH_SHORT).show();
                             Intent intent_login_my=new Intent();
                             intent_login_my.setClass(LoginActivity.this,MyActivity.class);
+                            finish();
+                            overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
 
                         }else{
                             Toast.makeText(getApplicationContext(), R.string.failed, Toast.LENGTH_SHORT).show();

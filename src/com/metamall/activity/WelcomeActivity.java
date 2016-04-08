@@ -104,6 +104,7 @@ public class WelcomeActivity extends Activity {
                         Intent i=new Intent();
                         i.setClass(WelcomeActivity.this,MyActivity.class);
                         finish();
+                        overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
 
                     }
                 }

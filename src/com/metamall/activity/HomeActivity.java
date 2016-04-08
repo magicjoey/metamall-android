@@ -59,6 +59,7 @@ public class HomeActivity extends Activity implements AdapterView.OnItemClickLis
                 Intent i = new Intent();
                 i.setClass(HomeActivity.this, SearchActivity.class);
                 finish();
+                overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
             }
         });
 
@@ -94,6 +95,7 @@ public class HomeActivity extends Activity implements AdapterView.OnItemClickLis
                 Intent i=new Intent();
                 i.setClass(HomeActivity.this, TimingDepreciateActivity.class);
                 finish();
+                overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
             }
         });
         btnTopHot=(Button) findViewById(R.id.goodSeal_home);
@@ -103,6 +105,7 @@ public class HomeActivity extends Activity implements AdapterView.OnItemClickLis
                 Intent i=new Intent();
                 i.setClass(HomeActivity.this, TopHotActivity.class);
                 finish();
+                overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
             }
         });
         btnBargainSale=(Button) findViewById(R.id.teJia_home);
@@ -112,6 +115,7 @@ public class HomeActivity extends Activity implements AdapterView.OnItemClickLis
                 Intent i=new Intent();
                 i.setClass(HomeActivity.this, BargainSaleActivity.class);
                 finish();
+                overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
             }
         });
         btnPreaching=(Button) findViewById(R.id.question_home);
@@ -121,6 +125,7 @@ public class HomeActivity extends Activity implements AdapterView.OnItemClickLis
                 Intent i= new Intent();
                 i.setClass(HomeActivity.this, PreachingActivity.class);
                 finish();
+                overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
             }
         });
         ibWeekGoods=(Button) findViewById(R.id.forMore_weekDated);
@@ -130,6 +135,7 @@ public class HomeActivity extends Activity implements AdapterView.OnItemClickLis
                 Intent i=new Intent();
                 i.setClass(HomeActivity.this, WeekGoodsActivity.class);
                 finish();
+                overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
             }
         });
         ibGoodsEveryDay=(Button) findViewById(R.id.forMore_goods_everyday);
@@ -148,6 +154,7 @@ public class HomeActivity extends Activity implements AdapterView.OnItemClickLis
                 Intent i=new Intent();
                 i.setClass(HomeActivity.this,LastCrazyActivity.class);
                 finish();
+                overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
             }
         });
         ibForSale=(Button) findViewById(R.id.forMore_for_sell);

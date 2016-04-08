@@ -147,60 +147,66 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/MyAllOrder"
-                android:background="@drawable/c11"
+                android:background="@drawable/c12"
                 android:text="@string/myAllOrder"
                 android:textColor="#555555"
                 android:textSize="18sp"
                 android:drawableStart="@drawable/my_try"
                 android:gravity="center_vertical"
-                android:layout_marginTop="4dp"/>
+                android:layout_marginTop="20dp"/>
+        <View android:layout_height="1.8dp"
+              android:layout_width="match_parent"
+              android:background="@color/bg_gray"/>
         <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/MyCollection"
-                android:background="@drawable/c11"
+                android:background="@drawable/c12"
                 android:text="@string/MyCollection"
                 android:textSize="18sp"
                 android:textColor="#555555"
                 android:drawableStart="@drawable/my_try"
-                android:gravity="center_vertical"
-                android:layout_marginTop="4dp"/>
+                android:gravity="center_vertical"/>
+        <View android:layout_height="1.8dp"
+              android:layout_width="match_parent"
+              android:background="@color/bg_gray"/>
         <Button
                 android:id="@+id/MyFit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/c11"
+                android:background="@drawable/c12"
                 android:text="@string/MyFit"
                 android:textSize="18sp"
                 android:textColor="#555555"
                 android:drawableStart="@drawable/my_try"
                 android:gravity="center_vertical"
-                android:onClick="showMyFit"
-                android:layout_marginTop="4dp"/>
+                />
+        <View android:layout_height="1.8dp"
+              android:layout_width="match_parent"
+              android:background="@color/bg_gray"/>
         <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/MyActivity"
-                android:background="@drawable/c11"
+                android:background="@drawable/c12"
                 android:text="@string/MyActivity"
                 android:textSize="18sp"
                 android:textColor="#555555"
                 android:drawableStart="@drawable/my_try"
-                android:gravity="center_vertical"
-                android:onClick="showMyActivity"
-                android:layout_marginTop="4dp"/>
+                android:gravity="center_vertical"/>
+        <View android:layout_height="1.8dp"
+              android:layout_width="match_parent"
+              android:background="@color/bg_gray"/>
         <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/recommend"
-                android:background="@drawable/c11"
+                android:background="@drawable/c12"
                 android:text="@string/MyRecommend"
                 android:textSize="18sp"
                 android:textColor="#555555"
                 android:drawableStart="@drawable/my_try"
-                android:gravity="center_vertical"
-                android:layout_marginTop="4dp"
-                android:onClick="showMyRecommend"/>
+                android:gravity="center_vertical"/>
 
 
 

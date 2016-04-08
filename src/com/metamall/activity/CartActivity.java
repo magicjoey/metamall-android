@@ -129,6 +129,7 @@ public class CartActivity extends Activity {
 				Intent intent=new Intent(CartActivity.this,LoginActivity.class);
 				startActivity(intent);
 				CartActivity.this.finish();
+				overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
 			}
 		});
 		tvEmpty = (TextView) findViewById(R.id.cart_tv_empty);

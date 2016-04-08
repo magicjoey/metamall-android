@@ -54,6 +54,7 @@ public class PersonalSecureActivity extends Activity {
                 Intent i=new Intent();
                 i.setClass(PersonalSecureActivity.this,PersonalPasswordChangeActivity.class);
                 finish();
+                overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
             }
         });
 
@@ -78,6 +79,7 @@ public class PersonalSecureActivity extends Activity {
                         Intent i=new Intent();
                         i.setClass(PersonalSecureActivity.this,telephoneChangeActivity.class);
                         finish();
+                        overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
                         break;
 
                     case R.id.btn_tele_change_pop_cancel:

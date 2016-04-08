@@ -40,7 +40,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="120dp"
                 android:visibility="gone" >
 
             <Button
@@ -103,6 +103,7 @@
                         android:layout_marginStart="10dp"
                         android:background="@null"
                         android:text="@string/selectAll"
+                        android:button="@drawable/checkbox_style"
                         android:textColor="@color/white"
                         android:checked="false"
                         />

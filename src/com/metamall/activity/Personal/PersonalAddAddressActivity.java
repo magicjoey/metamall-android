@@ -192,6 +192,7 @@ public class PersonalAddAddressActivity extends Activity {
                     Intent in=new Intent();
                     in.setClass(PersonalAddAddressActivity.this,PersonalAddressActivity.class);
                     finish();
+                    overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
                     Toast.makeText(getApplicationContext(),"保存成功",Toast.LENGTH_SHORT).show();
 
                 }

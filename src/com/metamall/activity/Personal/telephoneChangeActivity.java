@@ -105,6 +105,7 @@ public class telephoneChangeActivity extends Activity {
                         i.setClass(telephoneChangeActivity.this,MyActivity.class);
                         Toast.makeText(getApplicationContext(),"更改成功",Toast.LENGTH_SHORT).show();
                         finish();
+                    overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
                 }
 
                 else{
@@ -122,6 +123,7 @@ public class telephoneChangeActivity extends Activity {
                 Intent i=new Intent();
                 i.setClass(telephoneChangeActivity.this, MessageActivity.class);
                 finish();
+                overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
 
             }
         });
