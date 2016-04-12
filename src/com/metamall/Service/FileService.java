@@ -32,11 +32,11 @@ public class FileService {
         return true;
     }
     public Map<String,String> getUserInfo(String filename) throws Exception{
-        File file = new File("data/data/lq.wangzhen.file/files/"+filename);
+        File file = new File("data/data/metamall.file/files/"+filename);
         FileInputStream fis = new FileInputStream(file);
         //以上的两句代码也可以通过以下的代码实现：
         //FileInputStream fis = context.openFileInput(filename);
-        byte[] data = StreamTools.getBytes(fis);
+        byte[] data = StreamTools.readInputStream(fis);
         String result = new String(data);
         String results[] = result.split(":");
         Map<String,String> map = new HashMap<String,String>();

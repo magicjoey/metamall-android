@@ -44,5 +44,11 @@
         <item name="android:backgroundDimEnabled">true</item>
     </style>
       
-    <style name="NoTitle" parent="android:Theme.Holo.Light.NoActionBar"/>       
+    <style name="NoTitle" parent="android:Theme.Holo.Light.NoActionBar"/>
+    <style name="roomRatingBar" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/room_rating_bar</item>
+        <item name="android:minHeight">26dp</item>
+        <item name="android:maxHeight">26dp</item>
+    </style>
+
 </resources>

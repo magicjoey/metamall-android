@@ -177,7 +177,7 @@ public class ForDeliveryActivity extends CartActivity {
                         tvTotal.setText("合计：￥" + price);
                     }
                 });
-                metaApp.setprice(price);
+
             }
         });
     }

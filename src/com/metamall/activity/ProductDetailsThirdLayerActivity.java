@@ -7,10 +7,8 @@ import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
-import android.widget.ImageButton;
+import android.widget.*;
 import android.widget.ImageView.ScaleType;
-import android.widget.Toast;
 import cn.trinea.android.view.autoscrollviewpager.AutoScrollViewPager;
 import com.android.volley.toolbox.NetworkImageView;
 import com.meta.viewpagerindicator.CirclePageIndicator;
@@ -32,6 +30,13 @@ public class ProductDetailsThirdLayerActivity extends Activity {
 	private ImageButton btnCollect;
     private Button btintocart;
     private ImageButton ibcart;
+	private TextView tv_quantity;
+    private TextView tv_comment_score;
+    private RatingBar rb_rating_bar;
+    private Button bt_check_for_comment;
+    private View vw_image_text;
+
+
 
 	/**
 	 * 表示该商品是否被收藏
@@ -127,6 +132,20 @@ public class ProductDetailsThirdLayerActivity extends Activity {
                 overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
             }
         });
+        tv_quantity=(TextView) findViewById(R.id.User_comment_quantity);
+        tv_comment_score=(TextView) findViewById(R.id.User_comment_score);
+        rb_rating_bar=(RatingBar) findViewById(R.id.room_ratingbar);
+        bt_check_for_comment=(Button) findViewById(R.id.check_for_comment);
+        bt_check_for_comment.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent();
+                i.setClass(ProductDetailsThirdLayerActivity.this, CommentListActivity.class);
+                finish();
+            }
+        });
+        vw_image_text=(View) findViewById(R.id.goods_details_image_text);
+
 	}
 
 

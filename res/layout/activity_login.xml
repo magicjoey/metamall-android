@@ -51,7 +51,7 @@
 
         <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="120dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:orientation="vertical" >
 
@@ -85,7 +85,7 @@
 
             <View
                     android:layout_width="match_parent"
-                    android:layout_height="1px"
+                    android:layout_height="2dp"
                     android:background="@color/bg_gray" />
 
             <LinearLayout
@@ -93,7 +93,10 @@
                     android:layout_height="60dp"
                     android:orientation="horizontal"
                     android:background="@color/white"
-                    android:layout_marginTop="6dip">
+                    android:layout_marginTop="2dp"
+                    android:visibility="visible"
+                    android:id="@+id/password_login_linear"
+                    >
 
                 <TextView
                         android:layout_width="wrap_content"
@@ -116,15 +119,64 @@
                         android:inputType="textPassword"
                         android:textSize="18sp" />
                 <CheckBox
-                        android:text="@string/password_display"
+
                         android:textSize="15sp"
-                        android:layout_width="92dp"
-                        android:layout_height="60dp"
-                        android:textColor="#303030"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:id="@+id/passYN"
-                        android:checked="false"/>
+                        android:checked="false"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="20dp"
+                        android:button="@drawable/passyn"/>
 
             </LinearLayout>
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:background="@color/white"
+                    android:layout_marginTop="2dp"
+                    android:id="@+id/code_login_linear"
+                    android:visibility="gone">
+                <EditText
+                        android:id="@+id/login_num"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:background="@color/white"
+                        android:hint="@string/prompt"
+                        android:inputType="number"
+                        android:textSize="18sp" />
+                <com.metamall.Clutter.TimeButton.TimeButton
+                        android:text="@string/getIde"
+                        android:textSize="15sp"
+                        android:layout_width="92dp"
+                        android:layout_height="48dp"
+                        android:background="#cccccc"
+                        android:textColor="#303030"
+                        android:id="@+id/getAgain_login"/>
+            </LinearLayout>
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="16dp">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/style_switch"
+                    android:textColor="#ee4000"
+                    android:textSize="14sp"
+                    android:clickable="true"
+                    android:gravity="end"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="20dp"
+                    android:id="@+id/code_login"/>
+                </RelativeLayout>
+
+
+
 
         </LinearLayout>
 

@@ -3,15 +3,14 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:background="@color/bg_gray"
->
+        android:background="@color/bg_gray">
     <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@color/white" >
 
         <ImageButton
-                android:id="@+id/login_ib_back"
+                android:id="@+id/recover_ib_back"
                 android:layout_width="40dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -28,25 +27,30 @@
                 android:text="@string/validate"
                 android:textSize="20sp"
                 android:textColor="#2b2b2b"
-        />
+                />
     </RelativeLayout>
-    <TextView
+    <EditText
+            android:layout_marginTop="20dp"
+            android:id="@+id/recover_telephone"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:textColor="#454545"
-            android:id="@+id/message"
-            android:layout_marginTop="18dip"
-            />
+            android:layout_height="48dp"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:background="@color/white"
+            android:hint="@string/login_tel"
+            android:inputType="phone"
+            android:textSize="20sp" />
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:orientation="horizontal"
             android:background="@color/white"
-            android:layout_marginTop="8dip">
+            android:layout_marginTop="4dip">
 
         <EditText
-                android:id="@+id/message_num"
+                android:id="@+id/recover_message_num"
                 android:layout_width="0dp"
                 android:layout_height="30dp"
                 android:layout_gravity="center_vertical"
@@ -54,7 +58,9 @@
                 android:background="@color/white"
                 android:hint="@string/prompt"
                 android:inputType="number"
-                android:textSize="18sp" />
+                android:textSize="20sp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"/>
         <com.metamall.Clutter.TimeButton.TimeButton
                 android:text="@string/getIde"
                 android:textSize="15sp"
@@ -62,7 +68,7 @@
                 android:layout_height="48dp"
                 android:background="#cccccc"
                 android:textColor="#303030"
-                android:id="@+id/getAgain"/>
+                android:id="@+id/recover_getAgain"/>
 
 
     </LinearLayout>
@@ -73,7 +79,7 @@
             android:textSize="14sp"
             android:textColor="#848484"/>
     <Button
-            android:id="@+id/register_login"
+            android:id="@+id/recover_confirm"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_margin="15dp"
@@ -82,9 +88,6 @@
             android:text="@string/sure"
             android:textColor="@color/white"
             android:textSize="17sp"/>
-
-
-
 
 
 </LinearLayout>

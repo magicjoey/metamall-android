@@ -63,13 +63,7 @@ public class ProductDetailsSecondLayerActivity extends FragmentActivity {
      *
      */
 	Fragment fragment_gridview , fragment_listview;
-    /**
-     * populayout
-     */
-    private Button btnson1;
-    private Button btnson2;
-    private ScrollView scrollView1;
-    private ScrollView scrollView2;
+
 
 
 	/**

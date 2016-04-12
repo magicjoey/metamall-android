@@ -142,7 +142,12 @@
 
 
 
-
+<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp">
         <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -151,9 +156,10 @@
                 android:text="@string/myAllOrder"
                 android:textColor="#555555"
                 android:textSize="18sp"
-                android:drawableStart="@drawable/my_try"
+                android:drawableStart="@drawable/btn_menu_all_order"
                 android:gravity="center_vertical"
-                android:layout_marginTop="20dp"/>
+
+                android:layout_marginStart="10dp"/>
         <View android:layout_height="1.8dp"
               android:layout_width="match_parent"
               android:background="@color/bg_gray"/>
@@ -165,22 +171,9 @@
                 android:text="@string/MyCollection"
                 android:textSize="18sp"
                 android:textColor="#555555"
-                android:drawableStart="@drawable/my_try"
-                android:gravity="center_vertical"/>
-        <View android:layout_height="1.8dp"
-              android:layout_width="match_parent"
-              android:background="@color/bg_gray"/>
-        <Button
-                android:id="@+id/MyFit"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/c12"
-                android:text="@string/MyFit"
-                android:textSize="18sp"
-                android:textColor="#555555"
-                android:drawableStart="@drawable/my_try"
+                android:drawableStart="@drawable/bt_memu_collection"
                 android:gravity="center_vertical"
-                />
+                android:layout_marginStart="10dp"/>
         <View android:layout_height="1.8dp"
               android:layout_width="match_parent"
               android:background="@color/bg_gray"/>
@@ -192,8 +185,9 @@
                 android:text="@string/MyActivity"
                 android:textSize="18sp"
                 android:textColor="#555555"
-                android:drawableStart="@drawable/my_try"
-                android:gravity="center_vertical"/>
+                android:drawableStart="@drawable/btn_menu_activity"
+                android:gravity="center_vertical"
+                android:layout_marginStart="10dp"/>
         <View android:layout_height="1.8dp"
               android:layout_width="match_parent"
               android:background="@color/bg_gray"/>
@@ -206,11 +200,15 @@
                 android:textSize="18sp"
                 android:textColor="#555555"
                 android:drawableStart="@drawable/my_try"
-                android:gravity="center_vertical"/>
+                android:gravity="center_vertical"
+                android:layout_marginStart="10dp"/>
+    </LinearLayout>
+
 
 
 
     </LinearLayout>
+
 
 
 

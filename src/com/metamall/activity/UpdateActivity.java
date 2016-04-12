@@ -25,7 +25,6 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
@@ -54,8 +53,11 @@ public class UpdateActivity extends Activity {
         setContentView(R.layout.main);
         if(getServerVer()){
             int verCode = this.getVerCode(this);
-            if(newVerCode>verCode){
-                doNewVersionUpdate();//更新版本
+
+            if(newVerCode>verCode||autoUpdate.equals("yes")){
+                doNewVersionUpdate();
+
+                //更新版本
             }else{
 //                notNewVersionUpdate();//提示已是最新版本
             }

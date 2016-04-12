@@ -2,6 +2,7 @@ package com.metamall.activity.Personal;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -11,6 +12,7 @@ import com.metamall.Application.MetaApp;
 import com.metamall.R;
 import com.metamall.activity.MessageActivity;
 import com.metamall.activity.MyActivity;
+import com.metamall.activity.RegisterActivity;
 
 /**
  * Created by Administrator on 2016/4/3.
@@ -21,7 +23,10 @@ public class telephoneChangeActivity extends Activity {
     private TextView tvpassword;
     private EditText etnewtelephone;
     private EditText etpassword;
-    MetaApp metaApp;
+    SharedPreferences sharedPre=getSharedPreferences("config", MODE_PRIVATE);
+
+    String password=sharedPre.getString("password", "");
+
 
 
     @Override
@@ -30,7 +35,8 @@ public class telephoneChangeActivity extends Activity {
         setContentView(R.layout.activity_telephone_change);
         initView();
         btconfirm.setEnabled(false);
-        metaApp=MetaApp.getApp();
+
+
     }
     private void initView(){
         ibback=(ImageButton) findViewById(R.id.ib_back_personal_telephone_change);
@@ -83,7 +89,7 @@ public class telephoneChangeActivity extends Activity {
                 if(etnumber1.length()!=11){
                     Toast.makeText(getApplicationContext(),"请输入十一位手机号码",Toast.LENGTH_LONG).show();
                 }
-                else if(!etpassword.toString().equals(metaApp.getpassword())){
+                else if(!etpassword.toString().equals(password)){
                     Toast.makeText(getApplicationContext(),"确定输入的密码是否正确",Toast.LENGTH_SHORT).show();
 
 
@@ -121,7 +127,7 @@ public class telephoneChangeActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent i=new Intent();
-                i.setClass(telephoneChangeActivity.this, MessageActivity.class);
+                i.setClass(telephoneChangeActivity.this, RecoverActivity.class);
                 finish();
                 overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
 

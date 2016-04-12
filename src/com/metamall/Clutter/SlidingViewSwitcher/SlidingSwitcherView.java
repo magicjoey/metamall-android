@@ -1,4 +1,4 @@
-package com.metamall.SlidingViewSwitcher;
+package com.metamall.Clutter.SlidingViewSwitcher;
 
 import android.content.Context;
 import android.os.AsyncTask;

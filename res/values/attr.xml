@@ -16,7 +16,8 @@
 
         <attr
                 name="border_outside_color"
-                format="color"></attr>
+                format="color"/>
+        <attr name="ratingBarStyleIndicator" format="reference" />
 
     </declare-styleable>
 

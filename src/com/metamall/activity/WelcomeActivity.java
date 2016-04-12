@@ -1,7 +1,11 @@
 package com.metamall.activity;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -12,8 +16,9 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 import com.metamall.Application.MetaApp;
 import com.metamall.R;
+import com.metamall.model.Global;
 
- /**
+/**
  * Created by Administrator on 2016/4/3.
  */
 public class WelcomeActivity extends Activity {
@@ -22,21 +27,44 @@ public class WelcomeActivity extends Activity {
     private EditText etcurtain;
     private EditText etpassword;
     private EditText etpasswordConfirm;
-     private MetaApp metaApp;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
         initView();
         btconfirm.setEnabled(false);
-        metaApp=MetaApp.getApp();
+
     }
     private void initView(){
         ibback=(ImageButton)findViewById(R.id.welcome_ib_back);
         ibback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                AlertDialog.Builder builder = new AlertDialog.Builder(WelcomeActivity.this);
+                builder.setMessage("确定返回并重新开始？");
+
+                builder.setTitle("提示");
+
+                builder.setPositiveButton("确认", new DialogInterface.OnClickListener() {
+
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                        WelcomeActivity.this.finish();
+                    }
+                });
+
+                builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+
+                builder.create().show();
             }
         });
         etcurtain=(EditText)findViewById(R.id.welcome_et_account);
@@ -99,10 +127,10 @@ public class WelcomeActivity extends Activity {
                     if(etpassword.getText()!=etpasswordConfirm.getText()){
                         Toast.makeText(getApplicationContext(),"两次输入密码不一致，请检查",Toast.LENGTH_LONG).show();
                     }else{
-                        metaApp.setName(etcurtain.toString());
-                        metaApp.setpassword(etpassword.toString());
+
                         Intent i=new Intent();
                         i.setClass(WelcomeActivity.this,MyActivity.class);
+                        Global.isLogin=true;
                         finish();
                         overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
 
@@ -111,7 +139,16 @@ public class WelcomeActivity extends Activity {
 
             }
         });
+        SharedPreferences preference = getSharedPreferences("person", Context.MODE_PRIVATE);
+        SharedPreferences.Editor edit = preference.edit();
+        String User=etcurtain.getText().toString();
+        String Psw=etpassword.getText().toString();
+        edit.putString("User",User);
+        edit.putString("Psw",Psw);
+        edit.apply();
 
 
     }
+
+
 }

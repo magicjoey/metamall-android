@@ -1,142 +1,261 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/bg_gray">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-            >
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical" >
-
-            <RelativeLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top"
-                android:padding="10dp" >
-
-                <ImageButton
-                    android:id="@+id/pd_btn_back"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:background="@drawable/top_arrow_back" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:textColor="#555555"
-                    android:text="商品详情" />
-
-<!--                <ImageButton
-                    android:id="@+id/pd_btn_more"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:background="@drawable/pd_more_icon" />
-
-                <ImageButton
-                    android:id="@+id/pd_btn_foot_print"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="5dp"
-                    android:layout_toStartOf="@id/pd_btn_more"
-                    android:background="@drawable/pd_foot_print" />-->
-            </RelativeLayout>
-
-            <cn.trinea.android.view.autoscrollviewpager.AutoScrollViewPager
-                android:id="@+id/pd_viewPager"
-                android:layout_width="match_parent"
-                android:layout_height="200dp" />
-
-            <com.meta.viewpagerindicator.CirclePageIndicator
-                android:id="@+id/pd_indicator"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_gravity="bottom"
-                android:layout_marginBottom="10dp" />
-
-            <RelativeLayout
-                android:layout_width="fill_parent"
-                android:layout_height="80dp"
-                android:padding="10dp" >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:textColor="#636363"
-                    android:text="商品信息描述" />
-
-                <ImageButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentTop="true"
-                    android:background="@drawable/pd_arrow_r" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_alignParentStart="true"
-                    android:text="￥:139.00"
-                    android:textColor="@color/red"
-                    android:textSize="20sp" />
-            </RelativeLayout>
-        </LinearLayout>
-
-
+                android:background="@color/bg_gray"
+        >
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_gravity="bottom"
-        android:background="@android:color/transparent" >
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:padding="10dp"
+            android:background="@color/white">
 
         <ImageButton
-            android:id="@+id/pd_btn_collect"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
-            android:background="#00000000"
-            android:scaleType="fitXY"
-            android:src="@drawable/transition_pd_collect" />
+                android:id="@+id/pd_btn_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:background="@drawable/top_arrow_back" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/pd_btn_collect"
-                android:layout_marginStart="40dp"
-            android:layout_marginTop="10dp"
-            android:textColor="#636363"
-            android:text="收藏" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textColor="#555555"
+                android:text="商品详情" />
 
-        <Button
-            android:id="@+id/pd_btn_addIntoCart"
+        <!--                <ImageButton
+            android:id="@+id/pd_btn_more"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:background="@drawable/selector_btn_collect"
-            android:text="@string/text_btn_addIntoCart"
-            android:textColor="@color/white" />
+            android:background="@drawable/pd_more_icon" />
 
         <ImageButton
-            android:id="@+id/pd_btn_cart"
-            android:layout_width="40dp"
-            android:layout_height="fill_parent"
-            android:layout_marginEnd="30dp"
-            android:layout_toStartOf="@id/pd_btn_addIntoCart"
-            android:background="@drawable/selector_pd_cart"
-            android:scaleType="fitXY" />
+            android:id="@+id/pd_btn_foot_print"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:layout_toStartOf="@id/pd_btn_more"
+            android:background="@drawable/pd_foot_print" />-->
     </RelativeLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+        <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+
+
+
+            <cn.trinea.android.view.autoscrollviewpager.AutoScrollViewPager
+                    android:id="@+id/pd_viewPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp" />
+
+            <com.meta.viewpagerindicator.CirclePageIndicator
+                    android:id="@+id/pd_indicator"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="10dp" />
+
+            <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="80dp"
+                    android:padding="10dp"
+                    android:background="@color/white">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:textColor="#636363"
+                        android:text="@string/comment_information"
+                        android:id="@+id/Goods_name"/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentStart="true"
+                        android:text="￥:139.00"
+                        android:textColor="@color/red"
+                        android:textSize="20sp"
+                        android:id="@+id/Goods_price"/>
+                <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/image_goods_style"
+                        android:layout_toEndOf="@+id/Goods_price"
+                        android:src="@drawable/ic_forum_list_avatar"/>
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:textColor="#666666"/>
+            </RelativeLayout>
+
+
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/white"
+                android:layout_marginTop="10dp">
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:text="@string/User_comment"
+                    android:textSize="15sp"
+                    android:textColor="#363636"
+                    android:gravity="center"
+                    android:layout_marginStart="4dp"/>
+            <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:textSize="13sp"
+                    android:textColor="#555555"
+                    android:gravity="center_vertical"
+                    android:id="@+id/User_comment_quantity"
+                    android:text="人数"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:background="@color/white"
+                android:orientation="horizontal">
+            <TextView
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="5"
+                    android:layout_marginStart="4dp"
+                    android:textColor="#555555"
+                    android:textSize="14sp"
+                    android:paddingStart="6dp"
+                    android:paddingEnd="0dp"
+                    android:text="综合评价"
+                    android:id="@+id/User_comment_score"/>
+            <RatingBar
+                    android:id="@+id/room_ratingbar"
+                    style="@style/roomRatingBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:numStars="5"
+                    android:rating="4"
+                    android:isIndicator="true"
+                    android:layout_marginEnd="4dp" >
+            </RatingBar>
+
+        </LinearLayout>
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/bg_gray"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:background="@color/white"
+                android:text="@string/goods_comment_null"
+                android:textSize="15sp"
+                android:gravity="center"
+                android:textColor="#555555"
+                android:visibility="gone"
+                android:id="@+id/goods_comment_null"/>
+
+        <Button
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@color/white"
+                android:text="@string/check_more_comment"
+                android:textColor="#555555"
+                android:textSize="17sp"
+                android:id="@+id/check_for_comment"
+                />
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="@string/goods_details_image_text"
+                android:textSize="16sp"
+                android:textColor="#636363"
+                android:layout_marginTop="14dp"
+                android:background="@color/white"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:gravity="center_vertical"/>
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:paddingTop="6dp"
+                android:id="@+id/goods_details_image_text"/>
+
+
     </LinearLayout>
 
-</ScrollView>
+
+
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white"
+            >
+
+        <ImageButton
+                android:id="@+id/pd_btn_collect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:background="#00000000"
+                android:scaleType="fitXY"
+                android:src="@drawable/transition_pd_collect" />
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/pd_btn_collect"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="10dp"
+                android:textColor="#636363"
+                android:text="@string/collection" />
+
+        <Button
+                android:id="@+id/pd_btn_addIntoCart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/selector_btn_collect"
+                android:text="@string/text_btn_addIntoCart"
+                android:textColor="@color/white" />
+
+        <ImageButton
+                android:id="@+id/pd_btn_cart"
+                android:layout_width="40dp"
+                android:layout_height="fill_parent"
+                android:layout_marginEnd="40dp"
+                android:layout_toStartOf="@id/pd_btn_addIntoCart"
+                android:background="@drawable/selector_pd_cart"
+                android:scaleType="fitXY" />
+    </RelativeLayout>
+</RelativeLayout>

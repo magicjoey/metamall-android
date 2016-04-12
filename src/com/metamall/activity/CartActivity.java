@@ -177,7 +177,6 @@ public class CartActivity extends Activity {
 						tvTotal.setText("合计：￥" + price);
 					}
 				});
-                metaApp.setprice(price);
 			}
 		});
 	}

@@ -157,7 +157,8 @@
                             android:scaleY="0.7"
                             android:background="@color/white"
                             android:paddingStart="10dp"
-                            android:paddingEnd="6dp">
+                            android:paddingEnd="6dp"
+                            >
                     </RadioButton>
                     <View
                             android:layout_width="match_parent"

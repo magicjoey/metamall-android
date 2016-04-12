@@ -2,6 +2,8 @@ package com.metamall.activity;
 
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
@@ -89,11 +91,34 @@ public class RegisterActivity extends Activity {
                             || head1.equals("185") || head1.equals("186")
                             ||head1.equals("133") || head1.equals("153")
                             || head1.equals("180") || head1.equals("189")){
-                        metaApp.setnumber(etTelephone.toString());
-                        Intent i=new Intent();
-                        i.setClass(RegisterActivity.this,MessageActivity.class);
-                        finish();
-                        overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
+                        AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
+                        builder.setMessage("我们将把短信发到"+etnumber1+"上，请注意查收。");
+                        builder.setTitle("提示");
+                        builder.setPositiveButton("确认", new DialogInterface.OnClickListener() {
+
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                                metaApp.setnumber(etTelephone.toString());
+                                Intent i=new Intent();
+                                i.setClass(RegisterActivity.this,MessageActivity.class);
+                                finish();
+                                overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
+
+
+                            }
+                        });
+
+                        builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        });
+
+                        builder.create().show();
+
 
                     }
                     else{

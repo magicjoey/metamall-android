@@ -48,8 +48,9 @@
     <string name="flow_figure">3G/4G环境下被动加载图片</string>
     <string name="message_push">接受消息推送</string>
     <string name="about_us">关于我们</string>
-
+    <string name="push">提交</string>
     <string name="exit">退出登录</string>
+    <string name="comment_user">评论</string>
     <string name="add_address">新建</string>
     <string name="male">男</string>
     <string name="female">女</string>
@@ -94,6 +95,7 @@
     <string name="oldpassword">旧密码：</string>
     <string name="newpassword">新密码：</string>
     <string name="password1">请输入您的密码</string>
+    <string name="style_switch">验证码登录</string>
     <string name="prompt">请输入验证码</string>
     <string name="myCentre">我的个人中心</string>
     <string name="myAllOrder_layout">一路惊喜-我的全部订单</string>
@@ -122,7 +124,7 @@
     <string name="MyActivity_layout">我参与的活动</string>
     <string name="MyRecommend_layout">应用推荐</string>
     <string name="MyRecommend_message">暂无应用推荐</string>
-    <string name="myAllOrder">      我的全部订单</string>
+    <string name="myAllOrder">\t我的全部订单</string>
     <string name="personal_information">个人信息</string>
     <string name="activity_address">收货地址管理</string>
     <string name="address_add">新建收货地址</string>
@@ -148,9 +150,8 @@
     <string name="forDelivery">待发货</string>
     <string name="Deliveryed">已发货</string>
     <string name="completed">已完成</string>
-    <string name="MyCollection">我的收藏</string>
-    <string name="MyFit">我的健康管理</string>
-    <string name="MyActivity">我参与的活动</string>
+    <string name="MyCollection">\t我的收藏</string>
+    <string name="MyActivity">\t我参与的活动</string>
     <string name="MyRecommend">应用推荐</string>
     <string name="password_hint">请输入密码</string>
     <string name="edit">编辑</string>
@@ -172,6 +173,10 @@
     <string name="action_settings">Settings</string>
     <string name="myShop">购物车</string>
     <string name="updateShopNum">修改商品数量</string>
+    <string name="all_comment">全部</string>
+    <string name="excited">满意</string>
+    <string name="normal">一般</string>
+    <string name="dissatisfied">不满意</string>
     <string name="updateAddress">修改地址</string>
     <string name="numberSub">-</string>
     <string name="numberAdd">+</string>
@@ -181,12 +186,19 @@
     <string name="checkOut">去结算</string>
     <string name="delete">删除</string>
     <string name="collection">收藏</string>
+    <string name="check_more_comment">查看具体评论</string>
+    <string name="goods_details_image_text">图文详情</string>
+    <string name="comment">评分</string>
+    <string name="overall_merit">综合评价</string>
+    <string name="User_comment">用户评价</string>
+    <string name="comment_information">商品信息描述</string>
     <string name="allslect">全选</string>
     <string name="sure">确定</string>
     <string name="sureOrder">确认订单</string>
     <string name="leaveMeassge">给我们留言</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="text_btn_addIntoCart">加入购物车</string>
+    <string name="goods_comment_null">这件商品暂时还没有评论</string>
     <string name="accomplish">完成</string>
     <string name="account_secure">账号与安全</string>
     <string name="login_password">登录密码</string>
@@ -194,6 +206,7 @@
     <string name="secure_telephone_change">去更换</string>
     <string name="login_password_tip">*建议您定期更换登录密码</string>
     <string name="provider">麦塔工作室</string>
+    <string name="comment_hint">长度在1~500个字中间\n写下您的购物体验会对我们更好的服务很有帮助呦~</string>
 
 
 </resources>

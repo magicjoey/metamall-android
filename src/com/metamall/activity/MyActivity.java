@@ -31,7 +31,6 @@ public class MyActivity extends Activity {
 	private Button btnCompleted;
 	private Button btnmyallaoder;
 	private Button btnmycollection;
-	private Button btnmyfit;
 	private Button btnmyactivity;
 	private Button btnrecommend;
 	private Button btnsetting;
@@ -119,16 +118,7 @@ public class MyActivity extends Activity {
 				finish();
 			}
 		});
-		btnmyfit=(Button) findViewById(R.id.MyFit);
-		btnmyfit.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				Intent intent=new Intent();
-				intent.setClass(MyActivity.this,MyFitActivity.class);
-                setResult(RESULT_CANCELED);
-                finish();
-			}
-		});
+
         btnmyactivity=(Button) findViewById(R.id.MyActivity);
         btnmyactivity.setOnClickListener(new OnClickListener() {
             @Override

@@ -28,11 +28,7 @@ public class MetaApp extends Application {
     private String recognition_addressDetails="";
     private String recognition_province;
     private String recognition_city;
-    private String name="";
-    private String password="";
-    private String number="";
 
-    private float price;
 
 
 
@@ -113,33 +109,7 @@ public class MetaApp extends Application {
     }
 
 
-    public String getName() {
-        return name;
-    }
-    public void setName(String name) {
-        this.name = name;
-    }
-    public String getpassword(){
-        return password;
 
-    }
-    public void setpassword(String password){
-        this.password = password;
-    }
-    //绑定的手机号码
-    public String getnumber(){
-        return number;
-    }
-    public void setnumber(String number){
-        this.number=number;
-    }
-
-//price
-    public float getprice(){
-        return price;}
-    public void setprice(float price){
-        this.price=price;
-    }
 
 
 
