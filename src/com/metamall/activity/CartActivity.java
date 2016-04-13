@@ -55,6 +55,7 @@ public class CartActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_cart);
+		initData();
 		initView();
 	}
 
@@ -176,6 +177,7 @@ public class CartActivity extends Activity {
 					public void run() {
 						tvTotal.setText("合计：￥" + price);
 					}
+
 				});
 			}
 		});
@@ -191,18 +193,18 @@ public class CartActivity extends Activity {
 	}
 
 	/**
-	 * 从服务器获取购物车商品数据
-	 */
-	private void getCartProducts() {
-		ArrayList<ProductData> list = new ArrayList<ProductData>();
-		for (int i = 0; i < 5; i++) {
-			ProductData data = new ProductData();
-			data.setId(i);
-			data.setImgUrl("http://b.hiphotos.baidu.com/image/pic/item/14ce36d3d539b6006bae3d86ea50352ac65cb79a.jpg");
-			data.setInfo("上岛咖啡上岛咖啡上岛咖啡上岛咖啡上岛咖啡上岛咖啡");
-			data.setPrice(120);
-			list.add(data);
-		}
+         * 从服务器获取购物车商品数据
+         */
+    private void getCartProducts() {
+        ArrayList<ProductData> list = new ArrayList<ProductData>();
+        for (int i = 0; i < 5; i++) {
+            ProductData data = new ProductData();
+            data.setId(i);
+            data.setImgUrl("http://b.hiphotos.baidu.com/image/pic/item/14ce36d3d539b6006bae3d86ea50352ac65cb79a.jpg");
+            data.setInfo("上岛咖啡上岛咖啡上岛咖啡上岛咖啡上岛咖啡上岛咖啡");
+            data.setPrice(120);
+            list.add(data);
+        }
 		products.clear();
 		products.addAll(list);
 		for (int i = 0; i < products.size(); i++) {

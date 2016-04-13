@@ -56,7 +56,7 @@
                         android:paddingStart="6dp"
                         android:paddingEnd="0dp"
                         android:text="@string/overall_merit"
-                        android:id="@+id/User_comment_score"/>
+                        android:id="@+id/User_comment_score_list"/>
                 <RatingBar
                         android:id="@+id/comment_rating_bar"
                         style="@style/roomRatingBar"

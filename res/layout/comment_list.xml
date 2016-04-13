@@ -16,7 +16,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:numStars="5"
-                android:rating="4"
+                android:rating="4.5"
                 android:isIndicator="true"
                 android:layout_marginStart="4dp"
                 >
@@ -25,7 +25,7 @@
                 android:id="@+id/user_comment_name_data"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="孙葫芦"
+
                 android:gravity="end"
                 android:textColor="#555555"
                 android:layout_marginTop="4dp"
@@ -37,7 +37,6 @@
             android:id="@+id/goods_comment_style"
             android:layout_width="match_parent"
             android:layout_height="30dp"
-            android:text="规格|葫芦娃"
             android:background="@color/white"
             android:paddingStart="9dp"
             android:paddingEnd="4dp"
@@ -55,7 +54,6 @@
             android:paddingTop="22dp"
             android:paddingBottom="16dp"
             android:background="@color/white"
-            android:text="大娃二娃三娃四娃五娃六娃七娃"
             android:textSize="19sp"
             android:textColor="#363636"/>
 

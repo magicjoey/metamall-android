@@ -12,6 +12,8 @@ import com.metamall.model.ProductData;
 import com.mtxc.universallistview.UniversalAdapter;
 import com.mtxc.universallistview.ViewHolder;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -22,6 +24,8 @@ public class CommentAdapter extends UniversalAdapter<CommentData>{
     private int index = 1;
     private String value = "value";
 
+
+
     public CommentAdapter(Context context, List<CommentData> datas,
                            int itemLayoutId) {
         super(context, datas, itemLayoutId);
@@ -30,12 +34,12 @@ public class CommentAdapter extends UniversalAdapter<CommentData>{
     }
 
     @Override
-    public void updateItem(final ViewHolder holder, final CommentData data) {
-        holder.setTextViewText(R.id.user_comment_name_data, data.getnickname()+data.getutc());
-        holder.setTextViewText(R.id.goods_comment_style,data.getspecification());
-        holder.setTextViewText(R.id.user_goods_comment_textview,data.getsubstance());
+    public void updateItem(final ViewHolder holder, final CommentData cdata) {
+        holder.setTextViewText(R.id.user_comment_name_data, cdata.getnickname()+cdata.getutc());
+        holder.setTextViewText(R.id.goods_comment_style,cdata.getspecification());
+        holder.setTextViewText(R.id.user_goods_comment_textview,cdata.getsubstance());
         RatingBar rbRating=holder.getView(R.id.room_ratingbar_comment);
-        rbRating.setRating(data.getstarsNum());
+        rbRating.setRating(cdata.getstarsNum());
 
 
 
@@ -95,6 +99,74 @@ public class CommentAdapter extends UniversalAdapter<CommentData>{
   //      sparseBooleanArray.clear();
 
    // }
+    /**
+     * 计算平均评分
+     */
+    public float overallMerit() {
+        float Merit = 0;
+        float averageMerit=0;
+        for (int i = 0; i < datas.size(); i++) {
+            Merit += (nums.get(i)) * (datas.get(i).getstarsNum());
+            averageMerit=Merit/datas.size();
+
+        }
+
+        return averageMerit;
+
+    }
+    /**
+     * 得到喜欢人数
+     */
+    public int ExcitedNum(){
+        Integer count=0;
+        Integer excitedNum=0;
+
+
+        for(int i=0;i<datas.size();i++){
+            if(datas.get(i).getstarsNum()==5||datas.get(i).getstarsNum()==4){
+                nums.put(excitedNum,datas.hashCode());                                          //todo  datas.?????
+                count++;
+            }
+            excitedNum=count;
+
+        }
+        return excitedNum;
+    }
+
+    /**
+     * 得到一般人数
+     */
+    public int NormalNum(){
+        Integer count=0;
+        Integer normalNum=0;
+        for(int i=0;i<datas.size();i++){
+            if(datas.get(i).getstarsNum()==3||datas.get(i).getstarsNum()==2){
+                nums.put(normalNum,datas.hashCode());                                           //todo
+                count++;
+            }
+            normalNum=count;
+        }
+        return normalNum;
+
+
+    }
+
+    /**
+     * 得到不喜欢人数
+     */
+    public int DissatisfiedNum(){
+        Integer count=0;
+        Integer dissatisfiedNum=0;
+        for(int i=0;i<datas.size();i++){
+            if(datas.get(i).getstarsNum()==1){
+                nums.put(dissatisfiedNum,datas.hashCode());                                  //todo
+                count++;
+            }
+            dissatisfiedNum=count;
+        }
+        return dissatisfiedNum;
+    }
+
 
 
 }
