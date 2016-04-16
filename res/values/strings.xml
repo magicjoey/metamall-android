@@ -118,6 +118,10 @@
     <string name="deliveryed_layout">一路惊喜-我的订单(已发货)</string>
     <string name="forpay_layout">一路惊喜-我的订单(待付款)</string>
     <string name="completed_layout">一路惊喜-我的订单(已完成)</string>
+    <string name="drawback_tv">在下面输入您的退款理由(500字以内)</string>
+    <string name="drawback_activity">退款</string>
+    <string name="drawback_et_hint">输入退款理由，我帮您解决</string>
+    <string name="logistics_activity">物流详情</string>
     <string name="myCollection_layout">一路惊喜-我的收藏</string>
     <string name="myFit_layout">健康管理</string>
     <string name="MyFit_count">我的健康记录</string>
@@ -164,9 +168,15 @@
     <string name="suggest">请先登录再查看</string>
     <string name="cart_empty">购物车肚子空空</string>
     <string name="for_pay_empty">您还没有需要支付的商品</string>
+    <string name="for_delivery_deliveryed">您暂时没有订单</string>
     <string name="mycollection_empty">收藏夹肚子空空</string>
     <string name="myOrder_empty">你还没有订单</string>
     <string name="selectAll">全选</string>
+    <string name="selectAgain">再来一份</string>
+    <string name="pushComment">评价</string>
+    <string name="press">催单</string>
+    <string name="drawback">申请退款</string>
+    <string name="view_logistics">查看物流</string>
     <string name="buy">去结算</string>
     <string name="add">+</string>
     <string name="sub">-</string>

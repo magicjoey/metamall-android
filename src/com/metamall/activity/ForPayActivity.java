@@ -54,6 +54,7 @@ public class ForPayActivity extends CartActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forpay);
         initView();
+        initData();
     }
 
 

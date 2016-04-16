@@ -56,6 +56,9 @@ public class CommentListActivity extends Activity {
 
 
 
+
+
+
     @Override
     protected void onCreate(Bundle savedStanceState){
         super.onCreate(savedStanceState);
@@ -63,6 +66,7 @@ public class CommentListActivity extends Activity {
         initData();
         initView();
         getCommentProducts();
+
     }
     private void initView(){
         ibback=(ImageButton) findViewById(R.id.comment_btn_back);
@@ -90,33 +94,45 @@ public class CommentListActivity extends Activity {
         listView.setAdapter(adapter);
 
         relativeLayoutAll=(RelativeLayout) findViewById(R.id.comment_all);
-        relativeLayoutAll.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                adapter.getCommentNum().get();
-            }
-        });
         relativeLayoutExcited=(RelativeLayout) findViewById(R.id.comment_excited);
-        relativeLayoutExcited.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                adapter.getCommentNum().get();
-            }
-        });
         relativeLayoutNormal=(RelativeLayout) findViewById(R.id.comment_normal);
-        relativeLayoutNormal.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                adapter.getCommentNum().get();
-            }
-        });
         relativeLayoutDissatisfied=(RelativeLayout) findViewById(R.id.comment_dissatisfied);
-        relativeLayoutDissatisfied.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                adapter.getCommentNum().get();
-            }
-        });
+
+
+     /**
+      *根据评价搜索功能
+      *
+      *
+      * relativeLayoutDissatisfied.setOnClickListener(new View.OnClickListener() {
+     @Override
+     public void onClick(View v) {
+     adapter.getCommentNum().get();
+     }
+     });
+      relativeLayoutAll.setOnClickListener(new View.OnClickListener() {
+     @Override
+     public void onClick(View v) {
+     adapter.getCommentNum().get();
+     }
+     });
+
+      relativeLayoutExcited.setOnClickListener(new View.OnClickListener() {
+     @Override
+     public void onClick(View v) {
+     adapter.getCommentNum().get();
+     }
+     });
+      relativeLayoutNormal.setOnClickListener(new View.OnClickListener() {
+     @Override
+     public void onClick(View v) {
+     adapter.getCommentNum().get();
+     }
+     });
+      *
+      *
+      *
+      *
+     */
 
     }
     /**

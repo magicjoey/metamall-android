@@ -122,11 +122,21 @@ public class WelcomeActivity extends Activity {
         btconfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(etcurtain.getText().length()!=0||etpasswordConfirm.getText().length()!=0||etpassword.getText().length()!=0){
+                if(etcurtain.getText().length()!=0&&etpasswordConfirm.getText().length()!=0&&etpassword.getText().length()!=0){
                     btconfirm.setEnabled(true);
                     if(etpassword.getText()!=etpasswordConfirm.getText()){
                         Toast.makeText(getApplicationContext(),"两次输入密码不一致，请检查",Toast.LENGTH_LONG).show();
+                    }else if(etpassword.getText().toString().length()<6||etpassword.getText().toString().length()>18){
+                        Toast.makeText(getApplicationContext(),"请输入6~18位密码",Toast.LENGTH_LONG).show();
+
                     }else{
+                        SharedPreferences preference = getSharedPreferences("person", Context.MODE_PRIVATE);
+                        SharedPreferences.Editor edit = preference.edit();
+                        String User=etcurtain.getText().toString();
+                        String Psw=etpassword.getText().toString();
+                        edit.putString("User",User);
+                        edit.putString("Psw",Psw);
+                        edit.apply();
 
                         Intent i=new Intent();
                         i.setClass(WelcomeActivity.this,MyActivity.class);
@@ -139,13 +149,7 @@ public class WelcomeActivity extends Activity {
 
             }
         });
-        SharedPreferences preference = getSharedPreferences("person", Context.MODE_PRIVATE);
-        SharedPreferences.Editor edit = preference.edit();
-        String User=etcurtain.getText().toString();
-        String Psw=etpassword.getText().toString();
-        edit.putString("User",User);
-        edit.putString("Psw",Psw);
-        edit.apply();
+
 
 
     }

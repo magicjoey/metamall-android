@@ -1,19 +1,20 @@
 package com.metamall.adapter;
 
 import android.content.Context;
-import android.util.SparseArray;
-import android.util.SparseBooleanArray;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteCursorDriver;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteQuery;
+
 import android.util.SparseIntArray;
 import android.widget.RatingBar;
-import android.widget.TextView;
+
 import com.metamall.R;
 import com.metamall.model.CommentData;
-import com.metamall.model.ProductData;
+
 import com.mtxc.universallistview.UniversalAdapter;
 import com.mtxc.universallistview.ViewHolder;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -21,8 +22,7 @@ import java.util.List;
  */
 public class CommentAdapter extends UniversalAdapter<CommentData>{
     private SparseIntArray nums;
-    private int index = 1;
-    private String value = "value";
+
 
 
 
@@ -47,29 +47,29 @@ public class CommentAdapter extends UniversalAdapter<CommentData>{
     public SparseIntArray getCommentNum() {
         return nums;
     }
-    public void commentSparseArray() {
+    //public void commentSparseArray() {
         //创建一个SparseArray对象
-        SparseArray<String> sparseArray = new SparseArray<String>();
+      //  SparseArray<String> sparseArray = new SparseArray<String>();
 
         //向sparseArray存入元素value，key为index
-        sparseArray.put(index, value);
+//        sparseArray.put(index, value);
 
         //sparseArray.indexOfKey(index);
         //查找value所在的位置，如果不存在，则返回-1
         //sparseArray.indexOfValue(value);
         //更新某个key的值
-        sparseArray.setValueAt(index, value);
+//        sparseArray.setValueAt(index, value);
         //获取index所对应的值，没有则返回null
-        sparseArray.get(index);
+  //      sparseArray.get(index);
         //获取index所对应的值，没有则返回自定义的默认值"default-value"
         //sparseArray.get(index,"default-value");
         //删除index对应的元素
-        sparseArray.delete(index);
+    //    sparseArray.delete(index);
         //移除，本质也是调用delete(int)方法
         //sparseArray.remove(index);
         //清空所有数据
         //sparseArray.clear();
-    }
+  //  }
    // public void testSparseBooleanArray()
     //{
 
@@ -166,6 +166,10 @@ public class CommentAdapter extends UniversalAdapter<CommentData>{
         }
         return dissatisfiedNum;
     }
+    /**
+     * 保存数据
+     */
+
 
 
 

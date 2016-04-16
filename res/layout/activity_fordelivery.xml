@@ -35,15 +35,7 @@
                     android:textSize="16sp"
                     android:textColor="#666666"
                     />
-            <Button
-                    android:id="@+id/for_delivery_setting"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:text="@string/setting"
-                    android:background="#00000000"
-                    android:textColor="#555555"/>
+
         </RelativeLayout>
         <RelativeLayout
             android:id="@+id/for_delivery_suggest_layout"
@@ -79,7 +71,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:drawableTop="@drawable/cart_no_data"
-            android:text="@string/for_pay_empty"
+            android:text="@string/for_delivery_deliveryed"
             android:textColor="@color/gray"
             android:textSize="17sp"
             android:visibility="gone" />
@@ -100,43 +92,7 @@
                 android:scrollbars="none" >
         </ListView>
 
-        <RelativeLayout
-                android:id="@+id/for_delivery_check_layout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/gray" >
 
-            <CheckBox
-                    android:id="@+id/for_delivery_cb_all"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="10dp"
-                    android:background="@null"
-                    android:text="@string/selectAll"
-                    android:button="@drawable/checkbox_style"
-                    android:textColor="@color/white"
-                    android:checked="false"
-                    />
-
-            <TextView
-                    android:id="@+id/for_delivery_tv_total"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:textColor="@color/white"
-                    android:textSize="17sp" />
-
-            <Button
-                    android:id="@+id/for_delivery_btn_buy"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:background="@color/red"
-                    android:text="@string/buy"
-                    android:textColor="@color/white"
-                    android:textSize="17sp" />
-        </RelativeLayout>
 
         </LinearLayout>
     </LinearLayout>

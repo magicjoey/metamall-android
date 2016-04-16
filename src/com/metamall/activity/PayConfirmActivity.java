@@ -11,6 +11,8 @@ import com.metamall.Application.MetaApp;
 import com.metamall.R;
 import com.metamall.activity.Personal.PersonalAddAddressActivity;
 import com.metamall.activity.Personal.PersonalAddressActivity;
+import com.metamall.adapter.CartListAdapter;
+import com.metamall.model.ProductData;
 
 /**
  * Created by Administrator on 2016/3/17.
@@ -41,6 +43,8 @@ public class PayConfirmActivity extends Activity {
     private Integer bprice;
     private float priceall;
 
+    private ProductData productData;
+
 
 
     @Override
@@ -50,7 +54,7 @@ public class PayConfirmActivity extends Activity {
         initView();
         metaApp=MetaApp.getApp();
         bname=metaApp.getRecognition_name();
-        aprice=metaApp.getprice();
+        aprice=productData.getPrice();
         if(bname.length() !=0){
             btaddress.setVisibility(View.GONE);
             linearLayout.setVisibility(View.VISIBLE);

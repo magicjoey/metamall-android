@@ -48,23 +48,22 @@
 
         <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="116dp"
                 android:orientation="horizontal"
                 android:layout_marginTop="18dip">
             <Button
                     android:id="@+id/erHuo_home"
-                    android:layout_width="match_parent"
+                    android:layout_width="100dp"
                     android:layout_height="fill_parent"
-                    android:layout_weight="1"
+                    android:padding="10dp"
                     android:background="@drawable/erhuo2"
                     android:layout_marginStart="2dip"
                     android:layout_marginEnd="2dip"/>
 
             <Button
                     android:id="@+id/goodSeal_home"
-                    android:layout_width="match_parent"
+                    android:layout_width="100dp"
                     android:layout_height="fill_parent"
-                    android:layout_weight="1"
                     android:background="@drawable/goodseal2"
                     android:layout_marginStart="2dip"
                     android:layout_marginEnd="2dip"
@@ -74,17 +73,15 @@
 
             <Button
                     android:id="@+id/teJia_home"
-                    android:layout_width="match_parent"
+                    android:layout_width="100dp"
                     android:layout_height="fill_parent"
-                    android:layout_weight="1"
                     android:background="@drawable/tejia2"
                     android:layout_marginStart="2dip"
                     android:layout_marginEnd="2dip"/>
             <Button
                     android:id="@+id/question_home"
-                    android:layout_width="match_parent"
+                    android:layout_width="100dp"
                     android:layout_height="fill_parent"
-                    android:layout_weight="1"
                     android:background="@drawable/question2"
                     android:textColor="@color/black"
                     android:textSize="17sp"
