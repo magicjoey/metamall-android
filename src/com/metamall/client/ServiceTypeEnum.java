@@ -9,7 +9,7 @@ package com.metamall.client;
 public enum ServiceTypeEnum {
     REGISTER("register", "注册", "api/register", "POST"),
     LOGIN("login", "登陆", "api/login", "POST"),
-    SMS("sms", "短信", "api/sms", "POST"),
+    SMS("sms", "短信", "api/sms", "GET"),
     ;
 
 
