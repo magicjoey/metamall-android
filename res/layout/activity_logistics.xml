@@ -32,17 +32,19 @@
                 />
 
     </RelativeLayout>
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@color/white"
+            android:layout_marginTop="10dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="10dp">
     <TextView
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:layout_marginTop="10dp"
-            android:background="@color/white"
-            android:paddingStart="20dp"
-            android:paddingEnd="20dp"
-            android:paddingTop="10dp"
-            android:text="啊哈哈哈哈哈哈哈哈哈"
             android:textColor="#363636"
             android:textSize="19sp"
             android:id="@+id/logistics_tv"/>
-
+    </ScrollView>
 </LinearLayout>

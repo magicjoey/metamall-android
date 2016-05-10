@@ -1,7 +1,9 @@
 package com.metamall.activity.Personal;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -23,14 +25,12 @@ public class PersonalPasswordChangeActivity extends Activity {
     private EditText etNewPassword;
     private EditText etNewPassword_confirm;
     private Button btconfirm;
-    MetaApp metaApp;
-    private String pw=metaApp.getpassword();
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_personal_password_change);
         initView();
-        metaApp=MetaApp.getApp();
+
 
     }
     private void initView(){
@@ -95,12 +95,13 @@ public class PersonalPasswordChangeActivity extends Activity {
         btconfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                SharedPreferences preference = getSharedPreferences("person", Context.MODE_PRIVATE);
+                String pw=preference.getString("Psw","");
                 if(!etOldPassword.toString().equals(pw)){
                     Toast.makeText(getApplicationContext(),"请确认您的旧密码是否正确\n不记得旧密码可以到手机号更换重新设置",Toast.LENGTH_LONG).show();
                 }else if(!etNewPassword.toString().equals(etNewPassword_confirm.toString())){
                     Toast.makeText(getApplicationContext(),"两次输入密码不一致",Toast.LENGTH_SHORT).show();
                 }else{
-                    pw=etNewPassword.toString();
                     Intent i=new Intent();
                     i.setClass(PersonalPasswordChangeActivity.this, MyActivity.class);
                     finish();

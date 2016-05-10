@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.*;
 import android.widget.CompoundButton.OnCheckedChangeListener;
-import com.metamall.Application.MetaApp;
 import com.metamall.R;
 import com.metamall.adapter.CartListAdapter;
 import com.metamall.adapter.CartListAdapter.OnPriceChangedListener;
@@ -21,7 +20,6 @@ import java.util.ArrayList;
  */
 public class CartActivity extends Activity {
 
-    MetaApp metaApp;
 
 	/**
 	 * 顶部

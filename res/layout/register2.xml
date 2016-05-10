@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:background="#fffafafa"
+              android:orientation="vertical" >
+
+    <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="48.0dip"
+            android:background="@color/bg_gray" >
+
+        <TextView
+                android:id="@+id/login_cancle"
+                android:layout_width="wrap_content"
+                android:layout_height="35.0dip"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="8.0dip"
+                android:gravity="center"
+                android:paddingLeft="10.0dip"
+                android:paddingRight="10.0dip"
+                android:text="取消"
+                android:textColor="#555555"
+                android:textSize="14.0dip"
+                android:textStyle="bold" />
+
+        <TextView
+                android:id="@+id/center_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="登陆账户"
+                android:textColor="#555555"
+                android:textSize="18.0dip"
+                android:textStyle="bold" />
+
+        <TextView
+                android:id="@+id/register_text"
+                android:layout_width="wrap_content"
+                android:layout_height="35.0dip"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="8.0dip"
+
+                android:gravity="center"
+                android:paddingLeft="10.0dip"
+                android:paddingRight="10.0dip"
+                android:text="注册"
+                android:textColor="#555555"
+                android:textSize="14.0dip"
+                android:textStyle="bold" />
+    </RelativeLayout>
+
+    <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+
+        <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical"
+                android:padding="10.0dip" >
+
+            <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5.0dip"
+                    android:gravity="center"
+                    android:orientation="horizontal" >
+
+                <TextView
+                        android:layout_width="58.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="账　号"
+                        android:textColor="#ff404040"
+                        android:textSize="16.0dip" />
+
+                <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="40.0dip" >
+
+                    <EditText
+                            android:id="@+id/LoginName"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:imeOptions="actionNext"
+                            android:paddingLeft="10.0dip"
+                            android:paddingRight="30.0dip"
+                            android:singleLine="true"
+                            android:textSize="16.0dip" />
+
+                    <ImageView
+                            android:id="@+id/login_name_clear_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:paddingLeft="5.0dip"
+                            android:paddingRight="5.0dip"
+                            android:src="@drawable/close_btn"
+                            android:visibility="gone" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <TextView
+                    android:id="@+id/usernameerrorid"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="58.0dip"
+                    android:text="error"
+                    android:textColor="#ffff0000"
+                    android:textSize="13.0dip"
+                    android:visibility="gone" />
+
+            <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13.0dip"
+                    android:gravity="center"
+                    android:orientation="horizontal" >
+
+                <TextView
+                        android:layout_width="58.0dip"
+                        android:layout_height="wrap_content"
+                        android:text="密　码"
+                        android:textColor="#ff404040"
+                        android:textSize="16.0dip" />
+
+                <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="40.0dip" >
+
+                    <EditText
+                            android:id="@+id/password"
+                            android:layout_width="fill_parent"
+                            android:layout_height="40.0dip"
+                            android:imeOptions="actionDone"
+                            android:inputType="textPassword"
+                            android:maxLength="16"
+                            android:paddingLeft="10.0dip"
+                            android:singleLine="true"
+                            android:textSize="16.0dip" />
+
+                    <ImageView
+                            android:id="@+id/clear_btn2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:paddingLeft="5.0dip"
+                            android:paddingRight="5.0dip"
+                            android:src="@drawable/close_btn"
+                            android:visibility="gone" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <TextView
+                    android:id="@+id/passworderrorid"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="58.0dip"
+                    android:text="error"
+                    android:textColor="#ffff0000"
+                    android:textSize="13.0dip"
+                    android:visibility="gone" />
+
+            <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13.0dip"
+                    android:orientation="horizontal" >
+
+                <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent" >
+
+                    <CheckBox
+                            android:id="@+id/autologin"
+                            android:layout_width="32.0dip"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5.0dip"
+                            android:checked="true" />
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="显示密码"
+                            android:textColor="#ff404040"
+                            android:textSize="16.0dip" />
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5.0dip" >
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="忘记密码？"
+                            android:textColor="@color/gray"
+                            android:textSize="16.0dip" />
+
+                    <TextView
+                            android:id="@+id/recode_textview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="点击这里"
+                            android:textColor="@color/lightRed"
+                            android:textSize="16.0dip" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <Button
+                    android:id="@+id/BtnMenulogin"
+                    android:layout_width="200.0dip"
+                    android:layout_height="42.0dip"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="12.0dip"
+                    android:layout_marginTop="12.0dip"
+                    android:background="@color/lightYellow"
+                    android:text="@string/login"
+                    android:textColor="@color/white"
+                    android:textSize="18.0dip" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

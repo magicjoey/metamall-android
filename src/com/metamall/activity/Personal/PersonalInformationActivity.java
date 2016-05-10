@@ -214,6 +214,7 @@ public class PersonalInformationActivity extends Activity {
             try
             {
                 view.setImageBitmap(bitmap);// 将图片显示在ImageView里
+                Toast.makeText(getApplicationContext(),"保存成功",Toast.LENGTH_SHORT).show();
             }catch(Exception e)
             {
                 Log.e("error", e.getMessage());

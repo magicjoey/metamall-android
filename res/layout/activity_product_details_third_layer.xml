@@ -159,7 +159,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:numStars="5"
-                    android:rating="4"
+                    android:rating="3"
                     android:isIndicator="true"
                     android:layout_marginEnd="4dp" >
             </RatingBar>
@@ -253,7 +253,7 @@
                 android:id="@+id/pd_btn_cart"
                 android:layout_width="40dp"
                 android:layout_height="fill_parent"
-                android:layout_marginEnd="40dp"
+                android:layout_marginEnd="48dp"
                 android:layout_toStartOf="@id/pd_btn_addIntoCart"
                 android:background="@drawable/selector_pd_cart"
                 android:scaleType="fitXY" />

@@ -13,37 +13,43 @@ public class CommentData {
     private String substance;
     private String utc;
 
-
-    public String getnickname(){
+    public String getNickname() {
         return nickname;
     }
-    public void setnickname(String nickname){
-        this.nickname=nickname;
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
     }
-    public Float getstarsNum(){
+
+    public Float getStarsNum() {
         return starsNum;
     }
-    public void setstarsNum(Float starsNum){
-        this.starsNum=starsNum;
+
+    public void setStarsNum(Float starsNum) {
+        this.starsNum = starsNum;
     }
-    public String getspecification(){
+
+    public String getSpecification() {
         return specification;
     }
-    public void setspecification(String specification){
-        this.specification=specification;
+
+    public void setSpecification(String specification) {
+        this.specification = specification;
     }
-    public String getsubstance(){
+
+    public String getSubstance() {
         return substance;
     }
-    public void setsubstance(String substance){
-        this.substance=substance;
+
+    public void setSubstance(String substance) {
+        this.substance = substance;
     }
-    public String getutc(){
+
+    public String getUtc() {
         return utc;
     }
-    public void setutc(String utc){
-        this.utc=utc;
+
+    public void setUtc(String utc) {
+        this.utc = utc;
     }
-
-
 }

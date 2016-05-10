@@ -19,7 +19,7 @@ import java.util.ArrayList;
 public class ForPayActivity extends CartActivity {
     private ImageButton ibback;
 
-    MetaApp metaApp;
+
     /**
      * 顶部
      */

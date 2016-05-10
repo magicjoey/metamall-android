@@ -1,10 +1,6 @@
 package com.metamall.adapter;
 
 import android.content.Context;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteCursorDriver;
-import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteQuery;
 
 import android.util.SparseIntArray;
 import android.widget.RatingBar;
@@ -35,11 +31,11 @@ public class CommentAdapter extends UniversalAdapter<CommentData>{
 
     @Override
     public void updateItem(final ViewHolder holder, final CommentData cdata) {
-        holder.setTextViewText(R.id.user_comment_name_data, cdata.getnickname()+cdata.getutc());
-        holder.setTextViewText(R.id.goods_comment_style,cdata.getspecification());
-        holder.setTextViewText(R.id.user_goods_comment_textview,cdata.getsubstance());
+        holder.setTextViewText(R.id.user_comment_name_data, cdata.getNickname()+cdata.getUtc());
+        holder.setTextViewText(R.id.goods_comment_style,cdata.getSpecification());
+        holder.setTextViewText(R.id.user_goods_comment_textview,cdata.getSubstance());
         RatingBar rbRating=holder.getView(R.id.room_ratingbar_comment);
-        rbRating.setRating(cdata.getstarsNum());
+        rbRating.setRating(cdata.getStarsNum());
 
 
 
@@ -106,7 +102,7 @@ public class CommentAdapter extends UniversalAdapter<CommentData>{
         float Merit = 0;
         float averageMerit=0;
         for (int i = 0; i < datas.size(); i++) {
-            Merit += (nums.get(i)) * (datas.get(i).getstarsNum());
+            Merit += (nums.get(i)) * (datas.get(i).getStarsNum());
             averageMerit=Merit/datas.size();
 
         }
@@ -123,7 +119,7 @@ public class CommentAdapter extends UniversalAdapter<CommentData>{
 
 
         for(int i=0;i<datas.size();i++){
-            if(datas.get(i).getstarsNum()==5||datas.get(i).getstarsNum()==4){
+            if(datas.get(i).getStarsNum()==5||datas.get(i).getStarsNum()==4){
                 nums.put(excitedNum,datas.hashCode());                                          //todo  datas.?????
                 count++;
             }
@@ -140,7 +136,7 @@ public class CommentAdapter extends UniversalAdapter<CommentData>{
         Integer count=0;
         Integer normalNum=0;
         for(int i=0;i<datas.size();i++){
-            if(datas.get(i).getstarsNum()==3||datas.get(i).getstarsNum()==2){
+            if(datas.get(i).getStarsNum()==3||datas.get(i).getStarsNum()==2){
                 nums.put(normalNum,datas.hashCode());                                           //todo
                 count++;
             }
@@ -158,7 +154,7 @@ public class CommentAdapter extends UniversalAdapter<CommentData>{
         Integer count=0;
         Integer dissatisfiedNum=0;
         for(int i=0;i<datas.size();i++){
-            if(datas.get(i).getstarsNum()==1){
+            if(datas.get(i).getStarsNum()==1){
                 nums.put(dissatisfiedNum,datas.hashCode());                                  //todo
                 count++;
             }

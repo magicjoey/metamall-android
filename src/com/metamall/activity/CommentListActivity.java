@@ -149,11 +149,11 @@ public class CommentListActivity extends Activity {
     private void getCommentProducts() {
         ArrayList<CommentData> list = new ArrayList<CommentData>();
         for (int i = 0; i < comments.size(); i++) {
-            cdata.setnickname(UserName);
-            cdata.setspecification("规格|淡蓝修身");
-            cdata.getutc();
-            cdata.getsubstance();
-            cdata.getstarsNum();
+            cdata.setNickname(UserName);
+            cdata.setSpecification("规格|淡蓝修身");
+            cdata.getUtc();
+            cdata.getSubstance();
+            cdata.getStarsNum();
             list.add(cdata);
         }
         comments.addAll(list);

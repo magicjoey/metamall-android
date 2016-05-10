@@ -29,6 +29,8 @@ public class LogisticsActivity extends Activity {
             }
         });
         tvLogistics=(TextView) findViewById(R.id.logistics_tv);
+        //todo 从网上获取物流信息
+
 
 
     }

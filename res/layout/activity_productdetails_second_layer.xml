@@ -59,7 +59,7 @@
             <Button
                     android:id="@+id/btn_pd2_total"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="34dp"
                     android:layout_weight="1"
                     android:background="@color/white"
                     android:drawableEnd="@drawable/pd_second_layer_down"
@@ -71,7 +71,7 @@
             <Button
                     android:id="@+id/btn_pd2_sales"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="34dp"
                     android:layout_weight="1"
                     android:background="@color/white"
                     android:text="@string/seal_volume"
@@ -82,7 +82,7 @@
             <Button
                     android:id="@+id/btn_pd2_price"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="34dp"
                     android:layout_weight="1"
                     android:background="@color/white"
                     android:drawableEnd="@drawable/pd_button_price_normal"
@@ -94,7 +94,7 @@
             <Button
                     android:id="@+id/btn_pd2_select"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="34dp"
                     android:layout_weight="1"
                     android:background="@color/white"
                     android:drawableEnd="@drawable/selection_normal"

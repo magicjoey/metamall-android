@@ -81,8 +81,10 @@
     <string name="complete">完成</string>
     <string name="personal_address_verbose">所在地区：</string>
     <string name="account_hint">请输入您的手机号</string>
+    <string name="account_account">请输入您的账号</string>
     <string name="welcome_name_hint">给自己取一个名字吧</string>
     <string name="welcome_text">请输入6-18位密码</string>
+    <string name="welcome_sex">先让我了解了解你吧~</string>
     <string name="welcome_password_hint1">一路惊喜建议您时常更换密码</string>
     <string name="welcome_password_hint2">密码不要和别人分享哦</string>
     <string name="telephone_change_hint1">请输入新的手机号码</string>
@@ -217,6 +219,8 @@
     <string name="login_password_tip">*建议您定期更换登录密码</string>
     <string name="provider">麦塔工作室</string>
     <string name="comment_hint">长度在1~500个字中间\n写下您的购物体验会对我们更好的服务很有帮助呦~</string>
+    <string name="image">图片</string>
+    <string name="later_on">请稍后</string>
 
 
 </resources>

@@ -3,8 +3,10 @@ package com.metamall.activity;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -32,6 +34,7 @@ public class RegisterActivity extends Activity {
 
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +48,8 @@ public class RegisterActivity extends Activity {
 
             @Override
             public void onClick(View v) {
+                SharedPreferences preferences=getSharedPreferences("userInfo",Context.MODE_PRIVATE);
+                preferences.edit().clear().commit();
 
                 finish();
             }
@@ -71,7 +76,7 @@ public class RegisterActivity extends Activity {
         btnRegister.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                String etnumber1=etTelephone.toString().trim();
+                final String etnumber1=etTelephone.toString().trim();
                 String head1=etnumber1.substring(0,3);  // "hamburger".substring(4, 8) returns "urge"//"smiles".substring(1, 5) returns "mile"
                 if(etnumber1.length()!=11){
                     Toast.makeText(getApplicationContext(),"请输入十一位手机号码",Toast.LENGTH_LONG).show();
@@ -99,7 +104,7 @@ public class RegisterActivity extends Activity {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 dialog.dismiss();
-                                metaApp.setnumber(etTelephone.toString());
+                                metaApp.setTeleNumber(etnumber1);
                                 Intent i=new Intent();
                                 i.setClass(RegisterActivity.this,MessageActivity.class);
                                 finish();

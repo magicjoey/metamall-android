@@ -3,12 +3,11 @@ package com.metamall.activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.media.Image;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.provider.ContactsContract;
-import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.*;
+import com.metamall.Dialog.CustomProgressDialog;
 import com.metamall.R;
 import com.metamall.activity.Home.ConvenientBanner.Transformer;
 import com.metamall.Search.SearchActivity;
@@ -23,7 +22,10 @@ import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 
 
+import java.io.InputStream;
 import java.lang.reflect.Field;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,6 +42,13 @@ public class HomeActivity extends Activity implements AdapterView.OnItemClickLis
     private Button ibLastCrazy;
     private Button ibGoodsEveryDay;
     private Button ibForSale;
+    private CustomProgressDialog progressDialog = null;
+    
+    View Include1=(View) findViewById(R.id.home_include_1);
+    View Include2=(View) findViewById(R.id.home_include_2);
+    View Include3=(View) findViewById(R.id.home_include_3);
+    View Include4=(View) findViewById(R.id.home_include_4);
+    private ImageView imageView1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,8 +57,18 @@ public class HomeActivity extends Activity implements AdapterView.OnItemClickLis
         initView();
         initViews();
         init();
+        //图片资源
+        String url = "http://s16.sinaimg.cn/orignal/89429f6dhb99b4903ebcf&690";
+        //得到可用的图片
+        Bitmap bitmap = getHttpBitmap(url);
+        imageView1 = (ImageView) Include1.findViewById(R.id.pd_viewPager);
+        //显示
+        imageView1.setImageBitmap(bitmap);
 
     }
+
+
+
 
     private void initView() {
         ethome_top_et_search = (EditText) findViewById(R.id.home_top_et_search);
@@ -284,6 +303,55 @@ public class HomeActivity extends Activity implements AdapterView.OnItemClickLis
         String name = transformerList.get(position);
         Transformer transformer = Transformer.valueOf(name);
         convenientBanner.setPageTransformer(transformer);
+    }
+
+    /**
+     * 获取网落图片资源
+     * @param url
+     * @return
+     */
+    public static Bitmap getHttpBitmap(String url){
+        URL myFileURL;
+        Bitmap bitmap=null;
+        try{
+            myFileURL = new URL(url);
+            //获得连接
+            HttpURLConnection conn=(HttpURLConnection)myFileURL.openConnection();
+            //设置超时时间为6000毫秒，conn.setConnectionTiem(0);表示没有时间限制
+            conn.setConnectTimeout(6000);
+            //连接设置获得数据流
+            conn.setDoInput(true);
+            //不使用缓存
+            conn.setUseCaches(false);
+            //这句可有可无，没有影响
+            //conn.connect();
+            //得到数据流
+            InputStream is = conn.getInputStream();
+            //解析得到图片
+            bitmap = BitmapFactory.decodeStream(is);
+            //关闭数据流
+            is.close();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+
+        return bitmap;
+
+    }
+    private void startProgressDialog(){
+        if (progressDialog == null){
+            progressDialog = CustomProgressDialog.createDialog(this);
+            progressDialog.setMessage("正在加载中...");
+        }
+
+        progressDialog.show();
+    }
+
+    private void stopProgressDialog(){
+        if (progressDialog != null){
+            progressDialog.dismiss();
+            progressDialog = null;
+        }
     }
 
 }

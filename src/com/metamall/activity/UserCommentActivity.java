@@ -22,6 +22,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.sql.Time;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -100,9 +101,11 @@ public class UserCommentActivity extends Activity {
         btpush.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                cdata.setsubstance(etcomment.getText().toString());
-                cdata.setstarsNum(starsNum);
-                cdata.setutc(year.toString()+"."+month.toString()+"."+day.toString()+".\t"+hour.toString()+":"+minute.toString());
+                cdata.setSubstance(etcomment.getText().toString());
+                cdata.setStarsNum(starsNum);
+                Date date = new Date();
+                DateFormat dformat = new SimpleDateFormat("yyyy/MM/dd hh24:mm:ss");
+                cdata.setUtc(dformat.format(date));
                 Intent i=new Intent();
                 i.setClass(UserCommentActivity.this,MyActivity.class);
                 Toast.makeText(getApplicationContext(),"评论成功",Toast.LENGTH_SHORT).show();
@@ -162,21 +165,21 @@ public class UserCommentActivity extends Activity {
         }
         return bitmap;
     }
-    public static void main(String[] args) throws Exception {
-        URL url=new URL("http://www.bjtime.cn");//取得资源对象
-        URLConnection uc=url.openConnection();//生成连接对象
-        uc.connect(); //发出连接
-        long ld=uc.getDate(); //取得网站日期时间
-        Date date=new Date(ld); //转换为标准时间对象
-        //分别取得时间中的小时，分钟和秒，并输出
-        System.out.print(date.getHours()+"时"+date.getMinutes()+"分"+date.getSeconds()+"秒");
-    }
-    Calendar c = Calendar.getInstance();
-
-    Integer year= c.get(Calendar.YEAR);
-    Integer month= c.get(Calendar.MONTH);
-    Integer day= c.get(Calendar.DAY_OF_MONTH);
-    Integer hour= c.get(Calendar.HOUR_OF_DAY);
-    Integer minute = c.get(Calendar.MINUTE);
+//    public static void main(String[] args) throws Exception {
+//        URL url=new URL("http://www.bjtime.cn");//取得资源对象
+//        URLConnection uc=url.openConnection();//生成连接对象
+//        uc.connect(); //发出连接
+//        long ld=uc.getDate(); //取得网站日期时间
+//        Date date=new Date(ld); //转换为标准时间对象
+//        //分别取得时间中的小时，分钟和秒，并输出
+//        System.out.print(date.getHours()+"时"+date.getMinutes()+"分"+date.getSeconds()+"秒");
+//    }
+//    Calendar c = Calendar.getInstance();
+//
+//    Integer year= c.get(Calendar.YEAR);
+//    Integer month= c.get(Calendar.MONTH);
+//    Integer day= c.get(Calendar.DAY_OF_MONTH);
+//    Integer hour= c.get(Calendar.HOUR_OF_DAY);
+//    Integer minute = c.get(Calendar.MINUTE);
 
 }

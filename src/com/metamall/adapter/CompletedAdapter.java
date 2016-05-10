@@ -2,9 +2,6 @@ package com.metamall.adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.util.SparseBooleanArray;
 import android.util.SparseIntArray;
 import android.view.View;
 import android.widget.*;

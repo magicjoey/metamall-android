@@ -1,7 +1,9 @@
 package com.metamall.activity.Personal;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
@@ -48,8 +50,10 @@ public class PersonalSexActivity extends Activity {
                 btserect.setCompoundDrawables(null,null,null,null);
                 Button btsex2=(Button) findViewById(R.id.sex_personal2);
                 btsex2.setText("男");
+
+
                 Intent i=new Intent();
-                i.setClass(PersonalSexActivity.this,PersonalInformationActivity.class);
+                i.putExtra("sex", "男");
                 finish();
                 overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
             }
@@ -64,8 +68,9 @@ public class PersonalSexActivity extends Activity {
                 btserect.setCompoundDrawables(null,null,null,null);
                 Button btsex2=(Button) findViewById(R.id.sex_personal2);
                 btsex2.setText("女");
+
                 Intent i=new Intent();
-                i.setClass(PersonalSexActivity.this,PersonalInformationActivity.class);
+                i.putExtra("sex", "女");
                 finish();
                 overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
 

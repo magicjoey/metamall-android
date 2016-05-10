@@ -76,8 +76,9 @@ public class MessageActivity extends Activity implements View.OnClickListener {
             }
 
         });
+
         message_suggest = (TextView) findViewById(R.id.message);
-        String message_suggest1=metaApp.getnumber();
+        String message_suggest1=metaApp.getTeleNumber();
         String message_suggest2="我们将把验证码发到："+message_suggest1+",请注意查看";
         message_suggest.setText(message_suggest2);
         etcode=(EditText) findViewById(R.id.message_num);

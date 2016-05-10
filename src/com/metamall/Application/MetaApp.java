@@ -28,9 +28,15 @@ public class MetaApp extends Application {
     private String recognition_addressDetails="";
     private String recognition_province;
     private String recognition_city;
+    private String teleNumber;
 
+    public String getTeleNumber() {
+        return teleNumber;
+    }
 
-
+    public void setTeleNumber(String teleNumber) {
+        this.teleNumber = teleNumber;
+    }
 
     public static boolean ibrecognition;
 

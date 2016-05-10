@@ -78,7 +78,7 @@
                         android:layout_gravity="center_vertical"
                         android:layout_weight="1"
                         android:background="@color/white"
-                        android:hint="@string/account_hint"
+                        android:hint="@string/account_account"
                         android:textSize="18sp" />
 
             </LinearLayout>
@@ -143,6 +143,7 @@
                         android:layout_height="30dp"
                         android:layout_gravity="center_vertical"
                         android:layout_weight="1"
+                        android:layout_marginStart="20dp"
                         android:background="@color/white"
                         android:hint="@string/prompt"
                         android:inputType="number"
